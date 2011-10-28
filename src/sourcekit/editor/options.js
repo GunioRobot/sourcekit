@@ -1,4 +1,4 @@
-﻿define('sourcekit/editor/options', 
+﻿define('sourcekit/editor/options',
 	[
         'ace/theme/clouds',
         'ace/theme/clouds_midnight',
@@ -39,13 +39,13 @@ function() {
 		/** Wordwrap */
 		wordwrap: {
 			key: 'editor.options.wordwrap',
-			default: ' ',			
+			default: ' ',
 			options: [
 				{ label: 'No Wrapping', value: ' ' },
 				{ label: '80 Chars', value: '80' },
 				{ label: '120 Chars', value: '120' }
 			]
-			
+
 		},
 		/** Themes */
 		theme: {
@@ -68,7 +68,7 @@ function() {
 				{ label: 'Twilight', value: 'twilight', module: 'ace/theme/twilight'},
 				{ label: 'Vibrant Ink', value: 'vibrant_ink', module: 'sourcekit/editor/theme/vibrant_ink'}
 			],
-			
+
 			getByName: function(name) {
 				var moduleName;
 				for (var k in this.options) {
@@ -76,16 +76,16 @@ function() {
 						moduleName = this.options[k].module;
 						break;
 					}
-				}				
+				}
 				return moduleName ? require(moduleName) : null;
 			}
 		},
-		
+
 		/** Sets the selected flag for a given array of options. */
 		findOptions: function(selected, options) {
 			for (var k in options) {
 				options[k].selected = (selected == options[k].value);
-			}					
+			}
 			return options;
 		}
 	}

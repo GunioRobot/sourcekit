@@ -28,7 +28,7 @@ Credits
 [ExpandoPane] Peter Higgins (dante)
 [FloatingPane] Peter Higgins (dante)
 [GridContainer/GridContainerLite] Erwan Morvillez (emorvillez), Jeff Cunat (jfcunat), Guillaume Mouricou (gmouricou), Peter Higgins (dante)
-[RadioGroup/Fade/Slide] Peter Higgins (dante) 
+[RadioGroup/Fade/Slide] Peter Higgins (dante)
 [ResizeHandle] Peter Higgins (dante)
 [RotatorContainer] Chris Barber (cb1)
 [ScrollPane] Peter Higgins (dante), Shane O'Sullivan (sos)
@@ -45,17 +45,17 @@ Project description
 	Supports inline scripts, inline styles, relative path adjustments
 	and having a table tag as domNode.
 
-	dojox.layout.DragPane - an experimental start of a simple Dragable pane 
+	dojox.layout.DragPane - an experimental start of a simple Dragable pane
 	(drag larger content around inside of a sized pane) Does not support borderContainer
-	LayoutContainer resizing yet. 
+	LayoutContainer resizing yet.
 
 	dojox.layout.ExpandoPane - Intended only as a child of BorderContainer, provides an
 	experimental layout region (top/left/right/bottom) that collapses when toggled, hiding
 	the layout children contained within.
-	
+
 	dojox.layout.FloatingPane - an extension on TitlePane for drag/drop
 	operation, "docking" [minimize/maximize], and resizing. HIGHLY experimental.
-	
+
 	dojox.layout.GridContainer - displays children in a definable grid-layout,
 	allowing children to optionally be repositioned with DnD
 
@@ -69,15 +69,15 @@ Project description
 	method to any widget you wish to use it on. [experimental]
 
 	dojox.layout.RotatorContainer - similar to a RadioGroup, but provides advanced button's and
-	control. 
+	control.
 
 	dojox.layout.ScrollPane - a dynamically scrolling pane. Adjusts naturally sized content
-	to a "viewport" and scrolls based on relative mouse position. 
-	
+	to a "viewport" and scrolls based on relative mouse position.
+
 	dojox.layout.TableContainer - A container widget that lays out child widgets using a
 	Table element. It can create labels for each widget, placed either above or
 	beside the widgets.
-	
+
 -------------------------------------------------------------------------------
 Dependencies
 
@@ -100,7 +100,7 @@ Installation:
 	Each component has a required CSS File with a similar name, contained within the
 	/resources folder. Include that file in your page. For instance, if using
 	the dojox.layout.ExpandoPane:
-	
+
 	<link rel="stylesheet" href="dojo-tree/dojox/layout/resources/ExpandoPane.css" />
 
 -------------------------------------------------------------------------------

@@ -13,7 +13,7 @@ var Mode = function() {
 oop.inherits(Mode, JavaScriptMode);
 
 (function() {
-    
+
     this.createWorker = function(session) {
         return null;
     };

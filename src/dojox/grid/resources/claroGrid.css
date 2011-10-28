@@ -41,7 +41,7 @@
 .dojoxGridHeader table {
 	text-align: center;
 }
-.dojoxGridHeader .dojoxGridCell { 
+.dojoxGridHeader .dojoxGridCell {
 	border: 1px solid;
 	border-color: #F6F4EB #ACA899 #ACA899 #F6F4EB;
 	background: url(images/grid_dx_gradient.gif) #E8E1CF top repeat-x;
@@ -79,7 +79,7 @@
 .dojoxGridColCaption {
 	overflow:hidden;
 }
- 
+
 .dojoxGridArrowButtonNode:hover {
         cursor: default;
 }
@@ -107,7 +107,7 @@
 	 -moz-outline-style: none;
 	outline: none;
 }
-.dojoxGridRowbar { 
+.dojoxGridRowbar {
 	border: 1px solid;
 	border-color: #F6F4EB #ACA899 #ACA899 #F6F4EB;
 	border-top: none;
@@ -130,10 +130,10 @@
 	width: 9000em;
 }
 .dojoxGridRow {
-	
+
 	border: 1px solid #E8E4D8;
 	border-color: #F8F7F1;
-	
+
 	border-left: none;
 	border-right: none;
 	background-color: white;
@@ -142,13 +142,13 @@
 .dojoxGridRowOver {
 	border-top-color: #FEBE47;
 	border-bottom-color: #FEBE47;
-	
-	
-	
+
+
+
 }
 .dojoxGridRowOdd {
 	background-color: #FFFDF3;
-	
+
 }
 .dojoxGridRowSelected {
 	background-color: #D9E8F9;
@@ -163,10 +163,10 @@
 }
 .dojoxGridInvisible {
 	visibility: hidden;
-}		
+}
 .Xdojo-ie .dojoxGridInvisible {
 	display: none;
-}		
+}
 .dojoxGridInvisible td, .dojoxGridHeader .dojoxGridInvisible td {
 	border-top-width: 0;
 	border-bottom-width: 0;
@@ -218,7 +218,7 @@
 	height: 0;
 	width: 0;
 }
-.dijit_a11y .dojoxGridRowbarSelected { 
+.dijit_a11y .dojoxGridRowbarSelected {
 	border-top: 1px solid white;
 	border-bottom: 1px dashed black;
 	border-top: 0;
@@ -304,11 +304,11 @@
 	cursor: col-resize;
 	z-index:10000;
 }
-.dojoxGridColNoResize, 
+.dojoxGridColNoResize,
 .dojoxGridColNoResize .dojoDndItemOver {
 	cursor: not-allowed !important;
 }
-.dojoxGridColResize, 
+.dojoxGridColResize,
 .dojoxGridColResize .dojoDndItemOver,
 .dojoxGridColumnResizing,
 .dojoxGridColumnResizing .dojoDndItemOver,
@@ -353,13 +353,13 @@
 .claro .dojoxGrid {
 	margin:0px;
 	padding:0px;
-	border-collapse:collapse;	
-	background-color:#fff;	
+	border-collapse:collapse;
+	background-color:#fff;
 }
 .claro .dojoxGridMasterMessages {
 	background-color: #fefefe;
 }
-.claro .dojoxGridLoading, 
+.claro .dojoxGridLoading,
 .claro .dojoxGridError {
 	background-position:left center;
 	background-repeat: no-repeat;
@@ -369,7 +369,7 @@
 	background-image:url("../../../dijit/themes/claro/images/loadingAnimation.gif");
 }
 .claro .dojoxGridError {
-	background-image: url('../../../dijit/icons/images/commonIconsObjActEnabled.png'); 
+	background-image: url('../../../dijit/icons/images/commonIconsObjActEnabled.png');
 	background-position: -496px;
 	width: 16px;
 	height: 16px;
@@ -377,13 +377,13 @@
 .claro .dojoxGridHeader {
 	background-color:#FFF;
 }
-.claro .dojoxGridHeader .dojoxGridCell { 
+.claro .dojoxGridHeader .dojoxGridCell {
 	background:url("images/header.png") #e5edf4 repeat-x top;
 	border-style:solid;
 	border-width:1px;
 	border-color:#BCBCBC #BCBCBC #BCBCBC transparent;
 }
-.dj_ie6 .claro .dojoxGridHeader .dojoxGridCell { 
+.dj_ie6 .claro .dojoxGridHeader .dojoxGridCell {
 	border-color:#BCBCBC #BCBCBC #BCBCBC #e5edf4;
 }
 .claro .dojoxGridSortNode {
@@ -421,16 +421,16 @@
 .claro .dojoxGridScrollbox {
 	background-color: #fefefe;
 }
-.claro .dojoxGridRowbar { 
+.claro .dojoxGridRowbar {
 	background:url("images/header.png") #e5edf4 repeat-x top;
 	border:none;
 	border-right:1px solid #BCBCBC;
 }
-.claro .dojoxGridRowbarTable { 
+.claro .dojoxGridRowbarTable {
 	background:transparent url("images/header_shadow.png") repeat-x scroll center bottom;
 }
 .dj_ie6 .claro .dojoxGridRowbar,
-.dj_ie6 .claro .dojoxGridRowbarTable { 
+.dj_ie6 .claro .dojoxGridRowbarTable {
 	background-image:none;
 }
 .claro .dojoxGridRowbarInner {
@@ -504,26 +504,26 @@
 .dj_ie6 .claro .dojoxGridRowActive .dojoxGridCell,
 .dj_ie7 .claro .dojoxGridRowActive .dojoxGridCell {
 	border-left:1px solid #7DBEFA;
-	border-right:1px solid #7DBEFA;	
+	border-right:1px solid #7DBEFA;
 }
 .claro .dojoxGridDoubleAffordance .dojoxGridRowOver .dojoxGridCellOver {
 	border:solid 1px #769dc0;
 	background-color:#93cafe;
 	border-collapse:separate;
 }
-.claro .dojoxGridDoubleAffordance .dojoxGridRowActive .dojoxGridCell{	
+.claro .dojoxGridDoubleAffordance .dojoxGridRowActive .dojoxGridCell{
 	background-image:url("images/row_back.png");
 }
-.claro .dojoxGridDoubleAffordance .dojoxGridRowActive .dojoxGridCellActive {	
+.claro .dojoxGridDoubleAffordance .dojoxGridRowActive .dojoxGridCellActive {
 	background:url("images/td_button_down.png") #93cafe repeat-x;
 }
 .dj_ie6 .claro .dojoxGridCell {
 	background-image:none !important;
 }
 .claro .dojoxGridRowEditing td {
-	
-	background-color: #60a1ea; 
-	
+
+	background-color: #60a1ea;
+
 }
 .claro .dojoxGridRow-inserting td {
 	background-color: #F4FFF4;

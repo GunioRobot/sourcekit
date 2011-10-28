@@ -43,7 +43,7 @@ var HtmlMode = require("ace/mode/html").Mode;
 var assert = require("../assertions");
 
 var Test = {
-    setUp : function() {    
+    setUp : function() {
         this.mode = new HtmlMode();
     },
 

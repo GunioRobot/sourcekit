@@ -3,7 +3,7 @@
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	
+
 	border:1px solid #ccc;
 	-moz-border-radius:6pt;
 	-webkit-border-radius:7pt;
@@ -29,7 +29,7 @@
 	overflow: hidden;
 }
 .horizontalPagerIcon {
-	cursor: pointer;	
+	cursor: pointer;
 }
 .verticalPagerPager {
 	position: absolute;
@@ -52,20 +52,20 @@
 	overflow: hidden;
 }
 .verticalPagerIcon {
-	cursor: pointer;	
+	cursor: pointer;
 }
 .pagerIconContainer {
-	position: absolute;	
+	position: absolute;
 }
 .pagerIconContainer img {
-	cursor: pointer;	
+	cursor: pointer;
 }
 .pagerItems {
 	list-style: none;
 	padding: 0;
-	margin: 0;	
+	margin: 0;
 }
-	
+
 .pagerItem {
 	overflow: hidden;
 	padding: 0;

@@ -1,5 +1,5 @@
 define(function(require, exports, module) {
-    
+
 var ua = require("pilot/useragent");
 var console = require('pilot/console');
 

@@ -5,7 +5,7 @@
 }
 .claro .dijitSplitContainer-child,
 .claro .dijitBorderContainer-child {
-	
+
 	border: 1px #b5bcc7 solid;
 }
 .claro .dijitBorderContainer-dijitTabContainerTop,
@@ -13,11 +13,11 @@
 .claro .dijitBorderContainer-dijitTabContainerLeft,
 .claro .dijitBorderContainer-dijitTabContainerRight,
 .claro .dijitBorderContainer-dijitAccordionContainer {
-	
+
 	 border: none;
 }
 .claro .dijitBorderContainer-dijitBorderContainer {
-	
+
 	border: 1px #c0ccdf solid;
 	padding: 5px;
 }

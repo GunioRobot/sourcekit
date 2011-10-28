@@ -6,7 +6,7 @@ Using Amazon S3 with Dojo has the following prerequisites:
           o HTTP_Request
 
 
-To use S3 from Dojo, you need a proxy. You can use the provided proxy example file by renaming 
+To use S3 from Dojo, you need a proxy. You can use the provided proxy example file by renaming
 proxy.example-php to proxy.php and then you must enter your Amazon access key and secret access key
 into the proxy.php file on line 3 and 4:
 
@@ -32,7 +32,7 @@ var s3Buckets = new dojox.rpc.Service({
 });
 
 
-To use the S3 as a Dojo data store you can use the S3JsonRestStore module. First setup an RPC service 
+To use the S3 as a Dojo data store you can use the S3JsonRestStore module. First setup an RPC service
 as shown above and then pass the RPC service to the S3JsonRestStore:
 
 dojo.require("dojox.data.S3JsonRestStore");

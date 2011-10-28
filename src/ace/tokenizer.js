@@ -94,8 +94,8 @@ var Tokenizer = function(rules) {
                     break;
                 }
             };
-            
-                  
+
+
             if (token.type !== type) {
                 if (token.type) {
                     tokens.push(token);
@@ -107,11 +107,11 @@ var Tokenizer = function(rules) {
             } else {
                 token.value += value;
             }
-            
+
             if (lastIndex == line.length) {
     	        break;
             }
-            
+
             lastIndex = re.lastIndex;
         };
 

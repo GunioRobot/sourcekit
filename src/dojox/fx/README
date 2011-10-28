@@ -5,7 +5,7 @@ Version 1.0.0
 Release date: 10/31/2007
 -------------------------------------------------------------------------------
 Project state:
-experimental 
+experimental
 -------------------------------------------------------------------------------
 Credits
 	Peter Higgins (dante)
@@ -24,21 +24,21 @@ Project description
 Dependencies:
 
 	dojox.fx requires dojo (core) and the dojo.fx package
-	dojox.fx.easing is deprecated, and exists in dojo.fx.easing. 
+	dojox.fx.easing is deprecated, and exists in dojo.fx.easing.
 	dojox.fx.flip requires dojo.fx
 	dojox.fx.scroll requires dojox.fx._core and dojo.fx
 
 -------------------------------------------------------------------------------
 Documentation
 
-	existing API surface: 
+	existing API surface:
 
 	dojox.fx._base:
 	- dojox.fx.crossFade - crossfade two nodes easily
 	- dojox.fx.sizeTo - size a node about it's center to a new width/height
 	- dojox.fx.slideBy - slide a node by a t,l offset
 	- dojox.fx.highlight - animates the background color of a node, and returns
-		it to the color it was. 
+		it to the color it was.
 
 	(all use standard Animation properties, like duration, easing, node, etc)
 
@@ -54,12 +54,12 @@ Documentation
 	- dojox.fx.toggleClass - wrapper for addClass/removeClass
 
 	dojox.fx.ext-dojo.NodeList - extensions to dojo.NodeList-fx wrapping the
-		relevant dojox.fx animations into dojo.NodeList 
+		relevant dojox.fx animations into dojo.NodeList
 
 	dojox.fx.Shadow - Class to add drop shadows to a node
 
 	dojox.fx.flip - a Module providing pseudo-3d flip animations for nodes.
-		Currently experimental. 
+		Currently experimental.
 
 -------------------------------------------------------------------------------
 Installation instructions

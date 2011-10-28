@@ -53,7 +53,7 @@ dojo.window.get = function(doc){
 dojo.window.scrollIntoView = function(/*DomNode*/ node, /*Object?*/ pos){
 	// summary:
 	//		Scroll the passed node into view, if it is not already.
-	
+
 	// don't rely on node.scrollIntoView working just because the function is there
 
 	try{ // catch unexpected/unrecreatable errors (#7808) since we can recover using a semi-acceptable native method
@@ -84,7 +84,7 @@ dojo.window.scrollIntoView = function(/*DomNode*/ node, /*Object?*/ pos){
 			if(el == body){ el = scrollRoot; }
 			var elPos = dojo.position(el),
 				fixedPos = isFixed(el);
-	
+
 			if(el == scrollRoot){
 				elPos.w = rootWidth; elPos.h = rootHeight;
 				if(scrollRoot == html && isIE && rtl){ elPos.x += scrollRoot.offsetWidth-elPos.w; } // IE workaround where scrollbar causes negative x
@@ -94,7 +94,7 @@ dojo.window.scrollIntoView = function(/*DomNode*/ node, /*Object?*/ pos){
 				var pb = dojo._getPadBorderExtents(el);
 				elPos.w -= pb.w; elPos.h -= pb.h; elPos.x += pb.l; elPos.y += pb.t;
 			}
-	
+
 			if(el != scrollRoot){ // body, html sizes already have the scrollbar removed
 				var clientSize = el.clientWidth,
 					scrollBarSize = elPos.w - clientSize;
@@ -139,7 +139,7 @@ dojo.window.scrollIntoView = function(/*DomNode*/ node, /*Object?*/ pos){
 				nodePos.y -= el.scrollTop;
 			}
 			el = (el != scrollRoot) && !fixedPos && el.parentNode;
-		}	
+		}
 	}catch(error){
 		console.error('scrollIntoView: ' + error);
 		node.scrollIntoView(false);
@@ -385,7 +385,7 @@ dojo.declare("dijit.WidgetSet", null, {
 	dijit.getUniqueId = function(/*String*/widgetType){
 		// summary:
 		//		Generates a unique id for a given widgetType
-	
+
 		var id;
 		do{
 			id = widgetType + "_" +
@@ -394,14 +394,14 @@ dojo.declare("dijit.WidgetSet", null, {
 		}while(hash[id]);
 		return dijit._scopeName == "dijit" ? id : dijit._scopeName + "_" + id; // String
 	};
-	
+
 	dijit.findWidgets = function(/*DomNode*/ root){
 		// summary:
 		//		Search subtree under root returning widgets found.
 		//		Doesn't search for nested widgets (ie, widgets inside other widgets).
-	
+
 		var outAry = [];
-	
+
 		function getChildrenHelper(root){
 			for(var node = root.firstChild; node; node = node.nextSibling){
 				if(node.nodeType == 1){
@@ -414,20 +414,20 @@ dojo.declare("dijit.WidgetSet", null, {
 				}
 			}
 		}
-	
+
 		getChildrenHelper(root);
 		return outAry;
 	};
-	
+
 	dijit._destroyAll = function(){
 		// summary:
 		//		Code to destroy all widgets and do other cleanup on page unload
-	
+
 		// Clean up focus manager lingering references to widgets and nodes
 		dijit._curFocus = null;
 		dijit._prevFocus = null;
 		dijit._activeStack = [];
-	
+
 		// Destroy all the widgets, top down
 		dojo.forEach(dijit.findWidgets(dojo.body()), function(widget){
 			// Avoid double destroy of widgets like Menu that are attached to <body>
@@ -441,7 +441,7 @@ dojo.declare("dijit.WidgetSet", null, {
 			}
 		});
 	};
-	
+
 	if(dojo.isIE){
 		// Only run _destroyAll() for IE because we think it's only necessary in that case,
 		// and because it causes problems on FF.  See bug #3531 for details.
@@ -449,13 +449,13 @@ dojo.declare("dijit.WidgetSet", null, {
 			dijit._destroyAll();
 		});
 	}
-	
+
 	dijit.byNode = function(/*DOMNode*/ node){
 		// summary:
 		//		Returns the widget corresponding to the given DOMNode
 		return hash[node.getAttribute("widgetId")]; // dijit._Widget
 	};
-	
+
 	dijit.getEnclosingWidget = function(/*DOMNode*/ node){
 		// summary:
 		//		Returns the widget whose DOM tree contains the specified DOMNode, or null if
@@ -477,11 +477,11 @@ dojo.declare("dijit.WidgetSet", null, {
 			&& (s.display != "none")
 			&& (attr(elem, "type") != "hidden");
 	});
-	
+
 	dijit.hasDefaultTabStop = function(/*Element*/ elem){
 		// summary:
 		//		Tests if element is tab-navigable even without an explicit tabIndex setting
-	
+
 		// No explicit tabIndex setting, need to investigate node type
 		switch(elem.nodeName.toLowerCase()){
 			case "a":
@@ -524,11 +524,11 @@ dojo.declare("dijit.WidgetSet", null, {
 				return elem.contentEditable == 'true';
 		}
 	};
-	
+
 	var isTabNavigable = (dijit.isTabNavigable = function(/*Element*/ elem){
 		// summary:
 		//		Tests if an element is tab-navigable
-	
+
 		// TODO: convert (and rename method) to return effective tabIndex; will save time in _getTabNavigable()
 		if(attr(elem, "disabled")){
 			return false;
@@ -595,7 +595,7 @@ dojo.declare("dijit.WidgetSet", null, {
 		var elems = dijit._getTabNavigable(dojo.byId(root));
 		return elems.lowest ? elems.lowest : elems.first; // DomNode
 	};
-	
+
 	dijit.getLastInTabbingOrder = function(/*String|DOMNode*/ root){
 		// summary:
 		//		Finds the descendant of the specified root node
@@ -603,7 +603,7 @@ dojo.declare("dijit.WidgetSet", null, {
 		var elems = dijit._getTabNavigable(dojo.byId(root));
 		return elems.last ? elems.last : elems.highest; // DomNode
 	};
-	
+
 	/*=====
 	dojo.mixin(dijit, {
 		// defaultDuration: Integer
@@ -614,7 +614,7 @@ dojo.declare("dijit.WidgetSet", null, {
 		defaultDuration: 200
 	});
 	=====*/
-	
+
 	dijit.defaultDuration = dojo.config["defaultDuration"] || 200;
 
 })();
@@ -909,7 +909,7 @@ dojo.mixin(dijit, {
 		var mousedownListener = function(evt){
 			dijit._justMouseDowned = true;
 			setTimeout(function(){ dijit._justMouseDowned = false; }, 0);
-			
+
 			// workaround weird IE bug where the click is on an orphaned node
 			// (first time clicking a Select/DropDownButton inside a TooltipDialog)
 			if(dojo.isIE && evt && evt.srcElement && evt.srcElement.parentNode == null){
@@ -1179,7 +1179,7 @@ dojo.AdapterRegistry = function(/*Boolean?*/ returnWrappers){
 
 dojo.extend(dojo.AdapterRegistry, {
 	register: function(/*String*/ name, /*Function*/ check, /*Function*/ wrap, /*Boolean?*/ directReturn, /*Boolean?*/ override){
-		//	summary: 
+		//	summary:
 		//		register a check function to determine if the wrap function or
 		//		object gets selected
 		//	name:
@@ -1662,7 +1662,7 @@ dijit.popup = {
 	//		Stack of currently popped up widgets.
 	//		(someone opened _stack[0], and then it opened _stack[1], etc.)
 	_stack: [],
-	
+
 	// _beginZIndex: Number
 	//		Z-index of the first popup.   (If first popup opens other
 	//		popups they get a higher z-index.)
@@ -1859,7 +1859,7 @@ dijit.popup = {
 			}else{
 				dojo.destroy(wrapper);
 			}
-                        
+
 			if(onClose){
 				onClose();
 			}
@@ -1937,7 +1937,7 @@ dojo.extend(dijit.BackgroundIframe, {
 		// 		resize the iframe so its the same size as node
 		// description:
 		//		this function is a no-op in all browsers except
-		//		IE6, which does not support 100% width/height 
+		//		IE6, which does not support 100% width/height
 		//		of absolute positioned iframes
 		if(this.iframe && dojo.isIE<7){
 			dojo.style(this.iframe, {
@@ -1972,7 +1972,7 @@ dijit.scrollIntoView = function(/*DomNode*/ node, /*Object?*/ pos){
 	// summary:
 	//		Scroll the passed node into view, if it is not already.
 	//		Deprecated, use `dojo.window.scrollIntoView` instead.
-	
+
 	dojo.window.scrollIntoView(node, pos);
 };
 
@@ -2034,7 +2034,7 @@ dojo.provide("dojo.uacss");
 	html.className = d.trim(html.className + " " + classStr);
 
 	// If RTL mode, then add dj_rtl flag plus repeat existing classes with -rtl extension.
-	// We can't run the code below until the <body> tag has loaded (so we can check for dir=rtl).  
+	// We can't run the code below until the <body> tag has loaded (so we can check for dir=rtl).
 	// Unshift() is to run sniff code before the parser.
 	dojo._loaders.unshift(function(){
 		if(!dojo._isBodyLtr()){
@@ -2075,7 +2075,7 @@ dijit.typematic = {
 	_fireEventAndReload: function(){
 		this._timer = null;
 		this._callback(++this._count, this._node, this._evt);
-		
+
 		// Schedule next event, timer is at most minDelay (default 10ms) to avoid
 		// browser overload (particularly avoiding starving DOH robot so it never gets to send a mouseup)
 		this._currentTimeout = Math.max(
@@ -2935,7 +2935,7 @@ dojo.declare("dijit._Widget", null, {
 		//		protected
 
 		// baseClass is a single class name or occasionally a space-separated list of names.
-		// Add those classes to the DOMNod.  If RTL mode then also add with Rtl suffix.		
+		// Add those classes to the DOMNod.  If RTL mode then also add with Rtl suffix.
 		if(this.baseClass){
 			var classes = this.baseClass.split(" ");
 			if(!this.isLeftToRight()){
@@ -3253,7 +3253,7 @@ dojo.declare("dijit._Widget", null, {
 			return this.get(name);
 		}
 	},
-	
+
 	get: function(name){
 		// summary:
 		//		Get a property from a widget.
@@ -3262,7 +3262,7 @@ dojo.declare("dijit._Widget", null, {
 		// description:
 		//		Get a named property from a widget. The property may
 		//		potentially be retrieved via a getter method. If no getter is defined, this
-		// 		just retrieves the object's property.  
+		// 		just retrieves the object's property.
 		// 		For example, if the widget has a properties "foo"
 		//		and "bar" and a method named "_getFooAttr", calling:
 		//	|	myWidget.get("foo");
@@ -3275,16 +3275,16 @@ dojo.declare("dijit._Widget", null, {
 		var names = this._getAttrNames(name);
 		return this[names.g] ? this[names.g]() : this[name];
 	},
-	
+
 	set: function(name, value){
 		// summary:
 		//		Set a property on a widget
 		//	name:
-		//		The property to set. 
+		//		The property to set.
 		//	value:
 		//		The value to set in the property.
 		// description:
-		//		Sets named properties on a widget which may potentially be handled by a 
+		//		Sets named properties on a widget which may potentially be handled by a
 		// 		setter in the widget.
 		// 		For example, if the widget has a properties "foo"
 		//		and "bar" and a method named "_setFooAttr", calling:
@@ -3305,7 +3305,7 @@ dojo.declare("dijit._Widget", null, {
 
 		if(typeof name === "object"){
 			for(var x in name){
-				this.set(x, name[x]); 
+				this.set(x, name[x]);
 			}
 			return this;
 		}
@@ -3324,7 +3324,7 @@ dojo.declare("dijit._Widget", null, {
 		}
 		return result || this;
 	},
-	
+
 	_attrPairNames: {},		// shared between all widgets
 	_getAttrNames: function(name){
 		// summary:
@@ -4088,7 +4088,7 @@ dojo.provide("dojox.gfx._base");
 		var cls = node.getAttribute("className");
 		if(cls){
 			node.setAttribute(
-				"className", 
+				"className",
 				cls.replace(new RegExp('(^|\\s+)' + classStr + '(\\s+|$)'), "$1$2")
 			);
 		}
@@ -4245,7 +4245,7 @@ dojo.mixin(dojox.gfx, {
 
 	// default geometric attributes
 	defaultStroke: {
-		type: "stroke", color: "black", style: "solid", width: 1, 
+		type: "stroke", color: "black", style: "solid", width: 1,
 		cap: "butt", join: 4
 	},
 	defaultLinearGradient: {
@@ -4264,7 +4264,7 @@ dojo.mixin(dojox.gfx, {
 		type: "pattern", x: 0, y: 0, width: 0, height: 0, src: ""
 	},
 	defaultFont: {
-		type: "font", style: "normal", variant: "normal", 
+		type: "font", style: "normal", variant: "normal",
 		weight: "normal", size: "10pt", family: "serif"
 	},
 
@@ -4548,12 +4548,12 @@ dojo.provide("dojox.lang.functional.lambda");
 //	- anonymous functions built from the string
 
 // Acknoledgements:
-//	- lambda() is based on work by Oliver Steele 
+//	- lambda() is based on work by Oliver Steele
 //		(http://osteele.com/sources/javascript/functional/functional.js)
 //		which was published under MIT License
 
 // Notes:
-//	- lambda() produces functions, which after the compilation step are 
+//	- lambda() produces functions, which after the compilation step are
 //		as fast as regular JS functions (at least theoretically).
 
 // Lambda input values:
@@ -4572,7 +4572,7 @@ dojo.provide("dojox.lang.functional.lambda");
 				 if(m && m.index == 0){ r.unshift(""); }
 				 return r;
 			};
-			
+
 	var lambda = function(/*String*/ s){
 		var args = [], sects = split.call(s, /\s*->\s*/m);
 		if(sects.length > 1){
@@ -4596,7 +4596,7 @@ dojo.provide("dojox.lang.functional.lambda");
 					s = s + "$2";
 				}
 			}else{
-				// the point of the long regex below is to exclude all well-known 
+				// the point of the long regex below is to exclude all well-known
 				// lower-case words from the list of potential arguments
 				var vars = s.
 					replace(/(?:\b[A-Z]|\.[a-zA-Z_$])[a-zA-Z_$\d]*|[a-zA-Z_$][a-zA-Z_$\d]*:|this|true|false|null|undefined|typeof|instanceof|in|delete|new|void|arguments|decodeURI|decodeURIComponent|encodeURI|encodeURIComponent|escape|eval|isFinite|isNaN|parseFloat|parseInt|unescape|dojo|dijit|dojox|window|document|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"/g, "").
@@ -4613,13 +4613,13 @@ dojo.provide("dojox.lang.functional.lambda");
 	};
 
 	var compose = function(/*Array*/ a){
-		return a.length ? 
+		return a.length ?
 					function(){
 						var i = a.length - 1, x = df.lambda(a[i]).apply(this, arguments);
 						for(--i; i >= 0; --i){ x = df.lambda(a[i]).call(this, x); }
 						return x;
 					}
-				: 
+				:
 					// identity
 					function(x){ return x; };
 	};
@@ -4685,7 +4685,7 @@ dojo.provide("dojox.lang.functional.array");
 //	- array-processing functions similar to standard JS functions
 
 // Notes:
-//	- this module provides JS standard methods similar to high-level functions in dojo/_base/array.js: 
+//	- this module provides JS standard methods similar to high-level functions in dojo/_base/array.js:
 //		forEach, map, filter, every, some
 
 // Defined methods:
@@ -4701,7 +4701,7 @@ dojo.provide("dojox.lang.functional.array");
 		// JS 1.6 standard array functions, which can take a lambda as a parameter.
 		// Consider using dojo._base.array functions, if you don't need the lambda support.
 		filter: function(/*Array|String|Object*/ a, /*Function|String|Array*/ f, /*Object?*/ o){
-			// summary: creates a new array with all elements that pass the test 
+			// summary: creates a new array with all elements that pass the test
 			//	implemented by the provided function.
 			if(typeof a == "string"){ a = a.split(""); }
 			o = o || d.global; f = df.lambda(f);
@@ -4751,7 +4751,7 @@ dojo.provide("dojox.lang.functional.array");
 			return o;	// Object
 		},
 		map: function(/*Array|String|Object*/ a, /*Function|String|Array*/ f, /*Object?*/ o){
-			// summary: creates a new array with the results of calling 
+			// summary: creates a new array with the results of calling
 			//	a provided function on every element in this array.
 			if(typeof a == "string"){ a = a.split(""); }
 			o = o || d.global; f = df.lambda(f);
@@ -4776,7 +4776,7 @@ dojo.provide("dojox.lang.functional.array");
 			return t;	// Array
 		},
 		every: function(/*Array|String|Object*/ a, /*Function|String|Array*/ f, /*Object?*/ o){
-			// summary: tests whether all elements in the array pass the test 
+			// summary: tests whether all elements in the array pass the test
 			//	implemented by the provided function.
 			if(typeof a == "string"){ a = a.split(""); }
 			o = o || d.global; f = df.lambda(f);
@@ -4808,7 +4808,7 @@ dojo.provide("dojox.lang.functional.array");
 			return true;	// Boolean
 		},
 		some: function(/*Array|String|Object*/ a, /*Function|String|Array*/ f, /*Object?*/ o){
-			// summary: tests whether some element in the array passes the test 
+			// summary: tests whether some element in the array passes the test
 			//	implemented by the provided function.
 			if(typeof a == "string"){ a = a.split(""); }
 			o = o || d.global; f = df.lambda(f);
@@ -4855,7 +4855,7 @@ dojo.provide("dojox.lang.functional.object");
 
 // Defined methods:
 //	- take any valid lambda argument as the functional argument
-//	- skip all attributes that are present in the empty object 
+//	- skip all attributes that are present in the empty object
 //		(IE and/or 3rd-party libraries).
 
 (function(){
@@ -4884,7 +4884,7 @@ dojo.provide("dojox.lang.functional.object");
 			return	t; // Array
 		},
 		filterIn: function(/*Object*/ obj, /*Function|String|Array*/ f, /*Object?*/ o){
-			// summary: creates new object with all attributes that pass the test 
+			// summary: creates new object with all attributes that pass the test
 			//	implemented by the provided function.
 			o = o || d.global; f = df.lambda(f);
 			var t = {}, v, i;
@@ -4907,7 +4907,7 @@ dojo.provide("dojox.lang.functional.object");
 			return o;	// Object
 		},
 		mapIn: function(/*Object*/ obj, /*Function|String|Array*/ f, /*Object?*/ o){
-			// summary: creates new object with the results of calling 
+			// summary: creates new object with the results of calling
 			//	a provided function on every attribute in this object.
 			o = o || d.global; f = df.lambda(f);
 			var t = {}, i;
@@ -4943,9 +4943,9 @@ dojo.provide("dojox.lang.functional.fold");
 //	- "fold" family of functions
 
 // Notes:
-//	- missing high-level functions are provided with the compatible API: 
+//	- missing high-level functions are provided with the compatible API:
 //		foldl, foldl1, foldr, foldr1
-//	- missing JS standard functions are provided with the compatible API: 
+//	- missing JS standard functions are provided with the compatible API:
 //		reduce, reduceRight
 //	- the fold's counterpart: unfold
 
@@ -5017,7 +5017,7 @@ dojo.provide("dojox.lang.functional.fold");
 		},
 		foldr: function(/*Array|String*/ a, /*Function|String|Array*/ f, /*Object*/ z, /*Object?*/ o){
 			// summary: repeatedly applies a binary function to an array from right
-			//	to left using a seed value as a starting point; returns the final 
+			//	to left using a seed value as a starting point; returns the final
 			//	value.
 			if(typeof a == "string"){ a = a.split(""); }
 			o = o || d.global; f = df.lambda(f);
@@ -5068,7 +5068,7 @@ dojo.provide("dojox.lang.functional.reversed");
 //	- reversed versions of array-processing functions similar to standard JS functions
 
 // Notes:
-//	- this module provides reversed versions of standard array-processing functions: 
+//	- this module provides reversed versions of standard array-processing functions:
 //		forEachRev, mapRev, filterRev
 
 // Defined methods:
@@ -5083,7 +5083,7 @@ dojo.provide("dojox.lang.functional.reversed");
 		// JS 1.6 standard array functions, which can take a lambda as a parameter.
 		// Consider using dojo._base.array functions, if you don't need the lambda support.
 		filterRev: function(/*Array|String*/ a, /*Function|String|Array*/ f, /*Object?*/ o){
-			// summary: creates a new array with all elements that pass the test 
+			// summary: creates a new array with all elements that pass the test
 			//	implemented by the provided function.
 			if(typeof a == "string"){ a = a.split(""); }
 			o = o || d.global; f = df.lambda(f);
@@ -5101,7 +5101,7 @@ dojo.provide("dojox.lang.functional.reversed");
 			for(var i = a.length - 1; i >= 0; f.call(o, a[i], i, a), --i);
 		},
 		mapRev: function(/*Array|String*/ a, /*Function|String|Array*/ f, /*Object?*/ o){
-			// summary: creates a new array with the results of calling 
+			// summary: creates a new array with the results of calling
 			//	a provided function on every element in this array.
 			if(typeof a == "string"){ a = a.split(""); }
 			o = o || d.global; f = df.lambda(f);
@@ -5110,7 +5110,7 @@ dojo.provide("dojox.lang.functional.reversed");
 			return t;	// Array
 		},
 		everyRev: function(/*Array|String*/ a, /*Function|String|Array*/ f, /*Object?*/ o){
-			// summary: tests whether all elements in the array pass the test 
+			// summary: tests whether all elements in the array pass the test
 			//	implemented by the provided function.
 			if(typeof a == "string"){ a = a.split(""); }
 			o = o || d.global; f = df.lambda(f);
@@ -5122,7 +5122,7 @@ dojo.provide("dojox.lang.functional.reversed");
 			return true;	// Boolean
 		},
 		someRev: function(/*Array|String*/ a, /*Function|String|Array*/ f, /*Object?*/ o){
-			// summary: tests whether some element in the array passes the test 
+			// summary: tests whether some element in the array passes the test
 			//	implemented by the provided function.
 			if(typeof a == "string"){ a = a.split(""); }
 			o = o || d.global; f = df.lambda(f);
@@ -5161,7 +5161,7 @@ dojo.colors = {
 		if(3 * h < 2){ return m1 + (m2 - m1) * (2 / 3 - h) * 6; }
 		return m1;
 	};
-	
+
 	dojo.colorFromRgb = function(/*String*/ color, /*dojo.Color?*/ obj){
 		// summary:
 		//		get rgb(a) array from css-style color declarations
@@ -5188,9 +5188,9 @@ dojo.colors = {
 				var H = ((parseFloat(c[0]) % 360) + 360) % 360 / 360,
 					S = parseFloat(c[1]) / 100,
 					L = parseFloat(c[2]) / 100,
-					// calculate rgb according to the algorithm 
-					// recommended by the CSS3 Color Module 
-					m2 = L <= 0.5 ? L * (S + 1) : L + S - L * S, 
+					// calculate rgb according to the algorithm
+					// recommended by the CSS3 Color Module
+					m2 = L <= 0.5 ? L * (S + 1) : L + S - L * S,
 					m1 = 2 * L - m2;
 				a = [
 					hue2rgb(m1, m2, H + 1 / 3) * 256,
@@ -5204,7 +5204,7 @@ dojo.colors = {
 		}
 		return null;	// dojo.Color
 	};
-	
+
 	var confine = function(c, low, high){
 		// summary:
 		//		sanitize a color component by making sure it is a number,
@@ -5212,7 +5212,7 @@ dojo.colors = {
 		c = Number(c);
 		return isNaN(c) ? high : c < low ? low : c > high ? high : c;	// Number
 	};
-	
+
 	dojo.Color.prototype.sanitize = function(){
 		// summary: makes sure that the object has correct attributes
 		var t = this;
@@ -5419,7 +5419,7 @@ dojo.mixin(dojox.color, {
 		b = 1-Math.min(1, yellow*(1-black)+black);
 		return new dojox.color.Color({ r:Math.round(r*255), g:Math.round(g*255), b:Math.round(b*255) });	//	dojox.color.Color
 	},
-	
+
 	fromHsl: function(/* Object|Array|int */hue, /* int */saturation, /* int */luminosity){
 		//	summary
 		//	Create a dojox.color.Color from an HSL defined color.
@@ -5435,7 +5435,7 @@ dojo.mixin(dojox.color, {
 
 		while(hue<0){ hue+=360; }
 		while(hue>=360){ hue-=360; }
-		
+
 		var r, g, b;
 		if(hue<120){
 			r=(120-hue)/60, g=hue/60, b=0;
@@ -5444,7 +5444,7 @@ dojo.mixin(dojox.color, {
 		} else {
 			r=(hue-240)/60, g=0, b=(360-hue)/60;
 		}
-		
+
 		r=2*saturation*Math.min(r, 1)+(1-saturation);
 		g=2*saturation*Math.min(g, 1)+(1-saturation);
 		b=2*saturation*Math.min(b, 1)+(1-saturation);
@@ -5457,7 +5457,7 @@ dojo.mixin(dojox.color, {
 		}
 		return new dojox.color.Color({ r:Math.round(r*255), g:Math.round(g*255), b:Math.round(b*255) });	//	dojox.color.Color
 	},
-	
+
 	fromHsv: function(/* Object|Array|int */hue, /* int */saturation, /* int */value){
 		//	summary
 		//	Create a dojox.color.Color from an HSV defined color.
@@ -5468,11 +5468,11 @@ dojo.mixin(dojox.color, {
 		} else if (dojo.isObject(hue)){
 			saturation=hue.s, value=hue.v, hue=hue.h;
 		}
-		
+
 		if(hue==360){ hue=0; }
 		saturation/=100;
 		value/=100;
-		
+
 		var r, g, b;
 		if(saturation==0){
 			r=value, b=value, g=value;
@@ -5502,7 +5502,7 @@ dojo.extend(dojox.color.Color, {
 		var cyan=1-(this.r/255), magenta=1-(this.g/255), yellow=1-(this.b/255);
 		return { c:Math.round(cyan*100), m:Math.round(magenta*100), y:Math.round(yellow*100) };		//	Object
 	},
-	
+
 	toCmyk: function(){
 		//	summary
 		//	Convert this Color to a CMYK definition.
@@ -5514,7 +5514,7 @@ dojo.extend(dojox.color.Color, {
 		yellow = (1-b-black)/(1-black);
 		return { c:Math.round(cyan*100), m:Math.round(magenta*100), y:Math.round(yellow*100), b:Math.round(black*100) };	//	Object
 	},
-	
+
 	toHsl: function(){
 		//	summary
 		//	Convert this Color to an HSL definition.
@@ -5657,7 +5657,7 @@ dojo.provide("dojox.color.Palette");
 		var ret = new dojox.color.Palette();
 		ret.colors = [];
 		dojo.forEach(p.colors, function(item){
-			var o=item.toCmy(), 
+			var o=item.toCmy(),
 				c=(param=="dc")?o.c+val:o.c,
 				m=(param=="dm")?o.m+val:o.m,
 				y=(param=="dy")?o.y+val:o.y;
@@ -5674,7 +5674,7 @@ dojo.provide("dojox.color.Palette");
 		var ret = new dojox.color.Palette();
 		ret.colors = [];
 		dojo.forEach(p.colors, function(item){
-			var o=item.toCmyk(), 
+			var o=item.toCmyk(),
 				c=(param=="dc")?o.c+val:o.c,
 				m=(param=="dm")?o.m+val:o.m,
 				y=(param=="dy")?o.y+val:o.y,
@@ -5693,7 +5693,7 @@ dojo.provide("dojox.color.Palette");
 		var ret = new dojox.color.Palette();
 		ret.colors = [];
 		dojo.forEach(p.colors, function(item){
-			var o=item.toHsl(), 
+			var o=item.toHsl(),
 				h=(param=="dh")?o.h+val:o.h,
 				s=(param=="ds")?o.s+val:o.s,
 				l=(param=="dl")?o.l+val:o.l;
@@ -5706,7 +5706,7 @@ dojo.provide("dojox.color.Palette");
 		var ret = new dojox.color.Palette();
 		ret.colors = [];
 		dojo.forEach(p.colors, function(item){
-			var o=item.toHsv(), 
+			var o=item.toHsv(),
 				h=(param=="dh")?o.h+val:o.h,
 				s=(param=="ds")?o.s+val:o.s,
 				v=(param=="dv")?o.v+val:o.v;
@@ -5834,7 +5834,7 @@ dojox.color.Palette.__generatorArgs = function(base){
 	//	base: dojo.Color
 	//		The base color to be used to generate the palette.
 	this.base = base;
-} 
+}
 dojox.color.Palette.__analogousArgs = function(base, high, low){
 	//	summary:
 	//		The keyword arguments object that is used to create a 5 color palette based on the
@@ -5849,7 +5849,7 @@ dojox.color.Palette.__analogousArgs = function(base, high, low){
 	this.base = base;
 	this.high = high;
 	this.low = low;
-} 
+}
 dojox.color.Palette.__splitComplementaryArgs = function(base, da){
 	//	summary:
 	//		The keyword arguments object used to create a palette based on the split complementary rules
@@ -5862,7 +5862,7 @@ dojox.color.Palette.__splitComplementaryArgs = function(base, da){
 	//		In degrees, the default is 30.
 	this.base = base;
 	this.da = da;
-} 
+}
 =====*/
 	dojo.mixin(dxc.Palette, {
 		generators: {
@@ -5902,7 +5902,7 @@ dojox.color.Palette.__splitComplementaryArgs = function(base, da){
 				//		http://kuler.adobe.com.
 				var base = dojo.isString(args.base)?new dojox.color.Color(args.base):args.base,
 					hsv = base.toHsv();
-				
+
 				//	figure out the saturation and value
 				var s1 = (hsv.s-30>9)?hsv.s-30:hsv.s+30,
 					s2 = hsv.s,
@@ -6078,7 +6078,7 @@ dojo.provide("dojox.lang.utils");
 		}
 		return o;
 	}
-	
+
 	dojo.mixin(du, {
 		coerceType: function(target, source){
 			// summary: Coerces one object to the type of another.
@@ -6091,7 +6091,7 @@ dojo.provide("dojox.lang.utils");
 			}
 			return eval("(" + source + ")");
 		},
-		
+
 		updateWithObject: function(target, source, conv){
 			// summary: Updates an existing object in place with properties from an "source" object.
 			// target: Object: the "target" object to be updated
@@ -6110,7 +6110,7 @@ dojo.provide("dojox.lang.utils");
 			}
 			return target;	// Object
 		},
-	
+
 		updateWithPattern: function(target, source, pattern, conv){
 			// summary: Updates an existing object in place with properties from an "source" object.
 			// target: Object: the "target" object to be updated
@@ -6125,7 +6125,7 @@ dojo.provide("dojox.lang.utils");
 			}
 			return target;	// Object
 		},
-		
+
 		merge: function(object, mixin){
 			// summary: Merge two objects structurally, mixin properties will override object's properties.
 			// object: Object: original object.
@@ -6178,7 +6178,7 @@ dojo.provide("dojox.gfx.gradutils");
 
 (function(){
 	var d = dojo, m = dojox.gfx.matrix, C = d.Color;
-	
+
 	function findColor(o, c){
 		if(o <= 0){
 			return c[0].color;
@@ -6516,7 +6516,7 @@ dojo.declare("dojox.charting.Theme", null, {
 		var symbol = marker && marker.symbol || this._markers[this._current % this._markers.length];
 
 		var theme = {series: series, marker: marker, symbol: symbol};
-		
+
 		// advance the counter
 		++this._current;
 
@@ -6851,7 +6851,7 @@ dojo.mixin(dojox.charting.Theme, {
 		}
 		return c;	//	dojo.Color[]
 	},
-	
+
 	generateGradient: function(fillPattern, colorFrom, colorTo){
 		var fill = dojo.delegate(fillPattern);
 		fill.colors = [
@@ -6860,7 +6860,7 @@ dojo.mixin(dojox.charting.Theme, {
 		];
 		return fill;
 	},
-	
+
 	generateHslColor: function(color, luminance){
 		color = new dojox.color.Color(color);
 		var hsl    = color.toHsl(),
@@ -7143,7 +7143,7 @@ dojox.charting.__SeriesCtorArgs = function(plot){
 	//	plot: String?
 	//		The plot (by name) that this series belongs to.
 	this.plot = plot;
-} 
+}
 =====*/
 dojo.declare("dojox.charting.Series", dojox.charting.Element, {
 	//	summary:
@@ -7170,7 +7170,7 @@ dojo.declare("dojox.charting.Series", dojox.charting.Element, {
 		//		Clear the calculated additional parameters set on this series.
 		this.dyn = {};
 	},
-	
+
 	update: function(data){
 		//	summary:
 		//		Set data and make this object dirty, so it can be redrawn.
@@ -7204,7 +7204,7 @@ dojo.provide("dojox.charting.scaler.common");
 		// summary: compare two FP numbers for equality
 		return Math.abs(a - b) <= 1e-6 * (Math.abs(a) + Math.abs(b));	// Boolean
 	};
-	
+
 	dojo.mixin(dojox.charting.scaler.common, {
 		findString: function(/*String*/ val, /*Array*/ text){
 			val = val.toLowerCase();
@@ -7214,8 +7214,8 @@ dojo.provide("dojox.charting.scaler.common");
 			return false;
 		},
 		getNumericLabel: function(/*Number*/ number, /*Number*/ precision, /*Object*/ kwArgs){
-			var def = kwArgs.fixed ? 
-						number.toFixed(precision < 0 ? -precision : 0) : 
+			var def = kwArgs.fixed ?
+						number.toFixed(precision < 0 ? -precision : 0) :
 						number.toString();
 			if(kwArgs.labelFunc){
 				var r = kwArgs.labelFunc(def, number, precision);
@@ -7264,7 +7264,7 @@ dojo.provide("dojox.charting.scaler.linear");
 		dc = dojox.charting, dcs = dc.scaler, dcsc = dcs.common,
 		findString = dcsc.findString,
 		getLabel = dcsc.getNumericLabel;
-	
+
 	var calcTicks = function(min, max, kwArgs, majorTick, minorTick, microTick, span){
 		kwArgs = dojo.delegate(kwArgs);
 		if(!majorTick){
@@ -7291,10 +7291,10 @@ dojo.provide("dojox.charting.scaler.linear");
 						Math.ceil(kwArgs.max / minorTick) * minorTick :
 							findString(kwArgs.fixUpper, ["micro"]) ?
 								Math.ceil(kwArgs.max / microTick) * microTick : kwArgs.max;
-								
+
 		if(kwArgs.useMin){ min = lowerBound; }
 		if(kwArgs.useMax){ max = upperBound; }
-		
+
 		var majorStart = (!majorTick || kwArgs.useMin && findString(kwArgs.fixLower, ["major"])) ?
 				min : Math.ceil(min / majorTick) * majorTick,
 			minorStart = (!minorTick || kwArgs.useMin && findString(kwArgs.fixLower, ["major", "minor"])) ?
@@ -7314,9 +7314,9 @@ dojo.provide("dojox.charting.scaler.linear");
 			microPerMinor  = microTick ? Math.round(minorTick / microTick) : 0,
 			majorPrecision = majorTick ? Math.floor(Math.log(majorTick) / Math.LN10) : 0,
 			minorPrecision = minorTick ? Math.floor(Math.log(minorTick) / Math.LN10) : 0,
-			scale = span / (max - min);	
+			scale = span / (max - min);
 		if(!isFinite(scale)){ scale = 1; }
-		
+
 		return {
 			bounds: {
 				lower:	lowerBound,
@@ -7349,7 +7349,7 @@ dojo.provide("dojox.charting.scaler.linear");
 			scaler:			dcs.linear
 		};
 	};
-	
+
 	dojo.mixin(dojox.charting.scaler.linear, {
 		buildScaler: function(/*Number*/ min, /*Number*/ max, /*Number*/ span, /*Object*/ kwArgs){
 			var h = {fixUpper: "none", fixLower: "none", natural: false};
@@ -7358,7 +7358,7 @@ dojo.provide("dojox.charting.scaler.linear");
 				if("fixLower" in kwArgs){ h.fixLower = String(kwArgs.fixLower); }
 				if("natural"  in kwArgs){ h.natural  = Boolean(kwArgs.natural); }
 			}
-			
+
 			// update bounds
 			if("min" in kwArgs){ min = kwArgs.min; }
 			if("max" in kwArgs){ max = kwArgs.max; }
@@ -7370,7 +7370,7 @@ dojo.provide("dojox.charting.scaler.linear");
 			h.useMin = true;
 			h.max = max;
 			h.useMax = true;
-			
+
 			if("from" in kwArgs){
 				min = kwArgs.from;
 				h.useMin = false;
@@ -7379,16 +7379,16 @@ dojo.provide("dojox.charting.scaler.linear");
 				max = kwArgs.to;
 				h.useMax = false;
 			}
-			
+
 			// check for erroneous condition
 			if(max <= min){
 				return calcTicks(min, max, h, 0, 0, 0, span);	// Object
 			}
-			
+
 			var mag = Math.floor(Math.log(max - min) / Math.LN10),
-				major = kwArgs && ("majorTickStep" in kwArgs) ? kwArgs.majorTickStep : Math.pow(10, mag), 
+				major = kwArgs && ("majorTickStep" in kwArgs) ? kwArgs.majorTickStep : Math.pow(10, mag),
 				minor = 0, micro = 0, ticks;
-				
+
 			// calculate minor ticks
 			if(kwArgs && ("minorTickStep" in kwArgs)){
 				minor = kwArgs.minorTickStep;
@@ -7412,7 +7412,7 @@ dojo.provide("dojox.charting.scaler.linear");
 					return calcTicks(min, max, h, major, 0, 0, span);	// Object
 				}while(false);
 			}
-	
+
 			// calculate micro ticks
 			if(kwArgs && ("microTickStep" in kwArgs)){
 				micro = kwArgs.microTickStep;
@@ -7437,13 +7437,13 @@ dojo.provide("dojox.charting.scaler.linear");
 					micro = 0;
 				}while(false);
 			}
-	
+
 			return micro ? ticks : calcTicks(min, max, h, major, minor, 0, span);	// Object
 		},
 		buildTicks: function(/*Object*/ scaler, /*Object*/ kwArgs){
 			var step, next, tick,
-				nextMajor = scaler.major.start, 
-				nextMinor = scaler.minor.start, 
+				nextMajor = scaler.major.start,
+				nextMinor = scaler.minor.start,
 				nextMicro = scaler.micro.start;
 			if(kwArgs.microTicks && scaler.micro.tick){
 				step = scaler.micro.tick, next = nextMicro;
@@ -7748,7 +7748,7 @@ dojo._hasResource["dojo.string"] = true;
 dojo.provide("dojo.string");
 
 /*=====
-dojo.string = { 
+dojo.string = {
 	// summary: String utilities for Dojo
 };
 =====*/
@@ -7760,9 +7760,9 @@ dojo.string.rep = function(/*String*/str, /*Integer*/num){
 	//		the string to replicate
 	//	num:
 	//		number of times to replicate the string
-	
+
 	if(num <= 0 || !str){ return ""; }
-	
+
 	var buf = [];
 	for(;;){
 		if(num & 1){
@@ -7799,22 +7799,22 @@ dojo.string.pad = function(/*String*/text, /*Integer*/size, /*String?*/ch, /*Boo
 	return end ? out + pad : pad + out;	// String
 };
 
-dojo.string.substitute = function(	/*String*/		template, 
-									/*Object|Array*/map, 
-									/*Function?*/	transform, 
+dojo.string.substitute = function(	/*String*/		template,
+									/*Object|Array*/map,
+									/*Function?*/	transform,
 									/*Object?*/		thisObject){
 	//	summary:
 	//		Performs parameterized substitutions on a string. Throws an
 	//		exception if any parameter is unmatched.
-	//	template: 
+	//	template:
 	//		a string with expressions in the form `${key}` to be replaced or
-	//		`${key:format}` which specifies a format function. keys are case-sensitive. 
+	//		`${key:format}` which specifies a format function. keys are case-sensitive.
 	//	map:
 	//		hash to search for substitutions
-	//	transform: 
+	//	transform:
 	//		a function to process all parameters before substitution takes
 	//		place, e.g. mylib.encodeXML
-	//	thisObject: 
+	//	thisObject:
 	//		where to look for optional format function; default to the global
 	//		namespace
 	//	example:
@@ -7857,7 +7857,7 @@ dojo.string.substitute = function(	/*String*/		template,
 	//	|	);
 
 	thisObject = thisObject || dojo.global;
-	transform = transform ? 
+	transform = transform ?
 		dojo.hitch(thisObject, transform) : function(v){ return v; };
 
 	return template.replace(/\$\{([^\s\:\}]+)(?:\:([^\s\:\}]+))?\}/g,
@@ -11791,7 +11791,7 @@ dojo.i18n._requireLocalization = function(/*String*/moduleName, /*String*/bundle
 
 	var targetLocale = dojo.i18n.normalizeLocale(locale);
  	var bundlePackage = [moduleName, "nls", bundleName].join(".");
-	// NOTE: 
+	// NOTE:
 	//		When loading these resources, the packaging does not match what is
 	//		on disk.  This is an implementation detail, as this is just a
 	//		private data structure to hold the loaded resources.  e.g.
@@ -11801,7 +11801,7 @@ dojo.i18n._requireLocalization = function(/*String*/moduleName, /*String*/bundle
 	//		in memory it is more logical and efficient to store in a different
 	//		order.  Locales cannot use dashes, since the resulting path will
 	//		not evaluate as valid JS, so we translate them to underscores.
-	
+
 	//Find the best-match locale to load if we have available flat locales.
 	var bestLocale = "";
 	if(availableFlatLocales){
@@ -11818,7 +11818,7 @@ dojo.i18n._requireLocalization = function(/*String*/moduleName, /*String*/bundle
 		}
 		if(!bestLocale){
 			bestLocale = "ROOT";
-		}		
+		}
 	}
 
 	//See if the desired locale is already loaded.
@@ -11864,7 +11864,7 @@ dojo.i18n._requireLocalization = function(/*String*/moduleName, /*String*/bundle
 			}else{
 				bundle[jsLoc] = parent;
 			}
-			
+
 			if(availableFlatLocales){
 				//Stop the locale path searching if we know the availableFlatLocales, since
 				//the first call to this function will load the only bundle that is needed.
@@ -11882,8 +11882,8 @@ dojo.i18n._requireLocalization = function(/*String*/moduleName, /*String*/bundle
 
 (function(){
 	// If other locales are used, dojo.requireLocalization should load them as
-	// well, by default. 
-	// 
+	// well, by default.
+	//
 	// Override dojo.requireLocalization to do load the default bundle, then
 	// iterate through the extraLocale list and load those translations as
 	// well, unless a particular locale was requested.
@@ -11992,7 +11992,7 @@ dojo.regexp.buildGroupRE = function(/*Object|Array*/arr, /*Function*/re, /*Boole
 	//		A single value or an array of values.
 	// re:
 	//		A function. Takes one parameter and converts it to a regular
-	//		expression. 
+	//		expression.
 	// nonCapture:
 	//		If true, uses non-capturing match, otherwise matches are retained
 	//		by regular expression. Defaults to false
@@ -12018,7 +12018,7 @@ dojo.regexp.group = function(/*String*/expression, /*Boolean?*/nonCapture){
 	//		adds group match to expression
 	// nonCapture:
 	//		If true, uses non-capturing match, otherwise matches are retained
-	//		by regular expression. 
+	//		by regular expression.
 	return "(" + (nonCapture ? "?:":"") + expression + ")"; // String
 }
 
@@ -12127,7 +12127,7 @@ dojo.number._applyPattern = function(/*Number*/value, /*String*/pattern, /*dojo.
 	}else if(pattern.indexOf('E') != -1){
 		throw new Error("exponential notation not supported");
 	}
-	
+
 	//TODO: support @ sig figs?
 	var numberPatternRE = dojo.number._numberPatternRE;
 	var numberPattern = positivePattern.match(numberPatternRE);
@@ -12199,7 +12199,7 @@ dojo.number.__FormatAbsoluteOptions = function(){
 =====*/
 
 dojo.number._formatAbsolute = function(/*Number*/value, /*String*/pattern, /*dojo.number.__FormatAbsoluteOptions?*/options){
-	// summary: 
+	// summary:
 	//		Apply numeric pattern to absolute value using options. Gives no
 	//		consideration to local customs.
 	// value:
@@ -12513,10 +12513,10 @@ dojo.number._realNumberRegexp = function(/*dojo.number.__RealNumberRegexpFlags?*
 			var re = "";
 			if(q && (flags.places!==0)){
 				re = "\\" + flags.decimal;
-				if(flags.places == Infinity){ 
-					re = "(?:" + re + "\\d+)?"; 
+				if(flags.places == Infinity){
+					re = "(?:" + re + "\\d+)?";
 				}else{
-					re += "\\d{" + flags.places + "}"; 
+					re += "\\d{" + flags.places + "}";
 				}
 			}
 			return re;
@@ -12525,9 +12525,9 @@ dojo.number._realNumberRegexp = function(/*dojo.number.__RealNumberRegexpFlags?*
 	);
 
 	var exponentRE = dojo.regexp.buildGroupRE(flags.exponent,
-		function(q){ 
+		function(q){
 			if(q){ return "([eE]" + dojo.number._integerRegexp({ signed: flags.eSigned}) + ")"; }
-			return ""; 
+			return "";
 		}
 	);
 
@@ -12559,7 +12559,7 @@ dojo.number.__IntegerRegexpFlags = function(){
 =====*/
 
 dojo.number._integerRegexp = function(/*dojo.number.__IntegerRegexpFlags?*/flags){
-	// summary: 
+	// summary:
 	//		Builds a regular expression that matches an integer
 
 	// assign default values to missing parameters
@@ -14756,10 +14756,10 @@ dojo._hasResource["dojo.fx.easing"] = true;
 dojo.provide("dojo.fx.easing");
 
 dojo.fx.easing = {
-	// summary: 
-	//		Collection of easing functions to use beyond the default 
+	// summary:
+	//		Collection of easing functions to use beyond the default
 	//		`dojo._defaultEasing` function.
-	// 
+	//
 	// description:
 	//
 	//		Easing functions are used to manipulate the iteration through
@@ -14767,26 +14767,26 @@ dojo.fx.easing = {
 	//		and the easing function progresses through that Line determing
 	//		how quickly (or slowly) it should go. Or more accurately: modify
 	//		the value of the _Line based on the percentage of animation completed.
-	//	
+	//
 	//		All functions follow a simple naming convention of "ease type" + "when".
 	//		If the name of the function ends in Out, the easing described appears
 	//		towards the end of the animation. "In" means during the beginning,
 	//		and InOut means both ranges of the Animation will applied, both
-	//		beginning and end. 
+	//		beginning and end.
 	//
-	//		One does not call the easing function directly, it must be passed to 
+	//		One does not call the easing function directly, it must be passed to
 	//		the `easing` property of an animation.
 	//
 	//	example:
-	//	|	
+	//	|
 	//	|	var anim = dojo.fadeOut({
-	//	|		node: 'node',	
+	//	|		node: 'node',
 	//	|		duration: 2000,
-	//	|		//	note there is no () 
+	//	|		//	note there is no ()
 	//	|		easing: dojo.fx.easing.quadIn
 	//	|	}).play();
 	//
-	
+
 	linear: function(/* Decimal? */n){
 		// summary: A linear easing function
 		return n;
@@ -14897,38 +14897,38 @@ dojo.fx.easing = {
 	},
 
 	backIn: function(/* Decimal? */n){
-		// summary: 
-		//		An easing function that starts away from the target, 
+		// summary:
+		//		An easing function that starts away from the target,
 		//		and quickly accelerates towards the end value.
-		// 
-		//		Use caution when the easing will cause values to become 
+		//
+		//		Use caution when the easing will cause values to become
 		//		negative as some properties cannot be set to negative values.
 		var s = 1.70158;
 		return Math.pow(n, 2) * ((s + 1) * n - s);
 	},
 
 	backOut: function(/* Decimal? */n){
-		// summary: 
-		//		An easing function that pops past the range briefly, and slowly comes back. 
+		// summary:
+		//		An easing function that pops past the range briefly, and slowly comes back.
 		//
 		// description:
-		//		An easing function that pops past the range briefly, and slowly comes back. 
+		//		An easing function that pops past the range briefly, and slowly comes back.
 		//
-		//		Use caution when the easing will cause values to become negative as some 
+		//		Use caution when the easing will cause values to become negative as some
 		//		properties cannot be set to negative values.
-		
+
 		n = n - 1;
 		var s = 1.70158;
 		return Math.pow(n, 2) * ((s + 1) * n + s) + 1;
 	},
 
 	backInOut: function(/* Decimal? */n){
-		// summary: 
+		// summary:
 		//		An easing function combining the effects of `backIn` and `backOut`
 		//
 		// description:
 		//		An easing function combining the effects of `backIn` and `backOut`.
-		//		Use caution when the easing will cause values to become negative 
+		//		Use caution when the easing will cause values to become negative
 		//		as some properties cannot be set to negative values.
 		var s = 1.70158 * 1.525;
 		n = n * 2;
@@ -14938,13 +14938,13 @@ dojo.fx.easing = {
 	},
 
 	elasticIn: function(/* Decimal? */n){
-		// summary: 
+		// summary:
 		//		An easing function the elastically snaps from the start value
 		//
 		// description:
 		//		An easing function the elastically snaps from the start value
-		//	
-		//		Use caution when the elasticity will cause values to become negative 
+		//
+		//		Use caution when the elasticity will cause values to become negative
 		//		as some properties cannot be set to negative values.
 		if(n == 0 || n == 1){ return n; }
 		var p = .3;
@@ -14954,7 +14954,7 @@ dojo.fx.easing = {
 	},
 
 	elasticOut: function(/* Decimal? */n){
-		// summary: 
+		// summary:
 		//		An easing function that elasticly snaps around the target value,
 		//		near the end of the Animation
 		//
@@ -14962,7 +14962,7 @@ dojo.fx.easing = {
 		//		An easing function that elasticly snaps around the target value,
 		//		near the end of the Animation
 		//
-		//		Use caution when the elasticity will cause values to become 
+		//		Use caution when the elasticity will cause values to become
 		//		negative as some properties cannot be set to negative values.
 		if(n==0 || n == 1){ return n; }
 		var p = .3;
@@ -14971,7 +14971,7 @@ dojo.fx.easing = {
 	},
 
 	elasticInOut: function(/* Decimal? */n){
-		// summary: 
+		// summary:
 		//		An easing function that elasticly snaps around the value, near
 		//		the beginning and end of the Animation.
 		//
@@ -14979,7 +14979,7 @@ dojo.fx.easing = {
 		//		An easing function that elasticly snaps around the value, near
 		//		the beginning and end of the Animation.
 		//
-		//		Use caution when the elasticity will cause values to become 
+		//		Use caution when the elasticity will cause values to become
 		//		negative as some properties cannot be set to negative values.
 		if(n == 0) return 0;
 		n = n * 2;
@@ -14995,7 +14995,7 @@ dojo.fx.easing = {
 	},
 
 	bounceIn: function(/* Decimal? */n){
-		// summary: 
+		// summary:
 		//		An easing function that 'bounces' near the beginning of an Animation
 		return (1 - dojo.fx.easing.bounceOut(1 - n)); // Decimal
 	},
@@ -15005,7 +15005,7 @@ dojo.fx.easing = {
 		//		An easing function that 'bounces' near the end of an Animation
 		var s = 7.5625;
 		var p = 2.75;
-		var l; 
+		var l;
 		if(n < (1 / p)){
 			l = s * Math.pow(n, 2);
 		}else if(n < (2 / p)){
@@ -15022,7 +15022,7 @@ dojo.fx.easing = {
 	},
 
 	bounceInOut: function(/* Decimal? */n){
-		// summary: 
+		// summary:
 		//		An easing function that 'bounces' at the beginning and end of the Animation
 		if(n < 0.5){ return dojo.fx.easing.bounceIn(n * 2) / 2; }
 		return (dojo.fx.easing.bounceOut(n * 2 - 1) / 2) + 0.5; // Decimal
@@ -15260,16 +15260,16 @@ dojo.declare("dojo.fx.Toggler", null, {
 	// description:
 	//		class constructor for an animation toggler. It accepts a packed
 	//		set of arguments about what type of animation to use in each
-	//		direction, duration, etc. All available members are mixed into 
-	//		these animations from the constructor (for example, `node`, 
-	//		`showDuration`, `hideDuration`). 
+	//		direction, duration, etc. All available members are mixed into
+	//		these animations from the constructor (for example, `node`,
+	//		`showDuration`, `hideDuration`).
 	//
 	// example:
 	//	|	var t = new dojo.fx.Toggler({
 	//	|		node: "nodeId",
 	//	|		showDuration: 500,
 	//	|		// hideDuration will default to "200"
-	//	|		showFunc: dojo.fx.wipeIn, 
+	//	|		showFunc: dojo.fx.wipeIn,
 	//	|		// hideFunc will default to "fadeOut"
 	//	|	});
 	//	|	t.show(100); // delay showing for 100ms
@@ -15284,7 +15284,7 @@ dojo.declare("dojo.fx.Toggler", null, {
 	//		The function that returns the `dojo.Animation` to show the node
 	showFunc: dojo.fadeIn,
 
-	// hideFunc: Function	
+	// hideFunc: Function
 	//		The function that returns the `dojo.Animation` to hide the node
 	hideFunc: dojo.fadeOut,
 
@@ -15300,7 +15300,7 @@ dojo.declare("dojo.fx.Toggler", null, {
 	// time show/hide are called if we're stopped somewhere in the
 	// middle.
 	// FIXME: also would be nice to specify individual showArgs/hideArgs mixed into
-	// each animation individually. 
+	// each animation individually.
 	// FIXME: also would be nice to have events from the animations exposed/bridged
 
 	/*=====
@@ -15353,15 +15353,15 @@ dojo.declare("dojo.fx.Toggler", null, {
 if(!dojo._hasResource["dojo.fx"]){ //_hasResource checks added by build. Do not use _hasResource directly in your code.
 dojo._hasResource["dojo.fx"] = true;
 dojo.provide("dojo.fx");
- // FIXME: remove this back-compat require in 2.0 
+ // FIXME: remove this back-compat require in 2.0
 /*=====
 dojo.fx = {
 	// summary: Effects library on top of Base animations
 };
 =====*/
 (function(){
-	
-	var d = dojo, 
+
+	var d = dojo,
 		_baseObj = {
 			_fire: function(evt, args){
 				if(this[evt]){
@@ -15480,14 +15480,14 @@ dojo.fx = {
 	d.extend(_chain, _baseObj);
 
 	dojo.fx.chain = function(/*dojo.Animation[]*/ animations){
-		// summary: 
+		// summary:
 		//		Chain a list of `dojo.Animation`s to run in sequence
 		//
 		// description:
 		//		Return a `dojo.Animation` which will play all passed
 		//		`dojo.Animation` instances in sequence, firing its own
 		//		synthesized events simulating a single animation. (eg:
-		//		onEnd of this animation means the end of the chain, 
+		//		onEnd of this animation means the end of the chain,
 		//		not the individual animations within)
 		//
 		// example:
@@ -15512,10 +15512,10 @@ dojo.fx = {
 			if(this.duration < duration){ this.duration = duration; }
 			this._connects.push(d.connect(a, "onEnd", this, "_onEnd"));
 		}, this);
-		
+
 		this._pseudoAnimation = new d.Animation({curve: [0, 1], duration: this.duration});
 		var self = this;
-		d.forEach(["beforeBegin", "onBegin", "onPlay", "onAnimate", "onPause", "onStop", "onEnd"], 
+		d.forEach(["beforeBegin", "onBegin", "onPlay", "onAnimate", "onPause", "onStop", "onEnd"],
 			function(evt){
 				self._connects.push(d.connect(self._pseudoAnimation, evt,
 					function(){ self._fire(evt, arguments); }
@@ -15573,11 +15573,11 @@ dojo.fx = {
 	d.extend(_combine, _baseObj);
 
 	dojo.fx.combine = function(/*dojo.Animation[]*/ animations){
-		// summary: 
+		// summary:
 		//		Combine a list of `dojo.Animation`s to run in parallel
 		//
 		// description:
-		//		Combine an array of `dojo.Animation`s to run in parallel, 
+		//		Combine an array of `dojo.Animation`s to run in parallel,
 		//		providing a new `dojo.Animation` instance encompasing each
 		//		animation, firing standard animation events.
 		//
@@ -15648,7 +15648,7 @@ dojo.fx = {
 			}
 		}, args));
 
-		d.connect(anim, "onEnd", function(){ 
+		d.connect(anim, "onEnd", function(){
 			s.height = "auto";
 			s.overflow = o;
 		});
@@ -15658,7 +15658,7 @@ dojo.fx = {
 
 	dojo.fx.wipeOut = function(/*Object*/ args){
 		// summary:
-		//		Shrink a node to nothing and hide it. 
+		//		Shrink a node to nothing and hide it.
 		//
 		// description:
 		//		Returns an animation that will shrink node defined in "args"
@@ -15667,12 +15667,12 @@ dojo.fx = {
 		// args: Object
 		//		A hash-map of standard `dojo.Animation` constructor properties
 		//		(such as easing: node: duration: and so on)
-		// 
+		//
 		// example:
 		//	|	dojo.fx.wipeOut({ node:"someId" }).play()
-		
+
 		var node = args.node = d.byId(args.node), s = node.style, o;
-		
+
 		var anim = d.animateProperty(d.mixin({
 			properties: {
 				height: {
@@ -15700,7 +15700,7 @@ dojo.fx = {
 		//		Slide a node to a new top/left position
 		//
 		// description:
-		//		Returns an animation that will slide "node" 
+		//		Returns an animation that will slide "node"
 		//		defined in args Object from its current position to
 		//		the position defined by (args.left, args.top).
 		//
@@ -15712,7 +15712,7 @@ dojo.fx = {
 		// example:
 		//	|	dojo.fx.slideTo({ node: node, left:"40", top:"50", units:"px" }).play()
 
-		var node = args.node = d.byId(args.node), 
+		var node = args.node = d.byId(args.node),
 			top = null, left = null;
 
 		var init = (function(n){
@@ -15880,7 +15880,7 @@ dojo.provide("dojox.lang.functional.scan");
 //	- "scan" family of functions
 
 // Notes:
-//	- missing high-level functions are provided with the compatible API: 
+//	- missing high-level functions are provided with the compatible API:
 //		scanl, scanl1, scanr, scanr1
 
 // Defined methods:
@@ -15895,7 +15895,7 @@ dojo.provide("dojox.lang.functional.scan");
 	d.mixin(df, {
 		// classic reduce-class functions
 		scanl: function(/*Array|String|Object*/ a, /*Function|String|Array*/ f, /*Object*/ z, /*Object?*/ o){
-			// summary: repeatedly applies a binary function to an array from left 
+			// summary: repeatedly applies a binary function to an array from left
 			//	to right using a seed value as a starting point; returns an array
 			//	of values produced by foldl() at that point.
 			if(typeof a == "string"){ a = a.split(""); }
@@ -15922,8 +15922,8 @@ dojo.provide("dojox.lang.functional.scan");
 			return t;	// Array
 		},
 		scanl1: function(/*Array|String|Object*/ a, /*Function|String|Array*/ f, /*Object?*/ o){
-			// summary: repeatedly applies a binary function to an array from left 
-			//	to right; returns an array of values produced by foldl1() at that 
+			// summary: repeatedly applies a binary function to an array from left
+			//	to right; returns an array of values produced by foldl1() at that
 			//	point.
 			if(typeof a == "string"){ a = a.split(""); }
 			o = o || d.global; f = df.lambda(f);
@@ -15967,7 +15967,7 @@ dojo.provide("dojox.lang.functional.scan");
 		},
 		scanr1: function(/*Array|String*/ a, /*Function|String|Array*/ f, /*Object?*/ o){
 			// summary: repeatedly applies a binary function to an array from right
-			//	to left; returns an array of values produced by foldr1() at that 
+			//	to left; returns an array of values produced by foldr1() at that
 			//	point.
 			if(typeof a == "string"){ a = a.split(""); }
 			o = o || d.global; f = df.lambda(f);
@@ -16362,7 +16362,7 @@ dojo.date.stamp.toISOString = function(/*Date*/dateObject, /*dojo.date.stamp.__O
 		}else if(options.selector != "time"){
 			var timezoneOffset = dateObject.getTimezoneOffset();
 			var absOffset = Math.abs(timezoneOffset);
-			time += (timezoneOffset > 0 ? "-" : "+") + 
+			time += (timezoneOffset > 0 ? "-" : "+") +
 				_(Math.floor(absOffset/60)) + ":" + _(absOffset%60);
 		}
 		formattedDate.push(time);
@@ -16414,7 +16414,7 @@ dojo.parser = new function(){
 			case "function":
 				if(d.isFunction(value)){
 					// IE gives us a function, even when we say something like onClick="foo"
-					// (in which case it gives us an invalid function "function(){ foo }"). 
+					// (in which case it gives us an invalid function "function(){ foo }").
 					//  Therefore, convert to string
 					value=value.toString();
 					value=d.trim(value.substring(value.indexOf('{')+1, value.length-1));
@@ -16461,8 +16461,8 @@ dojo.parser = new function(){
 		//		fully qualified name (like "dijit.form.Button")
 		// returns:
 		//		structure like
-		//			{ 
-		//				cls: dijit.Button, 
+		//			{
+		//				cls: dijit.Button,
 		//				params: { label: "string", disabled: "boolean"}
 		//			}
 
@@ -16472,7 +16472,7 @@ dojo.parser = new function(){
 			if(!cls){ return null; }		// class not defined [yet]
 
 			var proto = cls.prototype;
-	
+
 			// get table of parameter names & types
 			var params = {}, dummyClass = {};
 			for(var name in proto){
@@ -16529,7 +16529,7 @@ dojo.parser = new function(){
 		var thelist = [], dp = dojo.parser;
 		mixin = mixin||{};
 		args = args||{};
-		
+
 		d.forEach(nodes, function(obj){
 			if(!obj){ return; }
 
@@ -16548,7 +16548,7 @@ dojo.parser = new function(){
 				type = dp._attrName in mixin ? mixin[dp._attrName] : node.getAttribute(dp._attrName);
 				clsInfo = type && getClassInfo(type);
 				clazz = clsInfo && clsInfo.cls;
-				scripts = (clazz && (clazz._noScript || clazz.prototype._noScript) ? [] : 
+				scripts = (clazz && (clazz._noScript || clazz.prototype._noScript) ? [] :
 							d.query("> script[type^='dojo/']", node));
 			}
 			if(!clsInfo){
@@ -16646,9 +16646,9 @@ dojo.parser = new function(){
 			// ContentPane is the parent widget (so that the parse doesn't call startup() on the
 			// ContentPane's children)
 			d.forEach(thelist, function(instance){
-				if(	!args.noStart && instance  && 
+				if(	!args.noStart && instance  &&
 					instance.startup &&
-					!instance._started && 
+					!instance._started &&
 					(!instance.getParent || !instance.getParent())
 				){
 					instance.startup();
@@ -16670,18 +16670,18 @@ dojo.parser = new function(){
 		// rootNode: DomNode?
 		//		A default starting root node from which to start the parsing. Can be
 		//		omitted, defaulting to the entire document. If omitted, the `args`
-		//		object can be passed in this place. If the `args` object has a 
+		//		object can be passed in this place. If the `args` object has a
 		//		`rootNode` member, that is used.
 		//
 		// args:
 		//		a kwArgs object passed along to instantiate()
-		//		
+		//
 		//			* noStart: Boolean?
 		//				when set will prevent the parser from calling .startup()
-		//				when locating the nodes. 
+		//				when locating the nodes.
 		//			* rootNode: DomNode?
 		//				identical to the function's `rootNode` argument, though
-		//				allowed to be passed in via this `args object. 
+		//				allowed to be passed in via this `args object.
 		//			* inherited: Object
 		//				Hash possibly containing dir and lang settings to be applied to
 		//				parsed widgets, unless there's another setting on a sub-node that overrides
@@ -16696,7 +16696,7 @@ dojo.parser = new function(){
 		//	|		dojo.parser.parse(dojo.byId(foo));
 		//
 		// example:
-		//		Parse all classes in a page, but do not call .startup() on any 
+		//		Parse all classes in a page, but do not call .startup() on any
 		//		child
 		//	|		dojo.parser.parse({ noStart: true })
 		//
@@ -16802,9 +16802,9 @@ dojo.parser = new function(){
 //after the a11y test.
 
 (function(){
-	var parseRunner = function(){ 
+	var parseRunner = function(){
 		if(dojo.config.parseOnLoad){
-			dojo.parser.parse(); 
+			dojo.parser.parse();
 		}
 	};
 
@@ -16823,7 +16823,7 @@ dojo._hasResource["dojo.cache"] = true;
 dojo.provide("dojo.cache");
 
 /*=====
-dojo.cache = { 
+dojo.cache = {
 	// summary:
 	// 		A way to cache string content that is fetchable via `dojo.moduleUrl`.
 };
@@ -16868,7 +16868,7 @@ dojo.cache = {
 		//		|	var text = dojo["cache"]("my.module", "template.html");
 		//	example:
 		//		To ask dojo.cache to fetch content and store it in the cache, and sanitize the input
-		// 		 (the dojo["cache"] style of call is used to avoid an issue with the build system 
+		// 		 (the dojo["cache"] style of call is used to avoid an issue with the build system
 		// 		erroneously trying to intern this example. To get the build system to intern your
 		// 		dojo.cache calls, use the "dojo.cache" style of call):
 		// 		|	//If template.html contains "<html><body><h1>Hello</h1></body></html>", the
@@ -16918,7 +16918,7 @@ dojo.cache = {
 	};
 
 	dojo.cache._sanitize = function(/*String*/val){
-		// summary: 
+		// summary:
 		//		Strips <?xml ...?> declarations so that external SVG and XML
 		// 		documents can be added to a document without worry. Also, if the string
 		//		is an HTML document, only the part inside the body tag is returned.
@@ -17676,7 +17676,7 @@ dojo.declare("dojox.charting.action2d.__TooltipCtorArgs", dojox.charting.action2
 	//		Additional arguments for tooltip actions.
 
 	//	text: Function?
-	//		The function that produces the text to be shown within a tooltip.  By default this will be 
+	//		The function that produces the text to be shown within a tooltip.  By default this will be
 	//		set by the plot in question, by returning the value of the element.
 	text: null
 });
@@ -17700,7 +17700,7 @@ dojo.declare("dojox.charting.action2d.__TooltipCtorArgs", dojox.charting.action2
 	};
 
 	var df = dojox.lang.functional, m = dojox.gfx.matrix, pi4 = Math.PI / 4, pi2 = Math.PI / 2;
-	
+
 	dojo.declare("dojox.charting.action2d.Tooltip", dojox.charting.action2d.Base, {
 		//	summary:
 		//		Create an action on a plot where a tooltip is shown when hovering over an element.
@@ -17721,10 +17721,10 @@ dojo.declare("dojox.charting.action2d.__TooltipCtorArgs", dojox.charting.action2
 			//	kwArgs: dojox.charting.action2d.__TooltipCtorArgs?
 			//		Optional keyword arguments object for setting parameters.
 			this.text = kwArgs && kwArgs.text ? kwArgs.text : DEFAULT_TEXT;
-			
+
 			this.connect();
 		},
-		
+
 		process: function(o){
 			//	summary:
 			//		Process the action on the given object.
@@ -17735,9 +17735,9 @@ dojo.declare("dojox.charting.action2d.__TooltipCtorArgs", dojox.charting.action2
 				this.aroundRect = null;
 				return;
 			}
-			
+
 			if(!o.shape || o.type !== "onmouseover"){ return; }
-			
+
 			// calculate relative coordinates and the position
 			var aroundRect = {type: "rect"}, position = ["after", "before"];
 			switch(o.element){
@@ -17797,7 +17797,7 @@ dojo.declare("dojox.charting.action2d.__TooltipCtorArgs", dojox.charting.action2
 					*/
 					break;
 			}
-			
+
 			// adjust relative coordinates to absolute, and remove fractions
 			var lt = dojo.coords(this.chart.node, true);
 			aroundRect.x += lt.x;
@@ -17807,16 +17807,16 @@ dojo.declare("dojox.charting.action2d.__TooltipCtorArgs", dojox.charting.action2
 			aroundRect.width = Math.ceil(aroundRect.width);
 			aroundRect.height = Math.ceil(aroundRect.height);
 			this.aroundRect = aroundRect;
-			
+
 			showChartingTooltip(this.text(o), this.aroundRect, position, "center");
 		}
 	});
-	
+
 	//TODO: make the charting tooltip a generic one so it can be used with
 	// dojox.gfx shapes without charting.
-	
+
 	var MasterTooltip = dojo.declare(dijit._MasterTooltip, {
-		
+
 		show: function(/*String*/ innerHTML, /*DomNode*/ aroundNode, /*String[]?*/ position, /*String*/alignment){
 			// summary:
 			//		Display tooltip w/specified contents to right of specified node
@@ -17839,7 +17839,7 @@ dojo.declare("dojox.charting.action2d.__TooltipCtorArgs", dojox.charting.action2
 			// Firefox bug. when innerHTML changes to be shorter than previous
 			// one, the node size will not be updated until it moves.
 			this.domNode.style.top = (this.domNode.offsetTop + 1) + "px";
-			
+
 			if(!this.connectorNode) this.connectorNode = dojo.query(".dijitTooltipConnector", this.domNode)[0];
 			var connectorPos = dojo.coords(this.connectorNode);
 			this.arrowWidth = connectorPos.w, this.arrowHeight = connectorPos.h;
@@ -17860,13 +17860,13 @@ dojo.declare("dojox.charting.action2d.__TooltipCtorArgs", dojox.charting.action2
 			this.isShowingNow = true;
 			this.aroundNode = aroundNode;
 		},
-		
+
 		placeChartingTooltip: function(node, aroundRect, aroundCorners, layoutNode){
-			return this._placeOnScreenAroundRect(node, 
+			return this._placeOnScreenAroundRect(node,
 				aroundRect.x, aroundRect.y, aroundRect.width, aroundRect.height,	// rectangle
 				aroundCorners, layoutNode);
 		},
-		
+
 		_placeOnScreenAroundRect: function(node, x, y, width, height, aroundCorners, layoutNode){
 			var choices = [];
 		    for (var nodeCorner in aroundCorners) {
@@ -17883,27 +17883,27 @@ dojo.declare("dojox.charting.action2d.__TooltipCtorArgs", dojox.charting.action2
 		    }
 		    return this._place(node, choices, layoutNode);
 		},
-		
+
 		_place: function(/* DomNode */node, /* Array */ choices, /* Function */ layoutNode){
 		    var view = dijit.getViewport();
-		    
+
 		    if (!node.parentNode ||
 		    String(node.parentNode.tagName).toLowerCase() != "body") {
 		        dojo.body().appendChild(node);
 		    }
-		    
+
 		    var best = null;
-		    
+
 		    var arrowLeft = null, arrowTop = null;
 		    dojo.some(choices, function(choice){
 		        var corner = choice.corner;
 		        var aroundCorner = choice.aroundCorner;
 		        var pos = choice.pos;
-		        
+
 		        if (layoutNode) {
 		            layoutNode(node, choice.aroundCorner, corner);
 		        }
-		        
+
 		        // get node's size
 		        var style = node.style;
 		        var oldDisplay = style.display;
@@ -17913,31 +17913,31 @@ dojo.declare("dojox.charting.action2d.__TooltipCtorArgs", dojox.charting.action2
 		        var mb = dojo.marginBox(node);
 		        style.display = oldDisplay;
 		        style.visibility = oldVis;
-		        
+
 		        var startX, startY, endX, endY, width, height, overflow;
-		        
+
 		        arrowLeft = null, arrowTop = null;
 		        if (aroundCorner.charAt(0) == corner.charAt(0)) { //left, right
-		            startX = (corner.charAt(1) == 'L' ? pos.x : Math.max(view.l, pos.x - mb.w)), 
-					startY = (corner.charAt(0) == 'T' ? (pos.y + pos.h / 2 - mb.h / 2) : (pos.y - pos.h / 2 - mb.h / 2)), 
-					endX = (corner.charAt(1) == 'L' ? Math.min(view.l + view.w, startX + mb.w) : pos.x), 
-					endY = startY + mb.h, 
-					width = endX - startX, 
-					height = endY - startY, 
+		            startX = (corner.charAt(1) == 'L' ? pos.x : Math.max(view.l, pos.x - mb.w)),
+					startY = (corner.charAt(0) == 'T' ? (pos.y + pos.h / 2 - mb.h / 2) : (pos.y - pos.h / 2 - mb.h / 2)),
+					endX = (corner.charAt(1) == 'L' ? Math.min(view.l + view.w, startX + mb.w) : pos.x),
+					endY = startY + mb.h,
+					width = endX - startX,
+					height = endY - startY,
 					overflow = (mb.w - width) + (mb.h - height);
 		            arrowTop = (mb.h - this.arrowHeight) / 2;
 		        }
 		        else { //top, bottom
-		            startX = (corner.charAt(1) == 'L' ? (pos.x + pos.w / 2 - mb.w / 2) : (pos.x - pos.w / 2 - mb.w / 2)), 
-					startY = (corner.charAt(0) == 'T' ? pos.y : Math.max(view.t, pos.y - mb.h)), 
-					endX = startX + mb.w, 
-					endY = (corner.charAt(0) == 'T' ? Math.min(view.t + view.h, startY + mb.h) : pos.y), 
-					width = endX - startX, 
-					height = endY - startY, 
+		            startX = (corner.charAt(1) == 'L' ? (pos.x + pos.w / 2 - mb.w / 2) : (pos.x - pos.w / 2 - mb.w / 2)),
+					startY = (corner.charAt(0) == 'T' ? pos.y : Math.max(view.t, pos.y - mb.h)),
+					endX = startX + mb.w,
+					endY = (corner.charAt(0) == 'T' ? Math.min(view.t + view.h, startY + mb.h) : pos.y),
+					width = endX - startX,
+					height = endY - startY,
 					overflow = (mb.w - width) + (mb.h - height);
 		            arrowLeft = (mb.w - this.arrowWidth) / 2;
 		        }
-		        
+
 		        if (best == null || overflow < best.overflow) {
 		            best = {
 		                corner: corner,
@@ -17951,10 +17951,10 @@ dojo.declare("dojox.charting.action2d.__TooltipCtorArgs", dojox.charting.action2
 		        }
 		        return !overflow;
 		    }, this);
-		    
+
 		    node.style.left = best.x + "px";
 		    node.style.top = best.y + "px";
-		    
+
 			this.connectorNode.style.top = "";
 	        this.connectorNode.style.left = "";
 	        if (arrowTop){
@@ -17963,21 +17963,21 @@ dojo.declare("dojox.charting.action2d.__TooltipCtorArgs", dojox.charting.action2
 	        if (arrowLeft){
 				this.connectorNode.style.left = arrowLeft + "px";
 			}
-	        
+
 		    if (best.overflow && layoutNode) {
 		        layoutNode(node, best.aroundCorner, best.corner);
 		    }
 		    return best;
 		}
 	});
-	
+
 	var masterTT = null;
-	
+
 	function showChartingTooltip(innerHTML, aroundNode, position, alignment){
 		if(!masterTT){ masterTT = new MasterTooltip(); }
 		return masterTT.show(innerHTML, aroundNode, position, alignment);
 	}
-	
+
 	function hideChartingTooltip(aroundNode){
 		if(!masterTT){ masterTT = new MasterTooltip(); }
 		return masterTT.hide(aroundNode);
@@ -18009,39 +18009,39 @@ dojo.provide("dojox.charting.widget.Chart2D");
 		du = dojox.lang.utils,
 		dc = dojox.charting,
 		d = dojo;
-	
+
 	dojo.declare("dojox.charting.widget.Chart2D", dijit._Widget, {
 		// parameters for the markup
-		
+
 		// theme for the chart
 		theme: null,
-		
+
 		// margins for the chart: {l: 10, r: 10, t: 10, b: 10}
 		margins: null,
-		
+
 		// chart area
 		stroke: null,
 		fill:   null,
-		
+
 		// methods
-		
+
 		buildRendering: function(){
 			var n = this.domNode = this.srcNodeRef;
-			
+
 			// collect chart parameters
 			var axes    = d.query("> .axis", n).map(collectAxisParams).filter(notNull),
 				plots   = d.query("> .plot", n).map(collectPlotParams).filter(notNull),
 				actions = d.query("> .action", n).map(collectActionParams).filter(notNull),
 				series  = d.query("> .series", n).map(collectDataParams).filter(notNull);
-			
+
 			// build the chart
 			n.innerHTML = "";
 			var c = this.chart = new dc.Chart2D(n, {
-				margins: this.margins, 
+				margins: this.margins,
 				stroke:  this.stroke,
 				fill:    this.fill
 			});
-			
+
 			// add collected parameters
 			if(this.theme){
 				c.setTheme(this.theme);
@@ -18052,11 +18052,11 @@ dojo.provide("dojox.charting.widget.Chart2D");
 			plots.forEach(function(plot){
 				c.addPlot(plot.name, plot.kwArgs);
 			});
-			
+
 			this.actions = actions.map(function(action){
 				return new action.action(c, action.plot, action.kwArgs)
 			});
-			
+
 			var render = df.foldl(series, function(render, series){
 				if(series.type == "data"){
 					c.addSeries(series.name, series.data, series.kwArgs);
@@ -18065,15 +18065,15 @@ dojo.provide("dojox.charting.widget.Chart2D");
 					c.addSeries(series.name, [0], series.kwArgs);
 					var kw = {};
 					du.updateWithPattern(
-						kw, 
-						series.kwArgs, 
+						kw,
+						series.kwArgs,
 						{
-							"query": "", 
-							"queryOptions": null, 
-							"start": 0, 
-							"count": 1 //, 
+							"query": "",
+							"queryOptions": null,
+							"start": 0,
+							"count": 1 //,
 							// "sort": []
-						}, 
+						},
 						true
 					);
 					if(series.kwArgs.sort){
@@ -18115,7 +18115,7 @@ dojo.provide("dojox.charting.widget.Chart2D");
 			}
 		}
 	});
-	
+
 	collectParams = function(node, type, kw){
 		var dp = eval("(" + type + ".prototype.defaultParams)");
 		var x, attr;
@@ -18133,7 +18133,7 @@ dojo.provide("dojox.charting.widget.Chart2D");
 			}
 		}
 	};
-	
+
 	collectAxisParams = function(node){
 		var name = node.getAttribute("name"), type = node.getAttribute("type");
 		if(!name){ return null; }
@@ -18143,7 +18143,7 @@ dojo.provide("dojox.charting.widget.Chart2D");
 				type = dojox._scopeName + ".charting.axis2d." + type;
 			}
 			var axis = eval("(" + type + ")");
-			if(axis){ kw.type = axis; } 
+			if(axis){ kw.type = axis; }
 		}else{
 			type = dojox._scopeName + ".charting.axis2d.Default";
 		}
@@ -18162,7 +18162,7 @@ dojo.provide("dojox.charting.widget.Chart2D");
 		}
 		return o;
 	};
-	
+
 	collectPlotParams = function(node){
 		// var name = d.attr(node, "name"), type = d.attr(node, "type");
 		var name = node.getAttribute("name"), type = node.getAttribute("type");
@@ -18173,14 +18173,14 @@ dojo.provide("dojox.charting.widget.Chart2D");
 				type = dojox._scopeName + ".charting.plot2d." + type;
 			}
 			var plot = eval("(" + type + ")");
-			if(plot){ kw.type = plot; } 
+			if(plot){ kw.type = plot; }
 		}else{
 			type = dojox._scopeName + ".charting.plot2d.Default";
 		}
 		collectParams(node, type, kw);
 		return o;
 	};
-	
+
 	collectActionParams = function(node){
 		// var plot = d.attr(node, "plot"), type = d.attr(node, "type");
 		var plot = node.getAttribute("plot"), type = node.getAttribute("type");
@@ -18283,14 +18283,14 @@ dojo.deprecated("dojox.charting.themes.ET.greys", "1.3");
 		axis:{
 			stroke:{ width:	0 },
 			line:{ width:	0 },
-			majorTick:{ 
-				color:	"#666666", 
+			majorTick:{
+				color:	"#666666",
 				width:	1,
 				length: 5
 			},
-			minorTick: { 
-				color:	"black", 
-				width:	0.5, 
+			minorTick: {
+				color:	"black",
+				width:	0.5,
 				length:	2
 			},
 			font:"normal normal normal 8pt Tahoma",
@@ -18310,11 +18310,11 @@ dojo.deprecated("dojox.charting.themes.ET.greys", "1.3");
 			fontColor:"#000"
 		},
 		colors:[
-			dojo.colorFromHex("#8a8c8f"), 
+			dojo.colorFromHex("#8a8c8f"),
 			dojo.colorFromHex("#4b4b4b"),
-			dojo.colorFromHex("#3b444b"), 
+			dojo.colorFromHex("#3b444b"),
 			dojo.colorFromHex("#2e2d30"),
-			dojo.colorFromHex("#000000") 
+			dojo.colorFromHex("#000000")
 		]
 	});
 })();
@@ -18400,7 +18400,7 @@ dojo.provide("dojox.charting.widget.Legend");
 
 
 dojo.declare("dojox.charting.widget.Legend", [dijit._Widget, dijit._Templated], {
-	// summary: A legend for a chart. A legend contains summary labels for 
+	// summary: A legend for a chart. A legend contains summary labels for
 	// each series of data contained in the chart.
 	//
 	// Set the horizontal attribute to boolean false to layout legend labels vertically.
@@ -18412,16 +18412,16 @@ dojo.declare("dojox.charting.widget.Legend", [dijit._Widget, dijit._Templated], 
 	//
 	// (Area/Bar/Pie charts (letters represent colors))
 	// [a] Series1		[b] Series2		[c] Series3
-	
+
 	chartRef:   "",
 	horizontal: true,
 	swatchSize: 18,
-	
+
 	templateString: "<table dojoAttachPoint='legendNode' class='dojoxLegendNode'><tbody dojoAttachPoint='legendBody'></tbody></table>",
-	
+
 	legendNode: null,
 	legendBody: null,
-	
+
 	postCreate: function(){
 		if(!this.chart){
 			if(!this.chartRef){ return; }
@@ -18439,12 +18439,12 @@ dojo.declare("dojox.charting.widget.Legend", [dijit._Widget, dijit._Templated], 
 		}else{
 			this.series = this.chart.series;
 		}
-		
+
 		this.refresh();
 	},
 	refresh: function(){
 		// summary: regenerates the legend to reflect changes to the chart
-		
+
 		var df = dojox.lang.functional;
 
 		// cleanup
@@ -18465,7 +18465,7 @@ dojo.declare("dojox.charting.widget.Legend", [dijit._Widget, dijit._Templated], 
 			this.legendBody.appendChild(this._tr);
 			this._inrow = 0;
 		}
-		
+
 		var s = this.series;
 		if(s.length == 0){
 			return;
@@ -18502,7 +18502,7 @@ dojo.declare("dojox.charting.widget.Legend", [dijit._Widget, dijit._Templated], 
 		div.style.width  = this.swatchSize + "px";
 		div.style.height = this.swatchSize + "px";
 		icon.appendChild(div);
-		
+
 		// create a skeleton
 		if(this._tr){
 			// horizontal
@@ -18521,7 +18521,7 @@ dojo.declare("dojox.charting.widget.Legend", [dijit._Widget, dijit._Templated], 
 			tr.appendChild(icon);
 			tr.appendChild(text);
 		}
-		
+
 		// populate the skeleton
 		this._makeIcon(div, dyn);
 		text.innerHTML = String(label);

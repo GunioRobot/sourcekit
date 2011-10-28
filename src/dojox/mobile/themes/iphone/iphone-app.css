@@ -218,13 +218,13 @@ html.mobile, .mobile body {
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	background-color: white;
-	position: relative; 
+	position: relative;
 }
 .mblEdgeToEdgeList {
 	padding: 0px;
 	background-color: white;
-	position: relative; 
-	margin: 0px; 
+	position: relative;
+	margin: 0px;
 }
 .mblListItem {
 	list-style-type: none;
@@ -234,7 +234,7 @@ html.mobile, .mobile body {
 	font-weight: bold;
 	position: relative;
 	color: black;
-	vertical-align: bottom; 
+	vertical-align: bottom;
 }
 .mblListItemIcon {
 	position: absolute;
@@ -731,7 +731,7 @@ table.mblClose {
 	text-overflow: ellipsis;
 	text-align: center;
 }
-.alertText {	
+.alertText {
 	text-align: center;
 }
 .alertBtns {
@@ -787,7 +787,7 @@ table.mblClose {
 	border-bottom: 1px solid #444;
 	position: relative;
 	background-color: white;
-	z-index: 6; 
+	z-index: 6;
 }
 .list .row.mblListItem {
 	padding: 0px;
@@ -810,13 +810,13 @@ table.mblClose {
 }
 .list .buttons .deleteBtn {
 	background-color: red;
-	
+
 }
 .list .buttons .cancelBtn {
 	margin-left: 10px;
 	background-color: blue;
 }
-.row.collapsed { 
+.row.collapsed {
 	-webkit-animation-name: collapse-vert;
 	-webkit-animation-duration: 0.5s;
 	-webkit-animation-timing-function: linear;
@@ -829,7 +829,7 @@ table.mblClose {
 	to {
 		height: 0px;
 		padding: 0px;
-	} 
+	}
 }
 .listSelector {
 	position: absolute;
@@ -862,8 +862,8 @@ table.mblClose {
 input {
 	-webkit-text-size-adjust: 140%;
 }
- 
- 
+
+
 .mblImageThumbView {
 	position: relative;
 }
@@ -905,7 +905,7 @@ input {
   padding-left: 6px;
   padding-top: 5px;
   z-index: 10;
-  
+
 }
 .mblImageThumbView .mblThumbInner .mblThumbMask img {
   left: 0px;

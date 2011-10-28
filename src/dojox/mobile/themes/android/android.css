@@ -215,13 +215,13 @@ html.mobile, .mobile body {
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	background-color: white;
-	position: relative; 
+	position: relative;
 }
 .mblEdgeToEdgeList {
 	padding: 0px;
 	background-color: black;
-	position: relative; 
-	margin: 0px; 
+	position: relative;
+	margin: 0px;
 }
 .mblListItem {
 	list-style-type: none;

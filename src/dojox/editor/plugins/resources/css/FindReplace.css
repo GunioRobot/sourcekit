@@ -34,26 +34,26 @@
 	background-repeat: no-repeat;
 	width: 18px;
 	height: 18px;
-	background-position: center; 
+	background-position: center;
 }
 .soria .dijitEditorIconsFindReplaceClose {
         background-image: url('../icons/soria/close.gif');
 	background-repeat: no-repeat;
 	width: 18px;
 	height: 18px;
-	background-position: center; 
+	background-position: center;
 }
 .nihilo .dijitEditorIconsFindReplaceClose {
         background-image: url('../icons/nihilo/close.gif');
 	background-repeat: no-repeat;
 	width: 18px;
 	height: 18px;
-	background-position: center; 
+	background-position: center;
 }
 .claro .dijitEditorIconsFindReplaceClose {
         background-image: url('../icons/claro/close.gif');
 	background-repeat: no-repeat;
 	width: 18px;
 	height: 18px;
-	background-position: center; 
+	background-position: center;
 }

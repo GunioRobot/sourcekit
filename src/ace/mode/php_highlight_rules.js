@@ -436,7 +436,7 @@ var PhpHighlightRules = function() {
         'zip_entry_close|zip_entry_compressedsize|zip_entry_compressionmethod|zip_entry_filesize|zip_entry_name|zip_entry_open|zip_entry_read|' +
         'zip_open|zip_read|zlib_get_coding_type').split('|')
 	);
-	
+
     var keywords = lang.arrayToMap(
         ('abstract|and|array|as|break|case|catch|cfunction|class|clone|const|continue|declare|default|die|do|' +
         'else|elseif|enddeclare|endfor|endforeach|endif|endswitch|endwhile|extends|final|for|foreach|function|' +

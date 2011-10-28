@@ -33,8 +33,8 @@
 .dijitRtl .dijitIconFolderClosed,
 .dijitRtl .dijitFolderOpened,
 .dijitRtl .dijitIconFolderOpen,
-.dijitRtl .dijitIconError, .dijitRtl .dijitContentPaneError { 
-	background-image: url('images/commonIconsObjActEnabled_rtl.png'); 
+.dijitRtl .dijitIconError, .dijitRtl .dijitContentPaneError {
+	background-image: url('images/commonIconsObjActEnabled_rtl.png');
 	width: 16px;
 	height: 16px;
 }
@@ -110,7 +110,7 @@
 .dijitRtl .dijitDisabled .dijitFolderOpened,
 .dijitRtl .dijitDisabled .dijitIconFolderOpen,
 .dijitRtl .dijitDisabled .dijitIconError, .dijitRtl .dijitDisabled .dijitContentPaneError {
-	background-image: url('images/commonIconsObjActDisabled_rtl.png'); 
+	background-image: url('images/commonIconsObjActDisabled_rtl.png');
 }
 .dijitRtl .dijitContentPaneLoading {
 	background:url('images/loadingAnimation_rtl.gif') no-repeat;

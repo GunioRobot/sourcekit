@@ -28,7 +28,7 @@ working with specific types of data.
 -------------------------------------------------------------------------------
 Dependencies:
 
-DojoX Data has dependencies on core dojo (dojo.data), dojox.xml for XmlStore 
+DojoX Data has dependencies on core dojo (dojo.data), dojox.xml for XmlStore
 and dojox.data.dom(deprecated) and the D.O.H. unit test framework
 -------------------------------------------------------------------------------
 Documentation:
@@ -37,10 +37,10 @@ See the Dojo API tool (http://dojotoolkit.org/api)
 -------------------------------------------------------------------------------
 Contributions:
 
-For contributions to be committed into the dojox repository, the datastore 
+For contributions to be committed into the dojox repository, the datastore
 should have basic unit tests that exercise the API's that the store declares it
 implements.  Documentation and demos are a plus, but unit tests are required
-to be committed into this sub-package.  This is necessary to help keep the 
+to be committed into this sub-package.  This is necessary to help keep the
 provided datastores as stable as possible.
 
 -------------------------------------------------------------------------------
@@ -58,30 +58,30 @@ Install into the following directory structure:
 
 Require in the dojox.data stores you wish to use.
 -------------------------------------------------------------------------------
-Additional Notes: 
+Additional Notes:
 	dojox.data.AtomReadStore - Reads Atom XML documents.
 
 	dojox.data.CvsStore - comma-separated (spreadsheet output)
-	datastore implementation 
-	
-	dojox.data.FlickrRestStore - advanced version of: dojox.data.FlickrStore 
-	(Caching + user key support) 
-	
-	dojox.data.FlickrStore - data store driven by Flickr.com public API. 
-	
-	dojox.data.HtmlTableStore - Implementation of an HTML Table reading 
+	datastore implementation
+
+	dojox.data.FlickrRestStore - advanced version of: dojox.data.FlickrStore
+	(Caching + user key support)
+
+	dojox.data.FlickrStore - data store driven by Flickr.com public API.
+
+	dojox.data.HtmlTableStore - Implementation of an HTML Table reading
 	datastore
-	
-	dojox.data.HtmlStore - Implementation of an HTML reading datastore.  Can 
+
+	dojox.data.HtmlStore - Implementation of an HTML reading datastore.  Can
 	handle tables, ordered and un-ordered lists, and lists of divs.
-	
+
 	dojox.data.OpmlStore - Store for reading OMPL formatted data
-	
-	dojox.data.XmlStore - datastore for XML based services or  
+
+	dojox.data.XmlStore - datastore for XML based services or
 	documents.
 
 	dojox.data.QueryReadStore - datastore to provide serverside URL query
-	matching.  Similar to the 0.4.X ComboBox dataUrl parameter.	         
+	matching.  Similar to the 0.4.X ComboBox dataUrl parameter.
 
 	dojox.data.jsonPathStore - datastore that takes an arbitrary js object
 	and uses it as the store. Pre-Alpha at the moment.
@@ -95,7 +95,7 @@ Additional Notes:
 	dojox.data.PersevereStore - Extension of JsonRestStore for Persevere
 	dojox.data.CouchDBRestStore - Extension of JsonRestStore for CouchDB
 	dojox.data.S3JsonRestStore - Extension of JsonRestStore for Amazon S3
-	dojox.data.GoogleSearchStore - Store to interface Google's AJAX search services.  
+	dojox.data.GoogleSearchStore - Store to interface Google's AJAX search services.
 		There are many subclasses of this store for particular types of searches:
 		dojox.data.GoogleWebSearchStore
 		dojox.data.GoogleBlogSearchStore
@@ -105,10 +105,10 @@ Additional Notes:
 		dojox.data.GoogleBookSearchStore
 		dojox.data.GoogleImageSearchStore
 
-	dojox.data.AndOrReadStore - Demonstrating a more complex query format allowing AND/OR.  
+	dojox.data.AndOrReadStore - Demonstrating a more complex query format allowing AND/OR.
 	Based directly on dojo.data.ItemFileReadStore.
 
-	dojox.data.AndOrWriteStore - Demonstrating a more complex query format allowing AND/OR.  
+	dojox.data.AndOrWriteStore - Demonstrating a more complex query format allowing AND/OR.
 	Based directly on dojo.data.ItemFileWriteStore.
 
 	dojox.data.FileStore - A lazy-loading store designed for searching filesystems with a provided
@@ -122,6 +122,6 @@ Additional Notes:
 
 	dojox.data.AppStore - A store that implements full read, write, and identity APIs for working with ATOM documents.
 	The store uses the full APP protocol.
-        
+
 	dojox.data.OpenSearchStore - A store that implements OpenSearch provider search capability.
 

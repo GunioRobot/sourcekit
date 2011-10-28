@@ -3,7 +3,7 @@
         padding: 2px;
         overflow-x: auto;
         overflow-y: auto;
-        cursor: pointer;   
+        cursor: pointer;
 }
 .feedViewerEntry:hover {
         background: #a6c2e7;

@@ -1,26 +1,26 @@
 .dojoxUploaderNorm{
 	font-family:Myriad,Helvetica,Tahoma,Arial,clean,sans-serif;
 	font-size:12px;
-	border: 1px solid #c0c0c0; 
-	border-bottom: 1px solid #9b9b9b; 
-	padding: 0.1em 0.2em 0.2em 0.2em; 
+	border: 1px solid #c0c0c0;
+	border-bottom: 1px solid #9b9b9b;
+	padding: 0.1em 0.2em 0.2em 0.2em;
 	background: #fff url("../../../dijit/themes/tundra/images/buttonEnabled.png") repeat-x bottom left;
-	
+
 	vertical-align: middle;
-	
+
 	margin:0;
 	line-height:normal;
 	text-align:center;
 	white-space: nowrap;
-	
+
 	cursor: pointer;
 }
 .uploaderInsideNode{
 	visibility:hidden;
 }
 .dojoxUploaderHover{
-	border-color:		#a5beda; 
-	border-bottom-color:#5c7590; 
+	border-color:		#a5beda;
+	border-bottom-color:#5c7590;
 	color:#243C5F;
 	background:#fcfdff url("../../../dijit/themes/tundra/images/buttonHover.png") repeat-x bottom;
 }
@@ -30,13 +30,13 @@
 }
 .dojoxUploaderDisabled{
 	color: #7F7F7F;
-	border-color: #d5d5d5 #d5d5d5 #bdbdbd #d5d5d5; 
+	border-color: #d5d5d5 #d5d5d5 #bdbdbd #d5d5d5;
 	background:#e4e4e4 url("../../../dijit/themes/tundra/images/buttonDisabled.png") top repeat-x;
 }
 .soria .dojoxUploaderNorm {
 	border: 1px solid #8ba0bd;
 	border-bottom:1px solid #657c9c;
-	padding: 0.1em 0.2em 0.2em 0.2em; 
+	padding: 0.1em 0.2em 0.2em 0.2em;
 	background: #bcd5f0 url("../../../dijit/themes/soria/images/buttonEnabled.png") repeat-x top left;
 }
 .soria .dojoxUploaderHover{
@@ -55,7 +55,7 @@
 .nihilo .dojoxUploaderNorm {
 	border:1px solid #dedede;
 	border-bottom:1px solid #dedede;
-	padding: 0.1em 0.2em 0.2em 0.2em; 
+	padding: 0.1em 0.2em 0.2em 0.2em;
 	background: #fff url("../../../dijit/themes/nihilo/images/buttonEnabled.png") repeat-x top left;
 }
 .nihilo .dojoxUploaderHover{
@@ -129,6 +129,6 @@
 	font-size:10px;
 }
 .dj_ie object{
-	
+
 	display:block !important;
 }

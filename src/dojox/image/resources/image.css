@@ -1,6 +1,6 @@
 
 .dijitDialogUnderlay {
-	background-color:#000; 
+	background-color:#000;
 }
 .claro .dojoxLightbox,
 .soria .dojoxLightbox,
@@ -10,18 +10,18 @@
 	z-index:999;
 	overflow:hidden;
 	width:100px;
-	height:100px; 
+	height:100px;
 	border:11px solid #fff;
 	background:#fff url(images/loading.gif) no-repeat center center;
-	
-	-webkit-box-shadow: 0px 6px 10px #636363; 
+
+	-webkit-box-shadow: 0px 6px 10px #636363;
 	-webkit-border-radius: 3px;
 	-moz-border-radius:4px;
 	border-radius: 4px;
 }
 .dojoxLightboxContainer {
 	position:absolute;
-	top:0; left:0; 
+	top:0; left:0;
 }
 .dojoxLightboxFooter {
 	padding-bottom:5px;
@@ -34,7 +34,7 @@
 	font-size:10pt;
 }
 .dojoxLightboxGroupText {
-	color:#666; 
+	color:#666;
 	font-size:8pt;
 }
 .LightboxNext,
@@ -84,25 +84,25 @@
 	background-position:0 0;
 }
 .dojoxLightboxText {
-	margin:0; padding:0; 
+	margin:0; padding:0;
 }
-.slideShowWrapper { 
-	position:relative; 
+.slideShowWrapper {
+	position:relative;
 	background:#fff;
-	padding:8px; 
-	border:1px solid #333;	
+	padding:8px;
+	border:1px solid #333;
 	padding-bottom:20px;
 	overflow:hidden;
 	-moz-border-radius:3pt;
 	-webkit-border-radius:4pt;
-	-webkit-drop-shadow:#ccc 4pt; 
+	-webkit-drop-shadow:#ccc 4pt;
 }
-.slideShowNav { 
+.slideShowNav {
 	position:absolute;
-	bottom:-18px;	
+	bottom:-18px;
 	left:0px;
 	padding:0px 3px 2px 0px;
-	background-color:#fff; 
+	background-color:#fff;
 	width:100%;
 }
 .slideShowNavWrapper { float:right;  }
@@ -112,7 +112,7 @@
 	font-size:10pt;
 }
 .slideShowTitle .slideShowCounterText {
-	font-size:6pt; color:#666; 
+	font-size:6pt; color:#666;
 }
 .slideShowHidden {
 	position:absolute;
@@ -138,16 +138,16 @@
 }
 .slideShowSlideShow {
 	position:absolute;
-	top:30px; 
+	top:30px;
 	padding: 0 5px;
 	border: 0px;
-	text-decoration: none; 
+	text-decoration: none;
 	color: #2e6ab1;
 }
 .slideShowLoading { background-color: #fad66a; }
 .slideShowLoaded { background-color: transparent; }
 .slideShowCtrlPrev {
-	background-position: -96px 0px; 
+	background-position: -96px 0px;
 	float: left;
 }
 .slideShowCtrlNext {
@@ -184,12 +184,12 @@
 }
 .dj_ie6 .slideShowPager li.currentpage,
 .dj_ie6 .pagination li.disablepage{
-    
+
     margin-right: 5px;
     padding-right: 0;
 }
 .thumbWrapper .thumbNav {
-	background-repeat: no-repeat;	
+	background-repeat: no-repeat;
 	background-position: center;
 	padding-top: 1px;
 	width: 30px;
@@ -257,7 +257,7 @@
 	font-size: 1%;
 }
 .thumbWrapper .thumbLoaded {
-	background-color: transparent;	
+	background-color: transparent;
 }
 .thumbScroller {
 	overflow-x: hidden;
@@ -271,7 +271,7 @@
 }
 .thumbVert .thumbScroller {
 	height: 500px;
-	width: 100px;	
+	width: 100px;
 }
 .thumbWrapper {
 	float: left;

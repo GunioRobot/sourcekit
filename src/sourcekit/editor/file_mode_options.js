@@ -31,7 +31,7 @@ return {
         'text': { extensions: ['*'], label: 'Plain Text' },
         'xml': { extensions: ['xml'], label: 'XML' }
     },
-    
+
     findModeName: function(extension) {
         for (var key in this.modes) {
             var scanExtensions = this.modes[key].extensions;
@@ -42,17 +42,17 @@ return {
                 }
             }
         }
-        
+
         return 'text';
     },
-    
+
     findOptions: function(selectedMode) {
         var labelsOptions = [];
         for (var key in this.modes) {
             if (selectedMode == key) {
-                labelsOptions.push({ label: this.modes[key].label, value: key, selected: true }); 
+                labelsOptions.push({ label: this.modes[key].label, value: key, selected: true });
             } else {
-                labelsOptions.push({ label: this.modes[key].label, value: key }); 
+                labelsOptions.push({ label: this.modes[key].label, value: key });
             }
         }
         return labelsOptions;

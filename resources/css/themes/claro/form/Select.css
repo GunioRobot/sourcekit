@@ -17,7 +17,7 @@
 }
 .claro .dijitSelect .dijitArrowButton {
 	padding: 0;
-	border: 1px solid #fff;	
+	border: 1px solid #fff;
 	border-top:none;
 	background-color:#ebeef4;
 	background-image: url("images/formHighlight.png");
@@ -68,19 +68,19 @@
 	background-image: none;
 	color: #818181;
 }
-.claro .dijitSelectDisabled .dijitArrowButton { 
+.claro .dijitSelectDisabled .dijitArrowButton {
 	background-color: #efefef;
 }
 .claro .dijitSelectDisabled .dijitArrowButton .dijitArrowButtonInner {
 	background-position:0px 70%
 }
 .claro .dijitSelectMenu td.dijitMenuItemIconCell,
-.claro .dijitSelectMenu td.dijitMenuArrowCell { 
-	
-	display: none;  
+.claro .dijitSelectMenu td.dijitMenuArrowCell {
+
+	display: none;
 }
 .claro .dijitSelectMenu td.dijitMenuItemLabel {
-	
+
 	padding-left: 5px;
 	padding-right: 5px;
 }

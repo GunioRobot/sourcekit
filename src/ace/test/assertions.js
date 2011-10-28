@@ -38,7 +38,7 @@
 define(function(require, exports, module) {
 
 var assert = require("assert");
-    
+
 assert.position = function(cursor, row, column) {
     assert.equal(cursor.row, row);
     assert.equal(cursor.column, column);
@@ -50,7 +50,7 @@ assert.range = function(range, startRow, startColumn, endRow, endColumn) {
 };
 
 assert.notOk = function(value) {
-    assert.equal(value, false);   
+    assert.equal(value, false);
 }
 
 exports.jsonEquals = function(foundJson, expectedJson) {

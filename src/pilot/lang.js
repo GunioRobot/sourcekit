@@ -93,7 +93,7 @@ exports.deferredCall = function(fcn) {
     }
 
     deferred.schedule = deferred;
-    
+
     deferred.call = function() {
         this.cancel();
         fcn();
@@ -105,7 +105,7 @@ exports.deferredCall = function(fcn) {
         timer = null;
         return deferred;
     };
-    
+
     return deferred;
 };
 

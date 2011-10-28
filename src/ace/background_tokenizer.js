@@ -41,7 +41,7 @@ var oop = require("pilot/oop");
 var EventEmitter = require("pilot/event_emitter").EventEmitter;
 
 var BackgroundTokenizer = function(tokenizer, editor) {
-    this.running = false;    
+    this.running = false;
     this.lines = [];
     this.currentLine = 0;
     this.tokenizer = tokenizer;
@@ -135,7 +135,7 @@ var BackgroundTokenizer = function(tokenizer, editor) {
     this.$tokenizeRows = function(firstRow, lastRow) {
         if (!this.doc)
             return [];
-            
+
         var rows = [];
 
         // determine start state

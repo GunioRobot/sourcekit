@@ -66,11 +66,11 @@ var Document = function(text) {
         this.remove(new Range(0, 0, len, this.getLine(len-1).length));
         this.insert({row: 0, column:0}, text);
     };
-  	
+
     this.getValue = function() {
         return this.getAllLines().join(this.getNewLineCharacter());
     };
-    
+
     this.createAnchor = function(row, column) {
         return new Anchor(this, row, column);
     };

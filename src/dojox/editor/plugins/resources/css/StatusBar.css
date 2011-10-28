@@ -22,27 +22,27 @@
         cursor: ne-resize;
 }
 .dojoxResizeNE {
-	cursor: ne-resize; 
+	cursor: ne-resize;
 }
 .dijitRtl .dojoxResizeNE {
         cursor: nw-resize;
 }
 .dojoxResizeW {
-	cursor: w-resize; 
+	cursor: w-resize;
 }
-.dojoxResizeN { 
-	cursor: n-resize; 
+.dojoxResizeN {
+	cursor: n-resize;
 }
 .dojoxResizeHandleClone {
-	position:absolute; top:0; left:0; 
-	border:1px dashed #666; 
-	z-index:999; 
+	position:absolute; top:0; left:0;
+	border:1px dashed #666;
+	z-index:999;
 }
- 
+
 .dojoxEditorStatusBar {
         overflow: hidden;
         vertical-align: bottom;
-        padding: 2px; 
+        padding: 2px;
 }
 .dojoxEditorStatusBar table {
         width: 100%;
@@ -50,11 +50,11 @@
 .dojoxEditorStatusBar .dojoxResizeHandle {
         position: static;
         padding: 0px;
-        vertical-align: bottom; 
+        vertical-align: bottom;
 }
 .dojoxEditorStatusBar .dojoxEditorStatusBarText{
         height: 1.5em;
-        vertical-align: middle; 
+        vertical-align: middle;
         width: 100%;
         overflow: hidden;
 }
@@ -65,7 +65,7 @@
         border-style: solid;
         border-width: 1px;
         border-color: #B5BCC7;
-        
+
 }
 .tundra .dojoxEditorStatusBar {
         background-color: #EAEAEA;
@@ -74,7 +74,7 @@
         border-style: solid;
         border-width: 1px;
         border-color: #CCCCCC;
-        
+
 }
 .nihilo .dojoxEditorStatusBar {
         border-style: solid;
@@ -86,7 +86,7 @@
         border-style: solid;
         border-width: 1px;
         border-color: #CCCCCC;
-        
+
 }
 .soria .dojoxEditorStatusBar {
         border-style: solid;
@@ -98,5 +98,5 @@
         border-style: solid;
         border-width: 1px;
         border-color: #698FB3;
-        
+
 }

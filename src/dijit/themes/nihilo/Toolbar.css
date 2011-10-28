@@ -20,7 +20,7 @@
 .nihilo .dijitToolbar .dijitComboButton .dijitButtonContents,
 .nihilo .dijitToolbar .dijitComboButton .dijitDownArrowButton {
 	background: none;
-	padding: 1px;	
+	padding: 1px;
 }
 .nihilo .dijitToolbar .dijitButtonChecked,
 .nihilo .dijitToolbar .dijitToggleButtonChecked {
@@ -40,7 +40,7 @@
 .nihilo .dijitToolbar .dijitDropDownButtonHover,
 .nihilo .dijitToolbar .dijitComboButton .dijitButtonContentsHover,
 .nihilo .dijitToolbar .dijitComboButton .dijitDownArrowButtonHover {
-	
+
 	border: 1px solid #f7c95c;
 	padding: 0;
 	background-color:#ffe284;
@@ -50,7 +50,7 @@
 }
 .dj_ie .nihilo .dijitToolbar .dijitComboButton .dijitButtonContentsFocused,
 .dj_ie .nihilo .dijitToolbar .dijitComboButton .dijitDownArrowButtonFocused {
-	
+
 	border: 1px #555 dotted !important;
 	padding: 0px;
 }

@@ -64,7 +64,7 @@ Search.SELECTION = 2;
         oop.mixin(this.$options, options);
         return this;
     };
-    
+
     this.getOptions = function() {
         return lang.copyObject(this.$options);
     };

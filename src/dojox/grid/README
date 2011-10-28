@@ -51,7 +51,7 @@ or updated - but should work with any newer version of the dojo library.
 
 
 -------------------------------------------------------------------------------
-Sub-projects:									  
+Sub-projects:
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
@@ -100,6 +100,6 @@ Known issues
 Possible future changes
 
  1. A rich set of new features to be added, e.g. Exporter, Printer, Filter, Pagination ...
- 2. An activity of setting up a plug-in platform is in progress for future Grid versions, 
+ 2. An activity of setting up a plug-in platform is in progress for future Grid versions,
    by then all the EnhancedGrid features will be re-cast as separate plug-ins loaded on demand.
 -------------------------------------------------------------------------------

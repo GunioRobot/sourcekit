@@ -1,6 +1,6 @@
 
 .claro .dijitButtonNode {
-	
+
 	-webkit-transition-property:background-color;
  	-webkit-transition-duration:.3s;
 }
@@ -8,7 +8,7 @@
 .claro .dijitDropDownButton .dijitButtonNode,
 .claro .dijitComboButton .dijitButtonNode,
 .claro .dijitToggleButton .dijitButtonNode {
-	
+
 	border: 1px solid #769dc0;
 	padding:2px 4px 4px 4px;
 	background-image: url("images/button.png");
@@ -20,11 +20,11 @@
 	-webkit-border-radius: 4px;
 	box-shadow:0px 1px 1px rgba(0,0,0,0.15);
 	-webkit-box-shadow:0px 1px 1px rgba(0,0,0,0.15);
-	-moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.15);	
+	-moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
 }
 .claro .dijitComboButton .dijitArrowButton {
 	border-left-width: 0px;
-	padding: 4px 2px 4px 2px;	
+	padding: 4px 2px 4px 2px;
 }
 .claro .dijitArrowButtonInner {
 	width: 15px;
@@ -64,14 +64,14 @@
 }
 .claro .dijitButtonHover .dijitButtonNode,
 .claro .dijitDropDownButtonHover .dijitButtonNode,
-.claro .dijitComboButton .dijitButtonNodeHover, 
+.claro .dijitComboButton .dijitButtonNodeHover,
 .claro .dijitComboButton .dijitDownArrowButtonHover,
 .claro .dijitToggleButtonHover .dijitButtonNode {
 	background-color: #afd9ff;
 	color:#000;
  	-webkit-transition-duration:.2s;
 }
-.claro .dijitButtonActive .dijitButtonNode, 
+.claro .dijitButtonActive .dijitButtonNode,
 .claro .dijitDropDownButtonActive .dijitButtonNode,
 .claro .dijitComboButtonActive .dijitButtonNode,
 .claro .dijitToggleButtonActive .dijitButtonNode {
@@ -91,7 +91,7 @@
 .claro .dijitButtonDisabled .dijitButtonNode,
 .claro .dijitDropDownButtonDisabled .dijitButtonNode,
 .claro .dijitComboButtonDisabled .dijitButtonNode,
-.claro .dijitToggleButtonDisabled .dijitButtonNode { 
+.claro .dijitToggleButtonDisabled .dijitButtonNode {
 	background-position:0px -149px;
 	background-color: #e3e3e3;
 	border: solid 1px #c9c9c9;
@@ -100,11 +100,11 @@
 	-webkit-box-shadow:0px 0px 0px rgba(0,0,0,0);
 	-moz-box-shadow: 0px 0px 0px rgba(0,0,0,0);
 }
-.claro .dijitComboButtonDisabled .dijitArrowButton{ 
+.claro .dijitComboButtonDisabled .dijitArrowButton{
 	border-left-width: 0px;
 }
 .claro table.dijitComboButton {
-	border-collapse: separate;	
+	border-collapse: separate;
 }
 .dj_ie6 .claro .dijitButtonNode {
 	background-image: none;

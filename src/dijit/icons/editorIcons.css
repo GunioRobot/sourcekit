@@ -1,13 +1,13 @@
 
 .dijitEditorIcon {
-	background-image: url('images/editorIconsEnabled.png'); 
+	background-image: url('images/editorIconsEnabled.png');
 	background-repeat: no-repeat;
 	width: 18px;
 	height: 18px;
 	text-align: center;
 }
 .dijitDisabled .dijitEditorIcon {
-	background-image: url('images/editorIconsDisabled.png'); 
+	background-image: url('images/editorIconsDisabled.png');
 }
 .dijitEditorIconSep { background-position: 0px; }
 .dijitEditorIconSave { background-position: -18px; }

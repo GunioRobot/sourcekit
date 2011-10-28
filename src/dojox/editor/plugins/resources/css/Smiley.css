@@ -1,5 +1,5 @@
 .dijitAdditionalEditorIconSmiley {
-	
+
 	background-repeat: no-repeat;
 	background-position: center center;
 	width: 18px;
@@ -7,7 +7,7 @@
 	background-image: url(../icons/smiley.gif);
 }
 .dijitDisabled .dijitAdditionalEditorIconSmiley {
-	
+
 	background-image: url(../icons/smileyDisabled.gif);
 }
 .dijitEditorSmileyPalette {

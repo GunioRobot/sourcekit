@@ -2,10 +2,10 @@
 	/*
 		Copyright (c) 2004-2010, The Dojo Foundation
 		All Rights Reserved.
-	
+
 		Licensed under the Academic Free License version 2.1 or above OR the
 		modified BSD license. For more information on Dojo licensing, see:
-	
+
 			http://dojotoolkit.org/community/licensing.shtml
 	*/
 	Pieces taken from Dojo source to make this file stand-alone
@@ -17,23 +17,23 @@
 	<script type="text/javascript" src="isAllowed.js"></script>
 	<!--
 	BY DEFAULT THIS FILE DOES NOT WORK SO THAT YOU DON'T ACCIDENTALLY EXPOSE
-	ALL OF YOUR XHR-ENABLED SERVICES ON YOUR SITE. 
-	
+	ALL OF YOUR XHR-ENABLED SERVICES ON YOUR SITE.
+
 	In order for this file to work, you need to uncomment the start and end script tags,
 	and you should define a function with the following signature:
-	
+
 	function isAllowedRequest(request){
-		return false;	
+		return false;
 	}
-	
+
 	Return true out of the function if you want to allow the cross-domain request.
-	
+
 	DON'T DEFINE THIS FUNCTION IN THIS FILE! Define it in a separate file called isAllowed.js
 	and include it in this page with a script tag that has a src attribute pointing to the file.
 	See the very first script tag in this file for an example. You do not have to place the
 	script file in the same directory as this file, just update the path above if you move it
 	somewhere else.
-	
+
 	Customize the isAllowedRequest function to restrict what types of requests are allowed
 	for this server. The request object has the following properties:
 	- requestHeaders: an object with the request headers that are to be added to
@@ -43,10 +43,10 @@
 	- data: The URL-encoded data for the request. For a GET request, this would
 	        be the querystring parameters. For a POST request, it wll be the
 	        body data.
-	        
-	See xip_client.html for more info on the xip fragment identifier protocol.	
+
+	See xip_client.html for more info on the xip fragment identifier protocol.
 	-->
-	
+
 	<!-- Security protection: uncomment the script tag to enable. -->
 	<!-- script type="text/javascript" -->
 	// <!--
@@ -55,7 +55,7 @@
 		dojo.hostenv = {};
 		// These are in order of decreasing likelihood; this will change in time.
 		dojo.hostenv._XMLHTTP_PROGIDS = ['Msxml2.XMLHTTP', 'Microsoft.XMLHTTP', 'Msxml2.XMLHTTP.4.0'];
-		
+
 		dojo.hostenv.getXmlhttpObject = function(){
 				var http = null;
 			var last_e = null;
@@ -68,22 +68,22 @@
 					}catch(e){
 						last_e = e;
 					}
-		
+
 					if(http){
 						dojo.hostenv._XMLHTTP_PROGIDS = [progid];  // so faster next time
 						break;
 					}
 				}
-		
+
 				/*if(http && !http.toString) {
 					http.toString = function() { "[object XMLHttpRequest]"; }
 				}*/
 			}
-		
+
 			if(!http){
 				throw "xip_server.html: XMLHTTP not available: " + last_e;
 			}
-		
+
 			return http;
 		}
 
@@ -129,7 +129,7 @@
 
 	function messageReceived(encodedData){
 		var msg = unpackMessage(encodedData);
-		
+
 		switch(msg.command){
 			case "ok":
 				sendResponsePart();
@@ -140,7 +140,7 @@
 				setClientUrl("ok");
 				break;
 			case "part":
-				xipRequestMessage += msg.message;			
+				xipRequestMessage += msg.message;
 				setClientUrl("ok");
 				break;
 			case "end":
@@ -171,16 +171,16 @@
 			resIndex += part.length;
 		}
 		xipResponseParts.push(resData.substring(resIndex, resData.length));
-		
+
 		xipPartIndex = 0;
 		sendResponsePart();
 	}
-	
+
 	function sendResponsePart(){
 		if(xipPartIndex < xipResponseParts.length){
 			//Get the message part.
 			var partData = xipResponseParts[xipPartIndex];
-			
+
 			//Get the command.
 			var cmd = "part";
 			if(xipPartIndex + 1 == xipResponseParts.length){
@@ -222,26 +222,26 @@
 			- responseText
 		*/
 		var response = {};
-	
+
 		if(typeof(xhr.getAllResponseHeaders) != "undefined"){
 			var allHeaders = xhr.getAllResponseHeaders();
 			if(allHeaders){
 				response.responseHeaders = allHeaders;
 			}
 		}
-		
+
 		if(xhr.status == 0 || xhr.status){
 			response.status = xhr.status;
 		}
-		
+
 		if(xhr.statusText){
 			response.statusText = xhr.statusText;
 		}
-		
+
 		if(xhr.responseText){
 			response.responseText = xhr.responseText;
 		}
-	
+
 		//Build a string of the response object.
 		var result = "";
 		var isFirst = true;
@@ -281,15 +281,15 @@
 
 			request.requestHeaders = headers;
 		}
-		
+
 		if(isAllowedRequest(request)){
-		
+
 			//The request is allowed, so set up the XHR object.
 			var xhr = dojo.hostenv.getXmlhttpObject();
-			
+
 			//Start timer to look for readyState.
 			var xhrIntervalId = setInterval(function(){
-			
+
 				if(xhr.readyState == 4){
 					clearInterval(xhrIntervalId);
 					xhrDone(xhr);
@@ -299,7 +299,7 @@
 			//Actually start up the XHR request.
 			xhr.open(request.method, request.uri, true);
 			dojo.setHeaders(xhr, request.requestHeaders);
-			
+
 			var content = "";
 			if(request.data){
 				content = request.data;
@@ -341,7 +341,7 @@
 
 		xipStateId = config.id;
 		xipClientUrl = config.client;
-		
+
 		//Make sure we don't have a javascript: url, just for good measure.
 		if(xipClientUrl.split(":")[0].match(/javascript/i)){
 			throw "Invalid client URL";
@@ -349,9 +349,9 @@
 		if(!xipStateId.match(/^XhrIframeProxy[0-9]+$/)){
 			throw "Invalid state ID";
 		}
-	
+
 		setInterval(pollHash, 10);
-		
+
 		var serverUrl = window.location.href.split("#")[0];
 		document.getElementById("iframeHolder").innerHTML = '<iframe name="'
 			+ xipStateId + '_clientEndPoint'

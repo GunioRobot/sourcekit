@@ -97,7 +97,7 @@ var CssHighlightRules = function() {
         "vertical-ideographic|vertical-text|visible|w-resize|wait|whitespace|" +
         "zero").split("|")
     );
-    
+
     var colors = lang.arrayToMap(
         ("aqua|black|blue|fuchsia|gray|green|lime|maroon|navy|olive|orange|" +
         "purple|red|silver|teal|white|yellow").split("|")

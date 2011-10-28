@@ -74,7 +74,7 @@ proto.toggleCommentLines = function(state, doc, startRow, endRow){
         var line = doc.getLine(i);
         if (hereComment.test(line))
             continue;
-            
+
         if (commentLine.test(line))
             line = line.replace(commentLine, '$1');
         else

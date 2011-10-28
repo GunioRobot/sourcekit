@@ -10,7 +10,7 @@
 .dojoxGridRtl .dojoxGridArrowButtonNode {
 	float:left;
 }
-.dojoxGridRtl .dojoxGridNestedSort, 
+.dojoxGridRtl .dojoxGridNestedSort,
 .dojoxGridRtl .dojoxGridUnarySort {
 	text-align: right;
 }
@@ -28,7 +28,7 @@
 .dojoxGridRtl .dojoxGridUnarySortWrapper {
 	float: right;
 }
-.dojoxGridRtl .dojoxGridLoading, 
+.dojoxGridRtl .dojoxGridLoading,
 .dojoxGridRtl .dojoxGridError,
 .dojoxGridRtl .dojoxGridNoData {
 	background-position:right;

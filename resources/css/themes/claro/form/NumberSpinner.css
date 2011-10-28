@@ -6,7 +6,7 @@
 	padding: 0 2px;
 }
 .claro .dijitSpinnerButtonContainer .dijitSpinnerButtonInner {
-	border-width: 1px 0; 
+	border-width: 1px 0;
 	border-style: solid none;
 }
 .claro .dijitSpinner .dijitArrowButton {
@@ -18,26 +18,26 @@
 	overflow: hidden;
 }
 .dj_iequirks .claro .dijitSpinner .dijitArrowButton {
-	overflow: visible; 
+	overflow: visible;
 }
 .claro .dijitSpinner .dijitSpinnerButtonInner {
 	width: 15px;
 }
 .claro .dijitSpinner .dijitArrowButtonInner {
 	border:solid 1px #fff;
-	border-bottom-width: 0; 
+	border-bottom-width: 0;
 	background-image: url("images/commonFormArrows.png");
 	background-repeat: no-repeat;
 	height: 100%;
 	width:15px;
 	padding-left: 1px;
 	padding-right: 1px;
-	
+
 	background-position:-139px center;
-	
+
 	display: block;
-	margin: -1px 0px -1px 0px;	
-	#margin-top: 0; 
+	margin: -1px 0px -1px 0px;
+	#margin-top: 0;
 }
 .dj_iequirks .claro .dijitSpinner .dijitArrowButtonInner {
 	width: 19px;
@@ -74,7 +74,7 @@
 }
 .claro .dijitSpinner .dijitUpArrowButtonActive .dijitArrowButtonInner,
 .claro .dijitSpinner .dijitDownArrowButtonActive .dijitArrowButtonInner {
-	
+
 	border: 0px;
 	padding: 1px;
 	margin-right:2px;
@@ -97,4 +97,4 @@
 }
 .dj_ie7 .claro .dijitSpinner {
 	overflow:visible;
-} 
+}

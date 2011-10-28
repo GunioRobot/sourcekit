@@ -6,7 +6,7 @@ var deps = [
     "sourcekit/application",
     "pilot/plugin_manager",
     "pilot/settings",
-    "pilot/environment"    
+    "pilot/environment"
 ];
 
 var plugins = [

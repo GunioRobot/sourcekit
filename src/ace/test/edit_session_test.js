@@ -179,7 +179,7 @@ var Test = {
         session.setUseWrapMode(true);
         session.setWrapLimitRange(2, 2);
         session.adjustWrapLimit(80);
-        
+
         assert.position(session.documentToScreenPosition(0, 1), 1, 0);
         assert.position(session.documentToScreenPosition(0, 2), 2, 0);
         assert.position(session.documentToScreenPosition(0, 4), 2, 1);
@@ -217,7 +217,7 @@ var Test = {
         session = new EditSession(["ぁ a"]);
         session.setUseWrapMode(true);
         session.adjustWrapLimit(80);
-        
+
         assert.position(session.screenToDocumentPosition(0, 1), 0, 0);
         assert.position(session.screenToDocumentPosition(0, 2), 0, 1);
         assert.position(session.screenToDocumentPosition(0, 3), 0, 2);

@@ -43,7 +43,7 @@ var JavaScriptMode = require("ace/mode/javascript").Mode;
 var assert = require("../assertions");
 
 var Test = {
-    setUp : function() {    
+    setUp : function() {
         this.mode = new JavaScriptMode();
     },
 
@@ -72,7 +72,7 @@ var Test = {
 
     "test: toggle comment lines twice should return the original text" : function() {
 	    var session = new EditSession(["  abc", "cde", "fg"]);
-	
+
 	    this.mode.toggleCommentLines("start", session, 0, 2);
 	    this.mode.toggleCommentLines("start", session, 0, 2);
 	    assert.equal(["  abc", "cde", "fg"].join("\n"), session.toString());

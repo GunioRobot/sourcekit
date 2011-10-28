@@ -1,7 +1,7 @@
 {
 	"SMDVersion": "2.0",
 	// FIXME: is this the kind of value we're supposed to use here?
-	"id": "http://developer.yahoo.com/search/", 
+	"id": "http://developer.yahoo.com/search/",
 	"description": "Yahoo's search API",
 
 	transport: "JSONP",
@@ -14,7 +14,7 @@
 
 	// FIXME: Quite a few of these APIs can take multiple entries for the same parameter, to behave
 	//        as multi-select options. How should we handle these?
-	
+
 	// ANSWER: JSON Schema defines this aspect of SMD, enumeration of possible values is handled
 	//	with an "options" attribute. For example:
 	//	{ name: "search_in", type: "string", optional: true, "default": "all", options:["all", "question", "best_answer"]}, // can be "all", "question", "best_answer"
@@ -140,7 +140,7 @@
 		//
 		// CONTENT ANALYSIS
 		//
-		
+
 		// http://developer.yahoo.com/search/content/V1/termExtraction.html
 		termExtraction: {
 			// FIXME: the API docs say to submit this as a POST, but we need JSONP for cross-domain, right?
@@ -155,7 +155,7 @@
 		//
 		// CONTEXT SEARCH
 		//
-		
+
 		// http://developer.yahoo.com/search/content/V1/contextSearch.html
 		contextSearch: {
 			target: "http://search.yahooapis.com/WebSearchService/V1/contextSearch",

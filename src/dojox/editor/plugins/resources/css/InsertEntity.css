@@ -1,5 +1,5 @@
 .dijitAdditionalEditorIconInsertEntity {
-	
+
 	background-image: url(../icons/insertEntity.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -7,19 +7,19 @@
 	height: 18px;
 }
 .dijitDisabled .dijitAdditionalEditorIconInsertEntity {
-	
+
 	background-image: url(../icons/insertEntityDisabled.gif);
 }
 .dojoxEntityPalette {
-	
+
 	border: 1px solid #999;
 	background: #fff;
 	-moz-border-radius: 3pt;
 }
 .dojoxEntityPaletteCell {
-	
+
 	border: 1px dotted gray;
-	width: 20px;	
+	width: 20px;
 	line-height: 18px;
 	overflow: hidden;
 	z-index: 10;

@@ -6,13 +6,13 @@
 	text-align: right;
 }
 .dj_iequirks .dijitComboButtonRtl BUTTON {
-	
+
 	float:left;
 }
 .dijit_a11y .dijitTextBoxRtl .dijitValidationContainer,
 .dijitTextBoxRtl .dijitSpinnerButtonContainer,
 .dijitComboBoxRtl .dijitArrowButtonContainer {
-	
+
 	border-right-width: 1px !important;
 	border-right-style: solid !important;
 	border-left-width: 0px !important;
@@ -62,7 +62,7 @@
 	zoom:1;
 }
 .dijitSliderRtl .dijitSliderProgressBarH {
-	
+
 	float:right;
 	right:0;
 	left:auto;
@@ -79,7 +79,7 @@
 	width:100%;
 }
 .dijitColorPaletteRtl .dijitColorPaletteUnder {
-	
+
 	left: auto;
 	right: 0;
 }

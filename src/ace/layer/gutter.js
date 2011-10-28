@@ -73,12 +73,12 @@ var Gutter = function(parentEl) {
 
     this.setAnnotations = function(annotations) {
         // iterate over sparse array
-        this.$annotations = [];        
+        this.$annotations = [];
         for (var row in annotations) if (annotations.hasOwnProperty(row)) {
             var rowAnnotations = annotations[row];
             if (!rowAnnotations)
                 continue;
-                
+
             var rowInfo = this.$annotations[row] = {
                 text: []
             };

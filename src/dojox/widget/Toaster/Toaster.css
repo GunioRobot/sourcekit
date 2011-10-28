@@ -4,7 +4,7 @@
 	padding-top:0.25em;
 	background:#73c74a;
 }
-.dijitToasterMessage{ 
+.dijitToasterMessage{
 	color:#fff;
 }
 .dijitToasterWarning{ }
@@ -17,13 +17,13 @@
 	padding:1em;
 	padding-top:0.25em;
 	background:#d4d943;
-} 
+}
 .dijitToasterError .dijitToasterContent{
 	padding:1em;
 	padding-top:0.25em;
 	background:#c46600;
 }
- 
+
 .dijitToasterClip {
 	position: absolute;
 	z-index: 5000;
@@ -36,4 +36,4 @@
 	margin: 0px;
 	font:0.75em Tahoma, Helvetica, Verdana, Arial;
 }
- 
+

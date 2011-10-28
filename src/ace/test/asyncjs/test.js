@@ -17,13 +17,13 @@ exports.TestGenerator = function(source) {
 oop.inherits(exports.TestGenerator, async.Generator)
 
 ;(function() {
-    
+
     this.exec = function() {
         this.run().report().summary(function(err, passed) {
             console.log("DONE")
         })
     }
-    
+
     this.run = function() {
         return this.setupTest()
             .each(function(test, next) {
@@ -46,7 +46,7 @@ oop.inherits(exports.TestGenerator, async.Generator)
                     next()
             })
     }
-    
+
     this.report = function() {
         return this.each(function(test, next) {
             var color = test.passed ? "\x1b[32m" : "\x1b[31m"
@@ -54,20 +54,20 @@ oop.inherits(exports.TestGenerator, async.Generator)
             if (test.suiteName)
                 name = test.suiteName + ": " + test.name
             console.log(color + "[" + test.count + "/" + test.index + "] " + name + " " + (test.passed ? "OK" : "FAIL") + "\x1b[0m")
-            if (!test.passed)                
+            if (!test.passed)
                 if (test.err.stack)
                     console.log(test.err.stack)
                 else
                     console.log(test.err)
-                    
+
             next()
         })
     }
-    
+
     this.summary = function(callback) {
         var passed = 0
         var failed = 0
-        
+
         this.each(function(test) {
             if (test.passed)
                 passed += 1
@@ -80,19 +80,19 @@ oop.inherits(exports.TestGenerator, async.Generator)
             console.log(                  "Total number of tests: " + (passed + failed))
             passed && console.log("\x1b[32mPassed tests:          " + passed + "\x1b[0m")
             failed && console.log("\x1b[31mFailed tests:          " + failed + "\x1b[0m")
-            console.log("")            
+            console.log("")
             callback(null, failed == 0)
         })
     }
-    
+
     this.setupTest = function() {
         return this.each(function(test, next) {
             var empty = function(next) { next() }
             var context = test.context || this
-            
+
             if (test.setUp)
                 var setUp = async.makeAsync(0, test.setUp, context)
-            else 
+            else
                 setUp = empty
 
             tearDownCalled = false
@@ -100,16 +100,16 @@ oop.inherits(exports.TestGenerator, async.Generator)
                 var tearDownInner = async.makeAsync(0, test.tearDown, context)
             else
                 tearDownInner = empty
-                
+
             function tearDown(next) {
                 tearDownCalled = true
                 tearDownInner.call(test.context, next)
             }
 
             var testFn = async.makeAsync(0, test.fn, context)
-                
-            test.test = function(callback) {    
-                var called            
+
+            test.test = function(callback) {
+                var called
                 function errorListener(e) {
                     if (called)
                         return
@@ -126,7 +126,7 @@ oop.inherits(exports.TestGenerator, async.Generator)
                         callback(e, false)
                 }
                 //process.addListener('uncaughtException', errorListener)
-                
+
                 async.list([setUp, testFn, tearDown])
                     .delay(0)
                     .call(context)
@@ -136,25 +136,25 @@ oop.inherits(exports.TestGenerator, async.Generator)
                             return
                         called = true
                         var err = errors[1]
-                        //process.removeListener('uncaughtException', errorListener)                            
-                        callback(err, !err)                        
+                        //process.removeListener('uncaughtException', errorListener)
+                        callback(err, !err)
                     })
             }
-            
+
             next()
         })
     }
-    
+
 }).call(exports.TestGenerator.prototype)
 
 exports.testcase = function(testcase, suiteName, timeout) {
     var methods = []
     for (var method in testcase)
         methods.push(method)
-        
+
     var setUp = testcase.setUp || null
     var tearDown = testcase.tearDown || null
-    
+
     var single
     methods.forEach(function(name) {
         if (name.charAt(0) == '>')
@@ -162,8 +162,8 @@ exports.testcase = function(testcase, suiteName, timeout) {
     })
     if (single)
         methods = [single]
-    
-    var testNames = methods.filter(function(method) { 
+
+    var testNames = methods.filter(function(method) {
         return method.match(/^>?test/) && typeof(testcase[method]) == "function"
     })
     var count = testNames.length

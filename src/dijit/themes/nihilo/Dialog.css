@@ -6,7 +6,7 @@
 	padding: 0px;
 }
 .nihilo .dijitDialog .dijitDialogTitle {
-	
+
 	font-size: 0.9em;
 	color: #3243C5F;
 	font-weight: bold;
@@ -18,13 +18,13 @@
 	padding:10px;
 }
 .nihilo .dijitDialogTitleBar {
-	
+
 	background: #fafafa url("images/titleBar.png") repeat-x top left;
 	padding: 5px 6px 3px 6px;
-	outline:0; 
+	outline:0;
 }
 .nihilo .dijitDialogCloseIcon {
-	
+
 	background-image: url("images/spriteRoundedIconsSmall.png");
 	background-repeat: no-repeat;
 	background-position: -60px 0px;
@@ -43,35 +43,35 @@
 }
 .nihilo .dijitTooltip,
 .nihilo .dijitTooltipDialog {
-	
-	background: transparent;	
+
+	background: transparent;
 }
 .dijitTooltipBelow {
-	
+
 	padding-top: 10px;
 }
 .dijitTooltipAbove {
-	
+
 	padding-bottom: 10px;
 }
 .nihilo .dijitTooltipContainer {
-	
+
 	background-color: #fff;
 	border:1px solid #d3d3d3;
 	padding:0.45em;
 }
 .nihilo .dijitTooltipConnector {
-	
+
 	border:0px;
 	z-index: 2;
 }
 .nihilo .dijitTooltipABRight .dijitTooltipConnector {
-	
+
 	left: auto !important;
 	right: 6px;
 }
 .nihilo .dijitTooltipBelow .dijitTooltipConnector {
-	
+
 	top: 0px;
 	left: 6px;
 	background:url("images/tooltipConnectorUp.png") no-repeat top left;
@@ -82,7 +82,7 @@
 	background-image: url("images/tooltipConnectorUp.gif");
 }
 .nihilo .dijitTooltipAbove .dijitTooltipConnector {
-	
+
 	bottom: 0px;
 	left: 6px;
 	background:url("images/tooltipConnectorDown.png") no-repeat top left;
@@ -102,7 +102,7 @@
 	padding-left: 11px;
 }
 .nihilo .dijitTooltipLeft .dijitTooltipConnector {
-	
+
 	right: 0px;
 	bottom: 3px;
 	background:url("images/tooltipConnectorRight.png") no-repeat top left;
@@ -116,7 +116,7 @@
 	padding-left: 10px;
 }
 .nihilo .dijitTooltipRight .dijitTooltipConnector {
-	
+
 	left: 0px;
 	bottom: 3px;
 	background:url("images/tooltipConnectorLeft.png") no-repeat top left;

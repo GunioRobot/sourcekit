@@ -584,7 +584,7 @@ var VirtualRenderer = function(container, theme) {
         // the editor is not visible
         if (this.$size.scrollerHeight === 0)
             return;
-            
+
         var pos = this.$cursorLayer.getPixelPosition();
 
         var left = pos.left + this.$padding;
@@ -638,7 +638,7 @@ var VirtualRenderer = function(container, theme) {
         for (var l = 1; l < line; l++) {
             offset += this.session.getRowHeight(lineHeight, l-1);
         }
-            
+
         if (center) {
             offset -= this.$size.scrollerHeight / 2;
         }

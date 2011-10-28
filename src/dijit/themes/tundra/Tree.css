@@ -2,7 +2,7 @@
 .tundra .dijitTreeNode {
     background-image : url('images/i.gif');
     background-repeat : repeat-y;
-    zoom: 1;	
+    zoom: 1;
 }
 .tundra .dijitTreeIsLast {
     background: url('images/i_half.gif') no-repeat;
@@ -16,7 +16,7 @@
     height: 18px;
 }
 .tundra .dijitTreeRow {
-	
+
 	padding-bottom: 2px;
 }
 .tundra .dijitTreeContent {
@@ -27,7 +27,7 @@
 	background:#e2ebfe;
 }
 .tundra .dijitTreeRowHover {
-	
+
 	background-image: url(images/treeHover.png);
 	background-repeat: repeat;
 	background-color: transparent !important;
@@ -63,10 +63,10 @@
 	border-top: none;
 }
 .tundra .dijitTreeNode .dojoDndItemBefore .dijitTreeContent {
-	
+
 	border-top: 2px solid #369;
 }
 .tundra .dijitTreeNode .dojoDndItemAfter .dijitTreeContent {
-	
+
 	border-bottom: 2px solid #369;
 }

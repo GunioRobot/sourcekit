@@ -92,10 +92,10 @@ var Test = {
         assert.equal("text", tokens[1].type);
         assert.equal("rparen", tokens[2].type);
     },
-    
+
     "test for last rule in ruleset to catch capturing group bugs" : function() {
         var tokens = this.tokenizer.getLineTokens("}", "start").tokens;
-        
+
         assert.equal(1, tokens.length);
         assert.equal("rparen", tokens[0].type);
     }

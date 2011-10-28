@@ -1,6 +1,6 @@
 
 .soria .dijitButtonNode {
-	
+
 	border: 1px solid #8ba0bd;
 	border-bottom:1px solid #657c9c;
 	padding: 0.1em 0.2em 0.2em 0.2em;
@@ -27,7 +27,7 @@
 .soria .dijitComboButtonDisabled .dijitButtonNode,
 .soria .dijitTextBoxDisabled,
 .soria .dijitTextBoxDisabled .dijitButtonNode {
-	
+
 	border-color: #b9bbdd #b9bbdd #b9bbdd #b9bbdd;
 	background:#c3d3e5 url("../images/buttonDisabled.png") top repeat-x;
 	opacity: 0.60;
@@ -36,7 +36,7 @@
 .dj_ie7 .soria .dijitReadOnly INPUT,
 .dj_ie6 .soria .dijitComboButtonDisabled .dijitButtonText,
 .dj_ie7 .soria .dijitComboButtonDisabled .dijitButtonText {
-	
+
 	color: #aaa;
 }
 .soria .dijitButtonHover .dijitButtonNode,
@@ -46,8 +46,8 @@
 .soria .dijitButtonContentsHover,
 .soria .dijitUpArrowButtonHover,
 .soria .dijitDownArrowButtonHover {
-	
-	
+
+
 	color:#243C5F;
 	background:#acc5e2 url("../images/buttonHover.png") repeat-x top left;
 }
@@ -56,13 +56,13 @@
 .soria .dijitDropDownButtonActive .dijitButtonNode,
 .soria .dijitComboButtonActive .dijitButtonContents,
 .soria .dijitStackController .dijitToggleButtonChecked .dijitButtonNode {
-	
+
 	border-color:#657c9c;
 	background: #91b4e5 url("../images/buttonActive.png") top left repeat-x;
 }
 .soria .dijitUpArrowButtonActive,
 .soria .dijitDownArrowButtonActive {
-	
+
 	background: #91b4e5 url("../images/buttonActive.png") top left repeat-x;
 }
 .soria .dijitArrowButtonInner {
@@ -88,7 +88,7 @@
 	background-image: url("../images/spriteArrows.gif");
 }
 .dj_ie .soria .dijitSpinner .dijitUpArrowButton .dijitArrowButtonInner {
-	margin-top: 1px; 
+	margin-top: 1px;
 }
 .soria .dijitSpinnerButtonContainer {
 	width: auto;

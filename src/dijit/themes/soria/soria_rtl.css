@@ -7,13 +7,13 @@
 	text-align: right;
 }
 .dj_iequirks .dijitComboButtonRtl BUTTON {
-	
+
 	float:left;
 }
 .dijit_a11y .dijitTextBoxRtl .dijitValidationContainer,
 .dijitTextBoxRtl .dijitSpinnerButtonContainer,
 .dijitComboBoxRtl .dijitArrowButtonContainer {
-	
+
 	border-right-width: 1px !important;
 	border-right-style: solid !important;
 	border-left-width: 0px !important;
@@ -63,7 +63,7 @@
 	zoom:1;
 }
 .dijitSliderRtl .dijitSliderProgressBarH {
-	
+
 	float:right;
 	right:0;
 	left:auto;
@@ -80,7 +80,7 @@
 	width:100%;
 }
 .dijitColorPaletteRtl .dijitColorPaletteUnder {
-	
+
 	left: auto;
 	right: 0;
 }
@@ -89,7 +89,7 @@
 }
 .dijitRtl .soria .dijitTab {
 	margin-right:0;
-	margin-left:2px;		
+	margin-left:2px;
 }
 .dijitRtl .soria .dijitTabContainer .tabStripButton {
 	margin-left: 0;
@@ -125,7 +125,7 @@
 	background-position: 0px top;
 }
 .dijitRtl .soria .dijitAccordionTitleSelected .dijitAccordionArrow {
-	
+
 	background-position: -15px top;
 }
 .dijitRtl .soria .dijitSliderProgressBarH,
@@ -165,7 +165,7 @@
 }
 .dijitRtl .soria .dijitTreeNode,
 .dijitRtl .soria .dijitTreeExpandoLeaf {
-	
+
     background-image: none;
 }
 .dijitRtl .soria .dijitTreeContent {
@@ -173,11 +173,11 @@
     padding-right: 1px;
 }
 .dijitRtl .soria .dijitTreeExpandoOpened {
-	
+
 	background: url(images/spriteTree_rtl.gif) no-repeat -18px top;
 }
 .dijitRtl .soria .dijitTreeExpandoClosed {
-	
+
 	background-image: url(images/spriteTree_rtl.gif);
 }
 .dijitRtl .soria .dijitTitlePane .dijitClosed .dijitArrowNode {
@@ -194,7 +194,7 @@
 }
 .dj_ie6-rtl .soria .dijitTimePickerMarkerHover,
 .dj_ie7-rtl .soria .dijitTimePickerMarkerHover {
-        border-top: 0px; 
+        border-top: 0px;
 }
 .dijitRtl .soria .dijitDialogTitleBar .dijitDialogCloseIcon {
 	right: auto;
@@ -208,18 +208,18 @@
 	background-position: left top;
 }
 .dijitRtl .soria .dijitEditorIcon {
-	background-image: url(../../icons/images/editorIconsEnabled_rtl.png); 
+	background-image: url(../../icons/images/editorIconsEnabled_rtl.png);
 }
 .dijitRtl .soria .dijitDisabled .dijitEditorIcon {
-	background-image: url(../../icons/images/editorIconsDisabled_rtl.png); 
+	background-image: url(../../icons/images/editorIconsDisabled_rtl.png);
 }
 .dijitEditorRtl .dijitEditorIcon {
-	background-image: url(../../icons/images/editorIconsEnabled_rtl.png); 
+	background-image: url(../../icons/images/editorIconsEnabled_rtl.png);
 }
 .dijitEditorRtlDisabled .dijitEditorIcon {
-	background-image: url(../../icons/images/editorIconsDisabled_rtl.png); 
+	background-image: url(../../icons/images/editorIconsDisabled_rtl.png);
 }
 .dijitToolbarRtl .dijitToolbarSeparator {
 	background-image: url(../../icons/images/editorIconsEnabled_rtl.png);
 }
- 
+

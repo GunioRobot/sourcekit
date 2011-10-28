@@ -141,7 +141,7 @@ var Test = {
         editor.onTextInput("\n");
         assert.equal(["", "{"].join("\n"), session.toString());
     },
-	
+
     "test: outdent block" : function() {
         var session = new EditSession(["        a12345", "    b12345", "        c12345"].join("\n"));
         var editor = new Editor(new MockRenderer(), session);
@@ -435,55 +435,55 @@ var Test = {
         editor.removeLeft();
         assert.equal(session.toString(), "123\n    456");
     },
-    
+
     "test: transpose at line start should be a noop": function() {
         var session = new EditSession(["123", "4567", "89"]);
-        
+
         var editor = new Editor(new MockRenderer(), session);
         editor.moveCursorTo(1, 0);
         editor.transposeLetters();
-        
+
         assert.equal(session.getValue(), ["123", "4567", "89"].join("\n"));
     },
-    
+
     "test: transpose in line should swap the charaters before and after the cursor": function() {
         var session = new EditSession(["123", "4567", "89"]);
-        
+
         var editor = new Editor(new MockRenderer(), session);
         editor.moveCursorTo(1, 2);
         editor.transposeLetters();
-        
+
         assert.equal(session.getValue(), ["123", "4657", "89"].join("\n"));
     },
-    
+
     "test: transpose at line end should swap the last two characters": function() {
         var session = new EditSession(["123", "4567", "89"]);
-        
+
         var editor = new Editor(new MockRenderer(), session);
         editor.moveCursorTo(1, 4);
         editor.transposeLetters();
-        
+
         assert.equal(session.getValue(), ["123", "4576", "89"].join("\n"));
     },
-    
+
     "test: transpose with non empty selection should be a noop": function() {
         var session = new EditSession(["123", "4567", "89"]);
-        
+
         var editor = new Editor(new MockRenderer(), session);
         editor.moveCursorTo(1, 1);
         editor.getSelection().selectRight();
         editor.transposeLetters();
-        
+
         assert.equal(session.getValue(), ["123", "4567", "89"].join("\n"));
     },
-    
+
     "test: transpose should move the cursor behind the last swapped character": function() {
         var session = new EditSession(["123", "4567", "89"]);
-        
+
         var editor = new Editor(new MockRenderer(), session);
         editor.moveCursorTo(1, 2);
         editor.transposeLetters();
-        assert.position(editor.getCursorPosition(), 1, 3);        
+        assert.position(editor.getCursorPosition(), 1, 3);
     }
 };
 

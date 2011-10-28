@@ -2,10 +2,10 @@
 	/*
 		Copyright (c) 2004-2010, The Dojo Foundation
 		All Rights Reserved.
-	
+
 		Licensed under the Academic Free License version 2.1 or above OR the
 		modified BSD license. For more information on Dojo licensing, see:
-	
+
 			http://dojotoolkit.org/community/licensing.shtml
 	*/
 -->
@@ -19,7 +19,7 @@
 	<!-- Security protection: uncomment the start and end script tags to enable. -->
 	<!-- script type="text/javascript" -->
 	// <!--
-	
+
 	function pollHash(){
 		//Can't use location.hash because at least Firefox does a decodeURIComponent on it.
 		var urlParts = window.location.href.split("#");
@@ -57,7 +57,7 @@
 
 	//************** Init **************************
 	xipCurrentHash = "";
-	
+
 	//Decode the init params
 	var fragId = window.location.href.split("#")[1];
 	var config = unpackMessage(fragId).config;
@@ -86,7 +86,7 @@
 
 	//Call the master frame to let it know it is OK to start sending.
 	callMaster(xipStateId, "0:loaded");
-	
+
 	//Start counter to inspect hash value.
 	setInterval(pollHash, 10);
 

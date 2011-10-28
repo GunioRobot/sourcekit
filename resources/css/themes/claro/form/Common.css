@@ -9,7 +9,7 @@
 }
 .claro .dijitTextBoxError .dijitValidationIcon {
 	width: 0px;
-	background-color: transparent !important; 
+	background-color: transparent !important;
 }
 .claro .dijitTextBox .dijitInputContainer,
 .claro .dijitTextArea,
@@ -18,7 +18,7 @@
 }
 .claro .dijitTextBox,
 .claro .dijitTextBox .dijitButtonNode {
-	
+
 	border-color: #b5bcc7;
 	-webkit-transition-property:background-color, border;
  	-webkit-transition-duration:.35s;
@@ -80,15 +80,15 @@
 	border: 1px solid #fff;
 }
 .claro .dijitTextBox .dijitInputField {
-	padding-top: 1px; 
+	padding-top: 1px;
 	padding-bottom: 1px;
 }
 .claro .dijitTextBox .dijitInputInner {
-	
-	padding: 1px 2px 1px 0; 
+
+	padding: 1px 2px 1px 0;
 }
 .claro .dijitTextBox .dijitValidationContainer {
-	padding: 0 0 2px 0; 
+	padding: 0 0 2px 0;
 }
 .claro .dijitComboBox .dijitButtonNode {
 	background-color: #ebeef4;
@@ -105,13 +105,13 @@
 	background-color:#7dbefa;
 	background-position:0px -177px;
 	padding: 1px;
-}	
+}
 .claro .dijitComboBoxFocused .dijitArrowButtonInner {
 	background-position:-70px 53%;
 	border: 0px none;
 }
 .claro div.dijitComboBoxDisabled .dijitArrowButtonInner {
-	
+
 	background-position:0px 50%;
 	background-color:#f1f1f1;
 }

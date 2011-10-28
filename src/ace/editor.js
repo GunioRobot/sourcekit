@@ -63,7 +63,7 @@ var Editor =function(renderer, session) {
 
     this.textInput  = new TextInput(renderer.getTextAreaContainer(), this);
     this.keyBinding = new KeyBinding(this);
-    
+
     // TODO detect touch event support
     if (useragent.isIPad) {
         //this.$mouseHandler = new TouchHandler(this);
@@ -158,16 +158,16 @@ var Editor =function(renderer, session) {
 
         this.$onChangeFrontMarker = this.onChangeFrontMarker.bind(this);
         this.session.addEventListener("changeFrontMarker", this.$onChangeFrontMarker);
-        
+
         this.$onChangeBackMarker = this.onChangeBackMarker.bind(this);
         this.session.addEventListener("changeBackMarker", this.$onChangeBackMarker);
-        
+
         this.$onChangeBreakpoint = this.onChangeBreakpoint.bind(this);
         this.session.addEventListener("changeBreakpoint", this.$onChangeBreakpoint);
 
         this.$onChangeAnnotation = this.onChangeAnnotation.bind(this);
         this.session.addEventListener("changeAnnotation", this.$onChangeAnnotation);
-        
+
         this.$onCursorChange = this.onCursorChange.bind(this);
         this.session.addEventListener("changeOverwrite", this.$onCursorChange);
 
@@ -308,7 +308,7 @@ var Editor =function(renderer, session) {
 
     this.$updateHighlightActiveLine = function() {
         var session = this.getSession();
-        
+
         if (session.$highlightLineMarker) {
             session.removeMarker(session.$highlightLineMarker);
         }
@@ -323,7 +323,7 @@ var Editor =function(renderer, session) {
 
     this.onSelectionChange = function(e) {
         var session = this.getSession();
-        
+
         if (session.$selectionMarker) {
             session.removeMarker(session.$selectionMarker);
         }
@@ -344,11 +344,11 @@ var Editor =function(renderer, session) {
     this.onChangeFrontMarker = function() {
         this.renderer.updateFrontMarkers();
     };
-    
+
     this.onChangeBackMarker = function() {
         this.renderer.updateBackMarkers();
     };
-    
+
     this.onChangeBreakpoint = function() {
         this.renderer.setBreakpoints(this.session.getBreakpoints());
     };
@@ -429,18 +429,18 @@ var Editor =function(renderer, session) {
         var lineIndent    = this.mode.getNextLineIndent(lineState, line.slice(0, cursor.column), this.session.getTabString());
         var end           = this.session.insert(cursor, text);
 
-        
+
         var lineState = this.bgTokenizer.getState(cursor.row);
         // TODO disabled multiline auto indent
         // possibly doing the indent before inserting the text
         // if (cursor.row !== end.row) {
         if (this.session.getDocument().isNewLine(text)) {
             this.moveCursorTo(cursor.row+1, 0);
-            
+
             var size        = this.session.getTabSize(),
                 minIndent   = Number.MAX_VALUE;
 
-            
+
             for (var row = cursor.row + 1; row <= end.row; ++row) {
                 var indent = 0;
 
@@ -472,7 +472,7 @@ var Editor =function(renderer, session) {
             if (shouldOutdent) {
                 this.mode.autoOutdent(lineState, this.session, cursor.row);
             }
-        };        
+        };
     }
 
     this.onTextInput = function(text) {
@@ -484,7 +484,7 @@ var Editor =function(renderer, session) {
     };
 
     this.setOverwrite = function(overwrite) {
-        this.session.setOverwrite();        
+        this.session.setOverwrite();
     };
 
     this.getOverwrite = function() {
@@ -601,7 +601,7 @@ var Editor =function(renderer, session) {
         this.session.remove(this.getSelectionRange());
         this.clearSelection();
     };
-    
+
     this.removeWordRight = function() {
         if (this.$readOnly)
             return;
@@ -612,7 +612,7 @@ var Editor =function(renderer, session) {
         this.session.remove(this.getSelectionRange());
         this.clearSelection();
     };
-    
+
     this.removeWordLeft = function() {
         if (this.$readOnly)
             return;
@@ -623,7 +623,7 @@ var Editor =function(renderer, session) {
         this.session.remove(this.getSelectionRange());
         this.clearSelection();
     };
-    
+
     this.removeToLineStart = function() {
         if (this.$readOnly)
             return;
@@ -634,7 +634,7 @@ var Editor =function(renderer, session) {
         this.session.remove(this.getSelectionRange());
         this.clearSelection();
     };
-    
+
     this.removeToLineEnd = function() {
         if (this.$readOnly)
             return;
@@ -649,30 +649,30 @@ var Editor =function(renderer, session) {
     this.splitLine = function() {
         if (this.$readOnly)
             return;
-        
+
         if (!this.selection.isEmpty()) {
             this.session.remove(this.getSelectionRange());
             this.clearSelection();
         }
-    
+
         var cursor = this.getCursorPosition();
         this.insert("\n");
         this.moveCursorToPosition(cursor);
     };
-    
+
     this.transposeLetters = function() {
         if (this.$readOnly)
             return;
-        
+
         if (!this.selection.isEmpty()) {
             return;
         }
-    
+
         var cursor = this.getCursorPosition();
         var column = cursor.column;
         if (column == 0)
             return;
-        
+
         var line = this.session.getLine(cursor.row);
         if (column < line.length) {
             var swap = line.charAt(column) + line.charAt(column-1);
@@ -684,7 +684,7 @@ var Editor =function(renderer, session) {
         }
         this.session.replace(range, swap);
     };
-    
+
     this.indent = function() {
         if (this.$readOnly)
             return;
@@ -897,7 +897,7 @@ var Editor =function(renderer, session) {
     this.scrollToLine = function(line, center) {
         this.renderer.scrollToLine(line, center);
     };
-    
+
     this.centerSelection = function() {
         var range = this.getSelectionRange();
         var line = Math.floor(range.start.row + (range.end.row - range.start.row) / 2);
@@ -922,7 +922,7 @@ var Editor =function(renderer, session) {
         this.selection.selectAll();
         this.$blockScrolling -= 1;
     };
-    
+
     this.clearSelection = function() {
         this.selection.clearSelection();
     };
@@ -1049,7 +1049,7 @@ var Editor =function(renderer, session) {
         this.$blockScrolling += 1;
         for (var i = ranges.length - 1; i >= 0; --i)
             this.$tryReplace(ranges[i], replacement);
-        
+
         this.selection.setSelectionRange(selection);
         this.$blockScrolling -= 1;
     },

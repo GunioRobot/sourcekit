@@ -29,7 +29,7 @@
 	margin-right:5px;
 }
 .dj_ie6 .drawingToolbar .drawingButton {
-	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale src='images/tool_sprites.png');	
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale src='images/tool_sprites.png');
 }
 .vertical.drawingToolbar .drawingButton{
 	margin-bottom:5px;
@@ -58,7 +58,7 @@
 	clip: rect(0px 32px 32px 0px);
 }
 .drawingToolbar .drawingButton.selected .icon{
-	
+
 	top:-32px;
 	clip: rect(32px 32px 64px 0px);
 }
@@ -90,7 +90,7 @@
 	background-position:-351px 0px;
 }
 .dj_ie6 .drawingToolbar .drawingButton .icon {
-	
+
 	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale src='images/tool_icons.png');
 }
 .drawingToolbar.vertical .toolCombo .drawingButton.toolComboTop{

@@ -4,14 +4,14 @@
 	// adapted from: http://www.geonames.org/export/JSON-webservices.html
 	// http://creativecommons.org/licenses/by/3.0/
 	// INCOMPLETE IMPLEMENTATION
-	
+
 	"SMDVersion":"2.0",
 	"id":"/geonames",
 	"transport":"JSONP",
 	"envelope":"URL",
 	"target": "http://ws.geonames.org/",
 
-	"parameters" : [ 
+	"parameters" : [
 		{name:"type", optional: false, "default":"JSON"}
 	],
 
@@ -25,7 +25,7 @@
 				{ name: "country", type:"STRING", optional: true },
 				{ name: "lang", type:"STRING"}, // default: "en"
 				{ name: "maxRows", type:"INTEGER", optional: true } // default: 10
-			]	
+			]
 		},
 
 		getCities:{
@@ -40,7 +40,7 @@
 				{ name: "west", type:"FLOAT"},
 				{ name: "lang", type:"STRING"}, // default: "en"
 				{ name: "maxRows", type:"INTEGER", optional: true } // deault: 10
-			]	
+			]
 		},
 
 		"getQuakes":{
@@ -100,7 +100,7 @@
 		},
 
 		"getHierarchy":{
-			// Result : returns a list of GeoName records, ordered by hierarchy 
+			// Result : returns a list of GeoName records, ordered by hierarchy
 			// level. The top hierarchy (continent) is the first element in the list
 			"target": "hierarchyJSON",
 			"parameters": [
@@ -125,7 +125,7 @@
 			"parameters":[
 				{ name:"lat", type:"FLOAT" },
 				{ name:"lng", type:"FLOAT" },
-				{ name:"radius", type:"FLOAT" } 
+				{ name:"radius", type:"FLOAT" }
 			]
 		},
 
@@ -148,7 +148,7 @@
 			"parameters": [
 				{ name:"lat", type:"FLOAT" },
 				{ name:"lng", type:"FLOAT" },
-				{ name:"lang", type:"STRING",optional:true }, 
+				{ name:"lang", type:"STRING",optional:true },
 				{ name:"radius", type:"FLOAT" }
 			]
 		},
@@ -162,7 +162,7 @@
 				{ name:"long", type:"FLOAT" },
 				{ name:"radius", type:"FLOAT" }
 			]
-                }, 
+                },
 
 		"getWikipediaBoundingBox":{
 			// returns the wikipedia entries within the bounding box as xml document

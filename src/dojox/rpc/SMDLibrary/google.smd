@@ -3,19 +3,19 @@
 	// http://code.google.com/apis/ajaxsearch/documentation/reference.html
 	// PLEASE Read the Google Terms of Service:
 	// http://code.google.com/apis/ajaxsearch/terms.html
-	
+
 	"SMDVersion": "2.0",
-	"id": "http://ajax.googleapis.com/ajax/services/search/", 
+	"id": "http://ajax.googleapis.com/ajax/services/search/",
 	"description": "Google Ajax API",
-		
+
 	"transport": "JSONP",
 	"envelope": "URL",
 	"additionalParameters": true,
-	
+
 	"parameters": [
 		// the most important param, the search query:
 		{ "name": "q", optional: false, "default":"" },
-		
+
 		// Google doesn't require, but appreciates, you using an API key
 		// see: http://code.google.com/apis/ajaxsearch/signup.html
 		// { "name": "key", optional: true, "default": "[enter your key]" },
@@ -31,7 +31,7 @@
 
 		{ "name": "alt", optional:false, "default": "json" },
 
-		// API version: only 1.0 supported 
+		// API version: only 1.0 supported
 		{ "name": "v", optional:false, "default": "1.0" }
 	],
 
@@ -43,7 +43,7 @@
 				{ "name": "cx", "type":"string", "optional":true }, // unique id
 				{ "name": "cref", "type":"string", "optional":true }, // linked custom search engine
 				{ "name": "safe", "type":"string", "optional":true }, // active | moderate | off
-				// lr: see: http://www.google.com/coop/docs/cse/resultsxml.html#languageCollections	
+				// lr: see: http://www.google.com/coop/docs/cse/resultsxml.html#languageCollections
 				{ "name": "lr", "type":"string", "optional":true } // restrict to lang
 			]
 		},
@@ -97,7 +97,7 @@
 			"target": "http://ajax.googleapis.com/ajax/services/search/images",
 			"parameters": [
 				// safe: active | moderate | off
-				{ "name": "safe", "type":"string", "optional":true }, 
+				{ "name": "safe", "type":"string", "optional":true },
 				// limit image size: one of: icon, small|medium|large|xlarge, xxlarge, huge
 				{ "name": "imgsz", "type":"string", "optional": true },
 				// limit image color: one of: mono|gray|color
@@ -116,7 +116,7 @@
 			// pass a feed URL in the q parameter
 			"parameters": []
 		},
-		
+
 		"translate" : {
 			"target" : "http://ajax.googleapis.com/ajax/services/language/translate",
 			"parameters": [
@@ -124,6 +124,6 @@
 				{ "name":"langpair", "type":"string", optional:false }
 			]
 		}
-		
+
 	}
 }

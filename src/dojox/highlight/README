@@ -24,8 +24,8 @@ Documentation
 -------------------------------------------------------------------------------
 Installation instructions
 
-simply get the dojox/highlight folder (and dojox/highlight.js)  from the 
-dojox SVN repository, and include in your page via 
+simply get the dojox/highlight folder (and dojox/highlight.js)  from the
+dojox SVN repository, and include in your page via
 
 dojo.require("dojox.highlight");
 

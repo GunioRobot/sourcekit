@@ -53,7 +53,7 @@ var Marker = function(parentEl) {
     this.setSession = function(session) {
         this.session = session;
     };
-    
+
     this.setMarkers = function(markers) {
         this.markers = markers;
     };
@@ -65,7 +65,7 @@ var Marker = function(parentEl) {
 
         this.config = config;
 
-        var html = [];        
+        var html = [];
         for ( var key in this.markers) {
             var marker = this.markers[key];
 
@@ -76,7 +76,7 @@ var Marker = function(parentEl) {
 
             if (marker.renderer) {
                 var top = this.$getTop(range.start.row, config);
-                var left = Math.round(range.start.column * config.characterWidth);        
+                var left = Math.round(range.start.column * config.characterWidth);
                 marker.renderer(html, range, left, top, config);
             }
             else if (range.isMultiLine()) {

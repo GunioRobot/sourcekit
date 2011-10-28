@@ -7,20 +7,20 @@ Release date: 11/18/2008
 Project state: experimental
 -------------------------------------------------------------------------------
 Project authors
-	Jared Jurkiewicz (jared.jurkiewicz@gmail.com) 
+	Jared Jurkiewicz (jared.jurkiewicz@gmail.com)
 	Benjamin Schell (Corporate CLA)
 
 -------------------------------------------------------------------------------
 Project description
 
-The DojoX Atom project is an implementation of the ATOM document format in a 
+The DojoX Atom project is an implementation of the ATOM document format in a
 JavaScript model and a full Atom Publishing Protocol (APP) io library for working
 with ATOM feeds
 
 -------------------------------------------------------------------------------
 Dependencies:
 
-DojoX Atom has dependencies on core dojo (dojo.data) and the D.O.H. unit test 
+DojoX Atom has dependencies on core dojo (dojo.data) and the D.O.H. unit test
 framework.
 -------------------------------------------------------------------------------
 Documentation:
@@ -47,7 +47,7 @@ Install into the following directory structure:
 
 Require in the sections you wish to use (the model, IO library, etc)
 -------------------------------------------------------------------------------
-Additional Notes: 
+Additional Notes:
 	This library is still undergoing some work and as such the API may change
 	hence the marking of 'experimental'.
 

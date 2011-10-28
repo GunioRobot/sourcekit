@@ -13,7 +13,7 @@ Credits
 Project description
 
 The XHR IFrame Proxy (xip) allows you to do cross-domain XMLHttpRequests (XHRs).
-It works by using two iframes, one your domain (xip_client.html), one on the 
+It works by using two iframes, one your domain (xip_client.html), one on the
 other domain (xip_server.html). They use fragment IDs in the iframe URLs to pass
 messages to each other. The xip.js file defines dojox.io.proxy.xip. This module
 intercepts XHR calls made by the Dojo XHR methods (dojo.xhr* methods). The module

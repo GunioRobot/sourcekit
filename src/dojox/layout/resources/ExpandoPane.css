@@ -1,21 +1,21 @@
-	
+
 	.dojoxExpandoPane {
 		overflow:hidden;
 		z-index:440 !important;
 	}
-	
+
 	.dojoxExpandoPane .dojoxExpandoWrapper {
 		overflow:hidden;
 	}
 	.dojoxExpandoClosed .dojoxExpandoTitleNode {
 		display:none;
 	}
-	
+
 	.dojoxExpandoClosed .dojoxExpandoWrapper * {
 		overflow:hidden !important;
 	}
 	.dojoxExpandoTitleNode {
-		padding-right:6px; 
+		padding-right:6px;
 		padding-left:6px;
 	}
 	.dojoxExpandoIcon .a11yNode {
@@ -43,11 +43,11 @@
 		background-position: 0px 0px;
 		margin:0 auto;
 	}
-	
+
 	.dijitBorderContainer-dijitExpandoPane {
-		border: none !important; 
+		border: none !important;
 	}
-	
+
 	.soria .dojoxExpandoTitle {
 		height:16px;
 		font-size:0.9em;
@@ -59,28 +59,28 @@
 		border-left: 1px solid #B1BADF;
 		border-right: 1px solid #B1BADF;
 	}
-	
+
 	.soria .dojoxExpandoClosed .dojoxExpandoTitle {
 		background: none;
 		background-color: #F0F4FC;
 		border: none;
 	}
-	
+
 	.soria .dojoxExpandoClosed {
 		background: none;
 		background-color: #F0F4FC;
 		border: 1px solid #B1BADF !important;
 	}
-	
+
 	.soria .dojoxExpandoIcon {
 		background-image: url('../../../dijit/themes/soria/images/spriteRoundedIconsSmall.png');
 	}
-	
+
 	.dj_ie6 .soria .dojoxExpandoIcon {
 		background-image: url('../../../dijit/themes/soria/images/spriteRoundedIconsSmall.gif');
 	}
-		
-	
+
+
 	.tundra .dojoxExpandoTitle {
 		font-weight: bold;
 		padding: 5px;
@@ -91,14 +91,14 @@
 		border-left: 1px solid #ccc;
 		border-right: 1px solid #ccc;
 	}
-		
+
 	.tundra .dojoxExpandoClosed .dojoxExpandoTitle {
 		background: none;
 		background-color: #fafafa;
 		border: none;
 		padding:3px;
 	}
-	
+
 	.tundra .dojoxExpandoClosed {
 		background: none;
 		background-color: #fafafa;
@@ -110,19 +110,19 @@
 	.tundra .dojoxExpandoClosed {
 		background-color: #fafafa;
 	}
-	
+
 	.tundra .dojoxExpandoIcon {
 		background-image: url('../../../dijit/themes/tundra/images/spriteRoundedIconsSmall.gif');
 	}
-	
+
 	.tundra .dojoxExpandoClosed .dojoxExpandoIconLeft,
 	.tundra .dojoxExpandoClosed .dojoxExpandoIconRight,
 	.tundra .dojoxExpandoClosed .dojoxExpandoIconTop,
 	.tundra .dojoxExpandoClosed .dojoxExpandoIconBottom {
 		margin-top: 3px;
 	}
-	
-	
+
+
 	.claro .dojoxExpandoTitle {
 		font-weight: bold;
 		border:1px solid #769DC0;
@@ -135,14 +135,14 @@
         min-height:17px;
         color:#4a4a4a;
 	}
-		
+
 	.claro .dojoxExpandoClosed .dojoxExpandoTitle {
 		background: none;
 		background-color: #E6E6E7;
 		border: none;
 		padding:3px;
 	}
-	
+
 	.claro .dojoxExpandoClosed {
 		background: none;
 		background-color: #E6E6E7;
@@ -157,24 +157,24 @@
 		background-image: url("../../../dijit/themes/claro/layout/images/accordion.png");
 		background-position:0 0;
 	}
-	
-	
+
+
 	.claro .dojoxExpandoIcon {
 		background-image: url('../../../dijit/themes/tundra/images/spriteRoundedIconsSmall.gif');
 	}
-	
+
 	.claro .dojoxExpandoClosed .dojoxExpandoIconLeft,
 	.claro .dojoxExpandoClosed .dojoxExpandoIconRight,
 	.claro .dojoxExpandoClosed .dojoxExpandoIconTop,
 	.claro .dojoxExpandoClosed .dojoxExpandoIconBottom {
 		margin-top: 3px;
 	}
-	
-	
+
+
 	.nihilo .dojoxExpandoPane {
 		background: #fafafa;
 	}
-	
+
 	.nihilo .dojoxExpandoTitle {
 		height:16px;
 		font-size:0.9em;
@@ -186,35 +186,35 @@
 		border-left: 1px solid #ccc;
 		border-right: 1px solid #ccc;
 	}
-	
+
 	.nihilo .dojoxExpandoClosed .dojoxExpandoTitle {
 		background: none;
 		background-color: #fafafa;
 		border: none;
 	}
-	
+
 	.nihilo .dojoxExpandoClosed {
 		background: none;
 		background-color: #fafafa;
 		border: 1px solid #ccc !important;
 	}
-	
+
 	.nihilo .dojoxExpandoIcon {
 		background-image: url('../../../dijit/themes/nihilo/images/spriteRoundedIconsSmall.png');
 	}
-	
+
 	.dj_ie6 .nihilo .dojoxExpandoIcon {
 		background-image: url('../../../dijit/themes/nihilo/images/spriteRoundedIconsSmall.gif');
 	}
-		
+
 	.nihilo .dojoxExpandoTop {
 		border-bottom:1px solid #ccc;
 		border-left:1px solid #ccc;
-		border-right:1px solid #ccc; 
+		border-right:1px solid #ccc;
 	}
-	
-	
-	
+
+
+
 	.dojoxExpandoClosed .dojoxExpandoIcon {
 		margin-right:4px;
 	}

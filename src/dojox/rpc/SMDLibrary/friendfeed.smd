@@ -5,7 +5,7 @@
 
 	transport: "JSONP",
 	envelope: "URL",
-	
+
 	additionalParameters: true,
 	parameters: [
 		{ name: "format",  optional: false, "default": "json" },
@@ -38,7 +38,7 @@
 			parameters: [
 				{ name: "url", type: "string", optional: false, "default": "" }
 			]
-		},	  
+		},
 		domain: {
 			target: "http://friendfeed.com/api/feed/domain",
 			parameters: [

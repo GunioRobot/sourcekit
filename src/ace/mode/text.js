@@ -74,7 +74,7 @@ var Mode = function() {
 
         return "";
     };
-    
+
     this.createWorker = function(session) {
         return null;
     };

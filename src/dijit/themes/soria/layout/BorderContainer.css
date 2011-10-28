@@ -5,18 +5,18 @@
 }
 .soria .dijitSplitContainer-child,
 .soria .dijitBorderContainer-child {
-	
+
 	border: 1px #b1badf solid;
 }
 .soria .dijitBorderContainer-dijitTabContainerTop,
 .soria .dijitBorderContainer-dijitTabContainerBottom,
 .soria .dijitBorderContainer-dijitTabContainerLeft,
 .soria .dijitBorderContainer-dijitTabContainerRight {
-	
+
 	 border: none;
 }
 .soria .dijitBorderContainer-dijitBorderContainer {
-	
+
 	border: none;
 	padding: 0px;
 }

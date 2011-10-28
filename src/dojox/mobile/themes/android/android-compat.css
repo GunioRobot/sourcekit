@@ -75,7 +75,7 @@
 	background-color: #ADAAAD;
 	margin: 0px 5px;
 }
-*html li.mblListItem.mblVariableHeight { 
+*html li.mblListItem.mblVariableHeight {
 	height: 0;
 }
 li.mblListItem .mblArrow {
@@ -206,7 +206,7 @@ li.mblItemSelected .mblArrow {
 .mblTabButtonSelected {
 	background-image: url(compat/tab-sel-button-bg.png);
 }
-*html .mblTabButton { 
+*html .mblTabButton {
 	behavior: expression(
 		(function(el){
 			if(!el.previousSibling)

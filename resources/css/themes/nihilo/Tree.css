@@ -3,13 +3,13 @@
     background : url('images/treeI.gif') no-repeat;
     background-position : top left;
     background-repeat : repeat-y;
-    zoom: 1;	
+    zoom: 1;
 }
 .nihilo .dijitTreeIsLast {
     background: url('images/treeI_half.gif') no-repeat;
 }
 .nihilo .dijitTreeRowHover {
-	
+
 	background-image: url(images/treeHover.png);
 	background-repeat: repeat;
 	background-color: transparent !important;
@@ -27,7 +27,7 @@
     height: 18px;
 }
 .nihilo .dijitTreeRow {
-	
+
 	padding-bottom: 2px;
 }
 .nihilo .dijitTreeContent {
@@ -66,10 +66,10 @@
 	border-top: none;
 }
 .nihilo .dijitTreeNode .dojoDndItemBefore .dijitTreeContent {
-	
+
 	border-top: 2px solid #369;
 }
 .nihilo .dijitTreeNode .dojoDndItemAfter .dijitTreeContent {
-	
+
 	border-bottom: 2px solid #369;
 }

@@ -164,7 +164,7 @@ var TextInput = function(parentNode, host) {
     };
 
     if (useragent.isIE) {
-        event.addListener(text, "beforecopy", function(e) {        
+        event.addListener(text, "beforecopy", function(e) {
             var copyText = host.getCopyText();
             if(copyText)
                 clipboardData.setData("Text", copyText);

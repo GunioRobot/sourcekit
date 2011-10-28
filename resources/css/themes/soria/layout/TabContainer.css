@@ -26,7 +26,7 @@
 }
 .soria .dijitTab {
 	line-height:normal;
-	margin:0 2px 0 0;	
+	margin:0 2px 0 0;
 	padding:0px;
 	background: url("../images/tabContainerSprite.gif") no-repeat 0 -300px;
 	color: #243C5F;
@@ -52,7 +52,7 @@
 }
 .soria .dijitTabChecked
 {
-	
+
 	background: url("../images/tabContainerSprite.gif") no-repeat 0px -0px;
 }
 .soria .dijitTabChecked .dijitTabInnerDiv {
@@ -70,7 +70,7 @@
 .soria .dijitTabContainerTabListNested .dijitTab {
 	background: none;
 	border: none;
-	top: 0px;	
+	top: 0px;
 }
 .soria .dijitTabContainerTabListNested .dijitTab .dijitTabInnerDiv,
 .soria .dijitTabContainerTabListNested .dijitTab .dijitTabContent {
@@ -84,11 +84,11 @@
 	font-weight: bold;
 }
 .soria .dijitTabContainerSpacerNested .dijitTabSpacer {
-	
+
 	height: 0px;
 }
 .soria .dijitTabPaneWrapperNested {
-	border: none;	
+	border: none;
 }
 .soria .dijitTabCloseButton {
 	width: 15px;
@@ -106,12 +106,12 @@
 	background: url("../images/spriteRoundedIconsSmall.gif") no-repeat -60px -15px;
 }
 .soria .dijitTab .tabLabel {
-	
+
 	min-height: 15px;
 	display: inline-block;
 }
 .dj_ie6 .soria .dijitTabButtonIcon {
-	
+
 	height: 18px;
 	width: 1px;
 }
@@ -187,7 +187,7 @@
 	background: url("../images/tabBottomHoverC.gif") repeat-x bottom left;
 }
 .soria .dijitTabContainerBottom-tabs .dijitTabChecked {
-	
+
 	background: url("../images/tabBottomActiveSpriteLR.gif") no-repeat bottom left;
 }
 .soria .dijitTabContainerBottom-tabs .dijitTabChecked .dijitTabInnerDiv {
@@ -304,7 +304,7 @@
 .soria .dijitTabContainerLeft-tabs .dijitTab,
 .soria .dijitTabContainerRight-tabs .dijitTab {
 	margin-right:auto;
-	margin-bottom:2px;	
+	margin-bottom:2px;
 }
 .soria .dijitTabContainerLeft-spacer,
 .soria .dijitTabContainerRight-spacer {

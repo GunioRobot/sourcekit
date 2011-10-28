@@ -1,12 +1,12 @@
 
 .claro .dijitTreeNode {
-    zoom: 1;	
+    zoom: 1;
 }
 .claro .dijitTreeIsRoot {
     background-image: none;
 }
 .claro .dijitTreeRow {
-	
+
 	padding: 4px 1px 2px 0px;
 	margin-left: 1px;
 	background-image: url("images/commonHighlight.png");
@@ -35,7 +35,7 @@
 	margin-left: 0px;
 	border:solid 1px #769dc0;
 	color:#000;
-	-webkit-transition-duration:.25s ; 
+	-webkit-transition-duration:.25s ;
 }
 .claro .dijitTreeRowActive {
 	background-color:#7dbefa;
@@ -55,7 +55,7 @@
 	background-image: url('images/treeExpandImages.png');
     width: 16px;
     height: 16px;
-	background-position: -35px 0px		
+	background-position: -35px 0px
 }
 .dj_ie6 .claro .dijitTreeExpando {
 	background-image: url('images/treeExpandImages8bit.png');

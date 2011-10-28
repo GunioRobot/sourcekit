@@ -34,7 +34,7 @@
 		 *         ]
 		 *     }
 		 * }
-		 * 
+		 *
 		 * Not sure why we'd ever want an element to be named "*", but that's
 		 * how it is. So take care.
 		 *

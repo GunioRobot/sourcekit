@@ -92,7 +92,7 @@ oop.inherits(Mode, TextMode);
         if (tokens.length && tokens[tokens.length-1].type == "comment") {
             return indent;
         }
-        
+
         if (state == "start") {
             var match = line.match(/^.*[\{\(\[]\s*$/);
             if (match) {
@@ -121,12 +121,12 @@ oop.inherits(Mode, TextMode);
     this.autoOutdent = function(state, doc, row) {
         this.$outdent.autoOutdent(doc, row);
     };
-    
+
     this.createWorker = function(session) {
         var doc = session.getDocument();
         var worker = new WorkerClient(["ace", "pilot"], "worker-javascript.js", "ace/mode/javascript_worker", "JavaScriptWorker");
         worker.call("setValue", [doc.getValue()]);
-        
+
         doc.on("change", function(e) {
             e.range = {
                 start: e.data.range.start,
@@ -134,7 +134,7 @@ oop.inherits(Mode, TextMode);
             };
             worker.emit("change", e);
         });
-            
+
         worker.on("jslint", function(results) {
             var errors = [];
             for (var i=0; i<results.data.length; i++) {
@@ -148,18 +148,18 @@ oop.inherits(Mode, TextMode);
                         lint: error
                     })
             }
-                    
+
             session.setAnnotations(errors)
         });
-        
+
         worker.on("narcissus", function(e) {
             session.setAnnotations([e.data]);
         });
-        
+
         worker.on("terminate", function() {
             session.clearAnnotations();
         });
-        
+
         return worker;
     };
 

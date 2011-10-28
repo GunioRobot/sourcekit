@@ -3,7 +3,7 @@
         background: #FFFFFF;
 }
 .feedEntryViewerMenuTable {
-        background: #C0C0C0;      
+        background: #C0C0C0;
         border:2px solid;
         border-top-color: lightgrey;
         border-left-color: lightgrey;
@@ -32,9 +32,9 @@
         color:#000000;
         background: #FFFFFF;
         text-align: left;
-        
+
         font-size:  125%;
-        font-weight: bold; 
+        font-weight: bold;
 }
 .feedEntryViewerAuthor {
         color:#000000;
@@ -44,7 +44,7 @@
         color:#000000;
         background: #FFFFFF;
         text-align: left;
-        
+
         font-size:  110%;
         font-style: italic;
         font-weight: normal;
@@ -82,7 +82,7 @@
 .feedEntryViewerContributorNames {
         color:#000000;
         text-align: left;
-        
+
         font-size:  125%;
         font-weight: normal;
 }

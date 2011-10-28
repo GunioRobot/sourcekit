@@ -2746,10 +2746,10 @@ loop:   for (;;) {
     /*
      * Parses a single block. A block is a sequence of statements wrapped in
      * braces.
-     * 
-     * ordinary - true for everything but function bodies and try blocks. 
-     * stmt     - true if block can be a single statement (e.g. in if/for/while).     
-     */ 
+     *
+     * ordinary - true for everything but function bodies and try blocks.
+     * stmt     - true if block can be a single statement (e.g. in if/for/while).
+     */
     function block(ordinary, stmt) {
         var a,
             b = inblock,
@@ -5853,5 +5853,5 @@ loop:   for (;;) {
 // Make JSHINT a Node module, if possible.
 if (typeof exports == 'object' && exports)
     exports.JSHINT = JSHINT;
-    
+
 });

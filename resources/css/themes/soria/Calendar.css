@@ -1,6 +1,6 @@
 
 .soria .dijitCalendarIncrementControl {
-	
+
 	width:15px;
 	height:15px;
 	background-image: url("images/spriteRoundedIconsSmall.png");
@@ -27,7 +27,7 @@
 	margin: 0;
 }
 .soria .dijitCalendarMonthContainer th {
-	
+
 	background:#bed7f0 url("images/titleBar.png") repeat-x top;
 	padding-top:.3em;
 	padding-bottom:.2em;
@@ -38,7 +38,7 @@
 	padding-bottom:.1em;
 }
 .soria .dijitCalendarDayLabelTemplate {
-	
+
 	background:#bed7f0;
 	font-weight:normal;
 	padding-top:.15em;
@@ -55,7 +55,7 @@
 	font-weight: bold;
 }
 .soria .dijitCalendarDateTemplate {
-	
+
 	font-size: 0.9em;
 	font-weight: bold;
 	text-align: center;
@@ -69,40 +69,40 @@
 }
 .soria .dijitCalendarPreviousMonth,
 .soria .dijitCalendarNextMonth 		{
-	
+
 	color:#999999;
 	background-color:#fdfdfd !important;
 	border:#fdfdfd solid 1px !important;
 }
 .soria .dijitCalendarCurrentMonth {
-	
+
 }
 .soria .dijitCalendarDisabledDate {
 	text-decoration:line-through !important;
 }
 .soria .dijitCalendarCurrentDate {
-	
+
 	text-decoration:underline;
 	font-weight:bold;
 }
 .soria .dijitCalendarSelectedDate {
-	
+
 	background-color:#b9cbf1 !important;
 	color:black !important;
 	border:#4b5aaa solid 1px !important;
 }
 .soria .dijitCalendarYearContainer {
-	
+
 	background:white url("images/titleBar.png") repeat-x top;
 }
 .soria .dijitCalendarYearLabel {
-	
+
 	margin:0;
 	padding:0.4em 0 0.25em 0;
 	text-align:center;
 }
 .soria .dijitCalendarSelectedYear {
-	
+
 	color:black;
 	padding:0.2em;
 	padding-bottom:0.1em;
@@ -111,7 +111,7 @@
 }
 .soria .dijitCalendarNextYear,
 .soria .dijitCalendarPreviousYear {
-	
+
 	color:black !important;
 	font-weight:normal;
 }

@@ -81,7 +81,7 @@
 	background-color: #CCCCCC;
 }
 .soria .dojoxCollapsibleToolbarControl {
-	vertical-align: top;    
+	vertical-align: top;
 	border-bottom: 1px solid #ccc;
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
@@ -144,5 +144,5 @@
 .dijit_a11y .dojoxCollapsibleToolbarExpandText {
 	display: inline;
 	padding: 3px;
-	font-weight: bold; 
+	font-weight: bold;
 }

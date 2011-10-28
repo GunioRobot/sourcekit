@@ -1,7 +1,7 @@
 @echo off
 
 rem Build script for dojox.mobile
-rem 
+rem
 rem Note:
 rem You may need to manually apply the following patch to your build script
 rem in order to completely remove all the unused modules from your build.
@@ -11,7 +11,7 @@ rem unexpectedly picks up unused modules.
 rem For example, if you see query.js and NodeList.js baked into your build,
 rem while you are not using them, then it is worth trying the patch.
 rem The file to be patched is util/buildscripts/jslib/buildUtil.js.
-rem 
+rem
 rem --- buildUtil.js-orig
 rem +++ buildUtil.js
 rem @@ -1506,7 +1506,7 @@

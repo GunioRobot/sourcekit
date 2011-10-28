@@ -27,7 +27,7 @@ Rule	Arg	2000	only	-	Mar	3	0:00	0	-
 Rule	Arg	2007	only	-	Dec	30	0:00	1:00	S
 Rule	Arg	2008	max	-	Mar	Sun>=15	0:00	0	-
 Rule	Arg	2008	max	-	Oct	Sun>=15	0:00	1:00	S
- 
+
 Zone America/Argentina/Buenos_Aires -3:53:48 - LMT 1894 Oct 31
 			-4:16:48 -	CMT	1920 May # Cordoba Mean Time
 			-4:00	-	ART	1930 Dec

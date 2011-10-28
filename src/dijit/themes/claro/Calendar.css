@@ -8,7 +8,7 @@
 	text-align:center;
 	padding:6px 5px 3px 5px;
 	-moz-border-radius:4px;
-	-webkit-border-radius:4px;	
+	-webkit-border-radius:4px;
 }
 .dj_ie6 .claro .dijitCalendar {
 	background-image:none;
@@ -59,7 +59,7 @@
 	background-position:-91px 0px;
 }
 .claro .dijitA11ySideArrow {
-	
+
 	display: none;
 }
 .claro .dijitDayLabels th {
@@ -105,7 +105,7 @@
 	padding:3px 5px 3px 4px;
 	border:solid 1px #fff;
 	color:#1e1e1e;
-	background-color:rgba(171,212,251,0);	
+	background-color:rgba(171,212,251,0);
 	-webkit-transition-property:background-color, border;
  	-webkit-transition-duration:.35s;
 }
@@ -125,7 +125,7 @@
 	margin:0;
 }
 .claro .dijitCalendarYearLabel span {
-	
+
 	vertical-align:middle;
 }
 .claro .dijitCalendarSelectedYear {
@@ -150,13 +150,13 @@
 .claro .dijitCalendarPreviousYearHover {
 	color:#000;
 	border:solid 1px #fefefe;
-	padding: 0px 5px 0px 5px;	
+	padding: 0px 5px 0px 5px;
 	background-color:#eaf4fe;
 }
 .claro .dijitCalendarNextYearActive,
 .claro .dijitCalendarPreviousYearActive {
 	border: solid 1px #87b3d9;
-	padding: 0px 5px 0px 5px;	
+	padding: 0px 5px 0px 5px;
 	background-color:#90bde6;
 }
 .claro .dijitCalendarActiveDate .dijitCalendarDateLabel {
@@ -176,15 +176,15 @@
 }
 .claro .dijitCalendarDisabledDate .dijitCalendarDateLabel {
 	text-decoration:line-through;
-	
-	
+
+
 	background-color: transparent;
 	border-width: 0px;
 	padding: 4px 6px 4px 5px;
 	color: #547DA1;
 }
 .claro .dijitCalendarMonthContainer .dijitMenu{
-	
+
 	top: 20px !important;
 	left: 0px;
 	border-color: #769dc0;

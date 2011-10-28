@@ -34,7 +34,7 @@ dojo.colors = {
 		if(3 * h < 2){ return m1 + (m2 - m1) * (2 / 3 - h) * 6; }
 		return m1;
 	};
-	
+
 	dojo.colorFromRgb = function(/*String*/ color, /*dojo.Color?*/ obj){
 		// summary:
 		//		get rgb(a) array from css-style color declarations
@@ -61,9 +61,9 @@ dojo.colors = {
 				var H = ((parseFloat(c[0]) % 360) + 360) % 360 / 360,
 					S = parseFloat(c[1]) / 100,
 					L = parseFloat(c[2]) / 100,
-					// calculate rgb according to the algorithm 
-					// recommended by the CSS3 Color Module 
-					m2 = L <= 0.5 ? L * (S + 1) : L + S - L * S, 
+					// calculate rgb according to the algorithm
+					// recommended by the CSS3 Color Module
+					m2 = L <= 0.5 ? L * (S + 1) : L + S - L * S,
 					m1 = 2 * L - m2;
 				a = [
 					hue2rgb(m1, m2, H + 1 / 3) * 256,
@@ -77,7 +77,7 @@ dojo.colors = {
 		}
 		return null;	// dojo.Color
 	};
-	
+
 	var confine = function(c, low, high){
 		// summary:
 		//		sanitize a color component by making sure it is a number,
@@ -85,7 +85,7 @@ dojo.colors = {
 		c = Number(c);
 		return isNaN(c) ? high : c < low ? low : c > high ? high : c;	// Number
 	};
-	
+
 	dojo.Color.prototype.sanitize = function(){
 		// summary: makes sure that the object has correct attributes
 		var t = this;
@@ -329,7 +329,7 @@ dojo.i18n._requireLocalization = function(/*String*/moduleName, /*String*/bundle
 
 	var targetLocale = dojo.i18n.normalizeLocale(locale);
  	var bundlePackage = [moduleName, "nls", bundleName].join(".");
-	// NOTE: 
+	// NOTE:
 	//		When loading these resources, the packaging does not match what is
 	//		on disk.  This is an implementation detail, as this is just a
 	//		private data structure to hold the loaded resources.  e.g.
@@ -339,7 +339,7 @@ dojo.i18n._requireLocalization = function(/*String*/moduleName, /*String*/bundle
 	//		in memory it is more logical and efficient to store in a different
 	//		order.  Locales cannot use dashes, since the resulting path will
 	//		not evaluate as valid JS, so we translate them to underscores.
-	
+
 	//Find the best-match locale to load if we have available flat locales.
 	var bestLocale = "";
 	if(availableFlatLocales){
@@ -356,7 +356,7 @@ dojo.i18n._requireLocalization = function(/*String*/moduleName, /*String*/bundle
 		}
 		if(!bestLocale){
 			bestLocale = "ROOT";
-		}		
+		}
 	}
 
 	//See if the desired locale is already loaded.
@@ -402,7 +402,7 @@ dojo.i18n._requireLocalization = function(/*String*/moduleName, /*String*/bundle
 			}else{
 				bundle[jsLoc] = parent;
 			}
-			
+
 			if(availableFlatLocales){
 				//Stop the locale path searching if we know the availableFlatLocales, since
 				//the first call to this function will load the only bundle that is needed.
@@ -420,8 +420,8 @@ dojo.i18n._requireLocalization = function(/*String*/moduleName, /*String*/bundle
 
 (function(){
 	// If other locales are used, dojo.requireLocalization should load them as
-	// well, by default. 
-	// 
+	// well, by default.
+	//
 	// Override dojo.requireLocalization to do load the default bundle, then
 	// iterate through the extraLocale list and load those translations as
 	// well, unless a particular locale was requested.
@@ -519,7 +519,7 @@ dojo.declare("dijit._PaletteMixin",
 	// value: String
 	//		Currently selected color/emoticon/etc.
 	value: null,
-	
+
 	// _selectedCell: [private] Integer
 	//		Index of the currently selected cell. Initially, none selected
 	_selectedCell: -1,
@@ -568,7 +568,7 @@ dojo.declare("dijit._PaletteMixin",
 
 		this._cells = [];
 		var url = this._blankGif;
-		
+
 		var dyeClassObj = dojo.getObject(this.dyeClass);
 
 		for(var row=0; row < choices.length; row++){
@@ -577,7 +577,7 @@ dojo.declare("dijit._PaletteMixin",
 				var value = choices[row][col];
 				if(value){
 					var cellObject = new dyeClassObj(value);
-					
+
 					var cellNode = dojo.create("td", {
 						"class": this.cellClass,
 						tabIndex: "-1",
@@ -656,7 +656,7 @@ dojo.declare("dijit._PaletteMixin",
 		// tags:
 		//		private
 
-		var target = evt.currentTarget,	
+		var target = evt.currentTarget,
 			value = this._getDye(target).getValue();
 
 		// First focus the clicked cell, and then send onChange() notification.
@@ -666,8 +666,8 @@ dojo.declare("dijit._PaletteMixin",
 		// Use setTimeout because IE doesn't like changing focus inside of an event handler.
 		this._setCurrent(target);
 		setTimeout(dojo.hitch(this, function(){
-			dijit.focus(target);		
-			this._setValueAttr(value, true);		
+			dijit.focus(target);
+			this._setValueAttr(value, true);
 		}));
 
 		// workaround bug where hover class is not removed on popup because the popup is
@@ -710,7 +710,7 @@ dojo.declare("dijit._PaletteMixin",
 		// priorityChange:
 		//		Optional parameter used to tell the select whether or not to fire
 		//		onChange event.
-		
+
 		// clear old value and selected cell
 		this.value = null;
 		if(this._selectedCell >= 0){
@@ -1116,11 +1116,11 @@ dojo.dnd.autoScrollNodes = function(e){
 			if(s.overflow.toLowerCase() in dojo.dnd._validOverflow){
 				var b = dojo._getContentBox(n, s), t = dojo.position(n, true);
 				//console.log(b.l, b.t, t.x, t.y, n.scrollLeft, n.scrollTop);
-				var w = Math.min(dojo.dnd.H_TRIGGER_AUTOSCROLL, b.w / 2), 
+				var w = Math.min(dojo.dnd.H_TRIGGER_AUTOSCROLL, b.w / 2),
 					h = Math.min(dojo.dnd.V_TRIGGER_AUTOSCROLL, b.h / 2),
 					rx = e.pageX - t.x, ry = e.pageY - t.y, dx = 0, dy = 0;
 				if(dojo.isWebKit || dojo.isOpera){
-					// FIXME: this code should not be here, it should be taken into account 
+					// FIXME: this code should not be here, it should be taken into account
 					// either by the event fixing code, or the dojo.position()
 					// FIXME: this code doesn't work on Opera 9.5 Beta
 					rx += dojo.body().scrollLeft, ry += dojo.body().scrollTop;
@@ -1167,7 +1167,7 @@ dojo.provide("dojo.dnd.Mover");
 dojo.declare("dojo.dnd.Mover", null, {
 	constructor: function(node, e, host){
 		// summary:
-		//		an object, which makes a node follow the mouse. 
+		//		an object, which makes a node follow the mouse.
 		//		Used as a default mover, and as a base class for custom movers.
 		// node: Node
 		//		a node (or node's id) to be moved
@@ -1180,7 +1180,7 @@ dojo.declare("dojo.dnd.Mover", null, {
 		this.node = dojo.byId(node);
 		this.marginBox = {l: e.pageX, t: e.pageY};
 		this.mouseButton = e.button;
-		var h = this.host = host, d = node.ownerDocument, 
+		var h = this.host = host, d = node.ownerDocument,
 			firstEvent = dojo.connect(d, "onmousemove", this, "onFirstMove");
 		this.events = [
 			dojo.connect(d, "onmousemove", this, "onMouseMove"),
@@ -1207,7 +1207,7 @@ dojo.declare("dojo.dnd.Mover", null, {
 		dojo.stopEvent(e);
 	},
 	onMouseUp: function(e){
-		if(dojo.isWebKit && dojo.isMac && this.mouseButton == 2 ? 
+		if(dojo.isWebKit && dojo.isMac && this.mouseButton == 2 ?
 				e.button == 0 : this.mouseButton == e.button){
 			this.destroy();
 		}
@@ -1216,7 +1216,7 @@ dojo.declare("dojo.dnd.Mover", null, {
 	// utilities
 	onFirstMove: function(e){
 		// summary:
-		//		makes the node absolute; it is meant to be called only once. 
+		//		makes the node absolute; it is meant to be called only once.
 		// 		relative and absolutely positioned nodes are assumed to use pixel units
 		var s = this.node.style, l, t, h = this.host;
 		switch(s.position){
@@ -1236,7 +1236,7 @@ dojo.declare("dojo.dnd.Mover", null, {
 				// space into account - so we need to subtract the combined
 				// padding and margin.  We use getComputedStyle and
 				// _getMarginBox/_getContentBox to avoid the extra lookup of
-				// the computed style. 
+				// the computed style.
 				var b = dojo.doc.body;
 				var bs = dojo.getComputedStyle(b);
 				var bm = dojo._getMarginBox(b, bs);
@@ -1300,7 +1300,7 @@ dojo.declare("dojo.dnd.Moveable", null, {
 	handle: "",
 	delay: 0,
 	skip: false,
-	
+
 	constructor: function(node, params){
 		// summary:
 		//		an object, which makes a node moveable
@@ -1335,7 +1335,7 @@ dojo.declare("dojo.dnd.Moveable", null, {
 		dojo.forEach(this.events, dojo.disconnect);
 		this.events = this.node = this.handle = null;
 	},
-	
+
 	// mouse event processors
 	onMouseDown: function(e){
 		// summary:
@@ -1385,7 +1385,7 @@ dojo.declare("dojo.dnd.Moveable", null, {
 			dojo.stopEvent(e);
 		}
 	},
-	
+
 	// local events
 	onDragDetected: function(/* Event */ e){
 		// summary:
@@ -1397,8 +1397,8 @@ dojo.declare("dojo.dnd.Moveable", null, {
 		// summary:
 		//		called before every move operation
 		dojo.publish("/dnd/move/start", [mover]);
-		dojo.addClass(dojo.body(), "dojoMove"); 
-		dojo.addClass(this.node, "dojoMoveItem"); 
+		dojo.addClass(dojo.body(), "dojoMove");
+		dojo.addClass(this.node, "dojoMoveItem");
 	},
 	onMoveStop: function(/* dojo.dnd.Mover */ mover){
 		// summary:
@@ -1411,7 +1411,7 @@ dojo.declare("dojo.dnd.Moveable", null, {
 		// summary:
 		//		called during the very first move notification;
 		//		can be used to initialize coordinates, can be overwritten.
-		
+
 		// default implementation does nothing
 	},
 	onMove: function(/* dojo.dnd.Mover */ mover, /* Object */ leftTop, /* Event */ e){
@@ -1427,13 +1427,13 @@ dojo.declare("dojo.dnd.Moveable", null, {
 	onMoving: function(/* dojo.dnd.Mover */ mover, /* Object */ leftTop){
 		// summary:
 		//		called before every incremental move; can be overwritten.
-		
+
 		// default implementation does nothing
 	},
 	onMoved: function(/* dojo.dnd.Mover */ mover, /* Object */ leftTop){
 		// summary:
 		//		called after every incremental move; can be overwritten.
-		
+
 		// default implementation does nothing
 	}
 });
@@ -1464,7 +1464,7 @@ dojo.declare("dojo.dnd.move.constrainedMoveable", dojo.dnd.Moveable, {
 	// object attributes (for markup)
 	constraints: function(){},
 	within: false,
-	
+
 	// markup methods
 	markupFactory: function(params, node){
 		return new dojo.dnd.move.constrainedMoveable(node, params);
@@ -1517,7 +1517,7 @@ dojo.declare("dojo.dnd.move.boxConstrainedMoveable", dojo.dnd.move.constrainedMo
 	// box:
 	//		object attributes (for markup)
 	box: {},
-	
+
 	// markup methods
 	markupFactory: function(params, node){
 		return new dojo.dnd.move.boxConstrainedMoveable(node, params);
@@ -1563,8 +1563,8 @@ dojo.declare("dojo.dnd.move.parentConstrainedMoveable", dojo.dnd.move.constraine
 		//		an optional object with parameters
 		var area = params && params.area;
 		this.constraints = function(){
-			var n = this.node.parentNode, 
-				s = dojo.getComputedStyle(n), 
+			var n = this.node.parentNode,
+				s = dojo.getComputedStyle(n),
 				mb = dojo._getMarginBox(n, s);
 			if(area == "margin"){
 				return mb;	// Object
@@ -1592,12 +1592,12 @@ dojo.dnd.move.constrainedMover = function(fun, within){
 	// summary:
 	//		returns a constrained version of dojo.dnd.Mover
 	// description:
-	//		this function produces n object, which will put a constraint on 
+	//		this function produces n object, which will put a constraint on
 	//		the margin box of dragged object in absolute coordinates
 	// fun: Function
 	//		called on drag, and returns a constraint box
 	// within: Boolean
-	//		if true, constraints the whole dragged object withtin the rectangle, 
+	//		if true, constraints the whole dragged object withtin the rectangle,
 	//		otherwise the constraint is applied to the left-top corner
 
 	dojo.deprecated("dojo.dnd.move.constrainedMover, use dojo.dnd.move.constrainedMoveable instead");
@@ -1638,7 +1638,7 @@ dojo.dnd.move.boxConstrainedMover = function(box, within){
 	// box: Object
 	//		a constraint box (l, t, w, h)
 	// within: Boolean
-	//		if true, constraints the whole dragged object withtin the rectangle, 
+	//		if true, constraints the whole dragged object withtin the rectangle,
 	//		otherwise the constraint is applied to the left-top corner
 
 	dojo.deprecated("dojo.dnd.move.boxConstrainedMover, use dojo.dnd.move.boxConstrainedMoveable instead");
@@ -1652,13 +1652,13 @@ dojo.dnd.move.parentConstrainedMover = function(area, within){
 	//		"margin" to constrain within the parent's margin box, "border" for the border box,
 	//		"padding" for the padding box, and "content" for the content box; "content" is the default value.
 	// within: Boolean
-	//		if true, constraints the whole dragged object within the rectangle, 
+	//		if true, constraints the whole dragged object within the rectangle,
 	//		otherwise the constraint is applied to the left-top corner
 
 	dojo.deprecated("dojo.dnd.move.parentConstrainedMover, use dojo.dnd.move.parentConstrainedMoveable instead");
 	var fun = function(){
-		var n = this.node.parentNode, 
-			s = dojo.getComputedStyle(n), 
+		var n = this.node.parentNode,
+			s = dojo.getComputedStyle(n),
 			mb = dojo._getMarginBox(n, s);
 		if(area == "margin"){
 			return mb;	// Object
@@ -1706,17 +1706,17 @@ dojo.declare("dojo.dnd.__TimedMoveableArgs", [dojo.dnd.__MoveableArgs], {
 (function(){
 	// precalculate long expressions
 	var oldOnMove = dojo.dnd.Moveable.prototype.onMove;
-		
+
 	dojo.declare("dojo.dnd.TimedMoveable", dojo.dnd.Moveable, {
 		// summary:
 		//		A specialized version of Moveable to support an FPS throttling.
-		//		This class puts an upper restriction on FPS, which may reduce 
+		//		This class puts an upper restriction on FPS, which may reduce
 		//		the CPU load. The additional parameter "timeout" regulates
 		//		the delay before actually moving the moveable object.
-		
+
 		// object attributes (for markup)
 		timeout: 40,	// in ms, 40ms corresponds to 25 fps
-	
+
 		constructor: function(node, params){
 			// summary:
 			//		an object that makes a node moveable with a timer
@@ -1724,19 +1724,19 @@ dojo.declare("dojo.dnd.__TimedMoveableArgs", [dojo.dnd.__MoveableArgs], {
 			//		a node (or node's id) to be moved
 			// params: dojo.dnd.__TimedMoveableArgs
 			//		object with additional parameters.
-			
+
 			// sanitize parameters
 			if(!params){ params = {}; }
 			if(params.timeout && typeof params.timeout == "number" && params.timeout >= 0){
 				this.timeout = params.timeout;
 			}
 		},
-	
+
 		// markup methods
 		markupFactory: function(params, node){
 			return new dojo.dnd.TimedMoveable(node, params);
 		},
-	
+
 		onMoveStop: function(/* dojo.dnd.Mover */ mover){
 			if(mover._timer){
 				// stop timer
@@ -1774,16 +1774,16 @@ dojo.declare("dojo.fx.Toggler", null, {
 	// description:
 	//		class constructor for an animation toggler. It accepts a packed
 	//		set of arguments about what type of animation to use in each
-	//		direction, duration, etc. All available members are mixed into 
-	//		these animations from the constructor (for example, `node`, 
-	//		`showDuration`, `hideDuration`). 
+	//		direction, duration, etc. All available members are mixed into
+	//		these animations from the constructor (for example, `node`,
+	//		`showDuration`, `hideDuration`).
 	//
 	// example:
 	//	|	var t = new dojo.fx.Toggler({
 	//	|		node: "nodeId",
 	//	|		showDuration: 500,
 	//	|		// hideDuration will default to "200"
-	//	|		showFunc: dojo.fx.wipeIn, 
+	//	|		showFunc: dojo.fx.wipeIn,
 	//	|		// hideFunc will default to "fadeOut"
 	//	|	});
 	//	|	t.show(100); // delay showing for 100ms
@@ -1798,7 +1798,7 @@ dojo.declare("dojo.fx.Toggler", null, {
 	//		The function that returns the `dojo.Animation` to show the node
 	showFunc: dojo.fadeIn,
 
-	// hideFunc: Function	
+	// hideFunc: Function
 	//		The function that returns the `dojo.Animation` to hide the node
 	hideFunc: dojo.fadeOut,
 
@@ -1814,7 +1814,7 @@ dojo.declare("dojo.fx.Toggler", null, {
 	// time show/hide are called if we're stopped somewhere in the
 	// middle.
 	// FIXME: also would be nice to specify individual showArgs/hideArgs mixed into
-	// each animation individually. 
+	// each animation individually.
 	// FIXME: also would be nice to have events from the animations exposed/bridged
 
 	/*=====
@@ -1867,15 +1867,15 @@ dojo.declare("dojo.fx.Toggler", null, {
 if(!dojo._hasResource["dojo.fx"]){ //_hasResource checks added by build. Do not use _hasResource directly in your code.
 dojo._hasResource["dojo.fx"] = true;
 dojo.provide("dojo.fx");
- // FIXME: remove this back-compat require in 2.0 
+ // FIXME: remove this back-compat require in 2.0
 /*=====
 dojo.fx = {
 	// summary: Effects library on top of Base animations
 };
 =====*/
 (function(){
-	
-	var d = dojo, 
+
+	var d = dojo,
 		_baseObj = {
 			_fire: function(evt, args){
 				if(this[evt]){
@@ -1994,14 +1994,14 @@ dojo.fx = {
 	d.extend(_chain, _baseObj);
 
 	dojo.fx.chain = function(/*dojo.Animation[]*/ animations){
-		// summary: 
+		// summary:
 		//		Chain a list of `dojo.Animation`s to run in sequence
 		//
 		// description:
 		//		Return a `dojo.Animation` which will play all passed
 		//		`dojo.Animation` instances in sequence, firing its own
 		//		synthesized events simulating a single animation. (eg:
-		//		onEnd of this animation means the end of the chain, 
+		//		onEnd of this animation means the end of the chain,
 		//		not the individual animations within)
 		//
 		// example:
@@ -2026,10 +2026,10 @@ dojo.fx = {
 			if(this.duration < duration){ this.duration = duration; }
 			this._connects.push(d.connect(a, "onEnd", this, "_onEnd"));
 		}, this);
-		
+
 		this._pseudoAnimation = new d.Animation({curve: [0, 1], duration: this.duration});
 		var self = this;
-		d.forEach(["beforeBegin", "onBegin", "onPlay", "onAnimate", "onPause", "onStop", "onEnd"], 
+		d.forEach(["beforeBegin", "onBegin", "onPlay", "onAnimate", "onPause", "onStop", "onEnd"],
 			function(evt){
 				self._connects.push(d.connect(self._pseudoAnimation, evt,
 					function(){ self._fire(evt, arguments); }
@@ -2087,11 +2087,11 @@ dojo.fx = {
 	d.extend(_combine, _baseObj);
 
 	dojo.fx.combine = function(/*dojo.Animation[]*/ animations){
-		// summary: 
+		// summary:
 		//		Combine a list of `dojo.Animation`s to run in parallel
 		//
 		// description:
-		//		Combine an array of `dojo.Animation`s to run in parallel, 
+		//		Combine an array of `dojo.Animation`s to run in parallel,
 		//		providing a new `dojo.Animation` instance encompasing each
 		//		animation, firing standard animation events.
 		//
@@ -2162,7 +2162,7 @@ dojo.fx = {
 			}
 		}, args));
 
-		d.connect(anim, "onEnd", function(){ 
+		d.connect(anim, "onEnd", function(){
 			s.height = "auto";
 			s.overflow = o;
 		});
@@ -2172,7 +2172,7 @@ dojo.fx = {
 
 	dojo.fx.wipeOut = function(/*Object*/ args){
 		// summary:
-		//		Shrink a node to nothing and hide it. 
+		//		Shrink a node to nothing and hide it.
 		//
 		// description:
 		//		Returns an animation that will shrink node defined in "args"
@@ -2181,12 +2181,12 @@ dojo.fx = {
 		// args: Object
 		//		A hash-map of standard `dojo.Animation` constructor properties
 		//		(such as easing: node: duration: and so on)
-		// 
+		//
 		// example:
 		//	|	dojo.fx.wipeOut({ node:"someId" }).play()
-		
+
 		var node = args.node = d.byId(args.node), s = node.style, o;
-		
+
 		var anim = d.animateProperty(d.mixin({
 			properties: {
 				height: {
@@ -2214,7 +2214,7 @@ dojo.fx = {
 		//		Slide a node to a new top/left position
 		//
 		// description:
-		//		Returns an animation that will slide "node" 
+		//		Returns an animation that will slide "node"
 		//		defined in args Object from its current position to
 		//		the position defined by (args.left, args.top).
 		//
@@ -2226,7 +2226,7 @@ dojo.fx = {
 		// example:
 		//	|	dojo.fx.slideTo({ node: node, left:"40", top:"50", units:"px" }).play()
 
-		var node = args.node = d.byId(args.node), 
+		var node = args.node = d.byId(args.node),
 			top = null, left = null;
 
 		var init = (function(n){
@@ -2283,7 +2283,7 @@ dojo.declare("dijit.form._FormMixin", null,
     // value: Object
 	//		Name/value hash for each child widget with a name and value.
 	//		Child widgets without names are not part of the hash.
-	// 
+	//
 	//		If there are multiple child widgets w/the same name, value is an array,
 	//		unless they are radio buttons in which case value is a scalar (since only
 	//		one radio button can be checked at a time).
@@ -2870,23 +2870,23 @@ dojo._hasResource["dojo.html"] = true;
 dojo.provide("dojo.html");
 
 // the parser might be needed..
- 
+
 
 (function(){ // private scope, sort of a namespace
 
 	// idCounter is incremented with each instantiation to allow asignment of a unique id for tracking, logging purposes
-	var idCounter = 0, 
+	var idCounter = 0,
 		d = dojo;
-	
+
 	dojo.html._secureForInnerHtml = function(/*String*/ cont){
 		// summary:
 		//		removes !DOCTYPE and title elements from the html string.
-		// 
+		//
 		//		khtml is picky about dom faults, you can't attach a style or <title> node as child of body
 		//		must go into head, so we need to cut out those tags
 		//	cont:
 		//		An html string for insertion into the dom
-		//	
+		//
 		return cont.replace(/(?:\s*<!DOCTYPE\s[^>]+>|<title[^>]*>[\s\S]*?<\/title>)/ig, ""); // String
 	};
 
@@ -2906,9 +2906,9 @@ dojo.provide("dojo.html");
 		//	node:
 		//		the parent element
 		//	content:
-		//		the content to be set on the parent element. 
+		//		the content to be set on the parent element.
 		//		This can be an html string, a node reference or a NodeList, dojo.NodeList, Array or other enumerable list of nodes
-		
+
 		// always empty
 		d.empty(node);
 
@@ -2932,7 +2932,7 @@ dojo.provide("dojo.html");
 	};
 
 	// we wrap up the content-setting operation in a object
-	dojo.declare("dojo.html._ContentSetter", null, 
+	dojo.declare("dojo.html._ContentSetter", null,
 		{
 			// node: DomNode|String
 			//		An node which will be the parent element that we set content into
@@ -2941,16 +2941,16 @@ dojo.provide("dojo.html");
 			// content: String|DomNode|DomNode[]
 			//		The content to be placed in the node. Can be an HTML string, a node reference, or a enumerable list of nodes
 			content: "",
-			
+
 			// id: String?
-			//		Usually only used internally, and auto-generated with each instance 
+			//		Usually only used internally, and auto-generated with each instance
 			id: "",
 
 			// cleanContent: Boolean
-			//		Should the content be treated as a full html document, 
+			//		Should the content be treated as a full html document,
 			//		and the real content stripped of <html>, <body> wrapper before injection
 			cleanContent: false,
-			
+
 			// extractContent: Boolean
 			//		Should the content be treated as a full html document, and the real content stripped of <html>, <body> wrapper before injection
 			extractContent: false,
@@ -2958,31 +2958,31 @@ dojo.provide("dojo.html");
 			// parseContent: Boolean
 			//		Should the node by passed to the parser after the new content is set
 			parseContent: false,
-			
+
 			// lifecyle methods
 			constructor: function(/* Object */params, /* String|DomNode */node){
 				//	summary:
 				//		Provides a configurable, extensible object to wrap the setting on content on a node
 				//		call the set() method to actually set the content..
- 
+
 				// the original params are mixed directly into the instance "this"
 				dojo.mixin(this, params || {});
 
 				// give precedence to params.node vs. the node argument
 				// and ensure its a node, not an id string
 				node = this.node = dojo.byId( this.node || node );
-	
+
 				if(!this.id){
 					this.id = [
 						"Setter",
-						(node) ? node.id || node.tagName : "", 
+						(node) ? node.id || node.tagName : "",
 						idCounter++
 					].join("_");
 				}
 			},
 			set: function(/* String|DomNode|NodeList? */ cont, /* Object? */ params){
 				// summary:
-				//		front-end to the set-content sequence 
+				//		front-end to the set-content sequence
 				//	cont:
 				//		An html string, node or enumerable list of nodes for insertion into the dom
 				//		If not provided, the object's content property will be used
@@ -3002,9 +3002,9 @@ dojo.provide("dojo.html");
 			},
 			setContent: function(){
 				// summary:
-				//		sets the content on the node 
+				//		sets the content on the node
 
-				var node = this.node; 
+				var node = this.node;
 				if(!node) {
 				    // can't proceed
 					throw new Error(this.declaredClass + ": setContent given no node");
@@ -3014,9 +3014,9 @@ dojo.provide("dojo.html");
 				}catch(e){
 					// check if a domfault occurs when we are appending this.errorMessage
 					// like for instance if domNode is a UL and we try append a DIV
-	
+
 					// FIXME: need to allow the user to provide a content error message string
-					var errMess = this.onContentError(e); 
+					var errMess = this.onContentError(e);
 					try{
 						node.innerHTML = errMess;
 					}catch(e){
@@ -3026,13 +3026,13 @@ dojo.provide("dojo.html");
 				// always put back the node for the next method
 				this.node = node; // DomNode
 			},
-			
+
 			empty: function() {
 				// summary
 				//	cleanly empty out existing content
 
 				// destroy any widgets from a previous run
-				// NOTE: if you dont want this you'll need to empty 
+				// NOTE: if you dont want this you'll need to empty
 				// the parseResults array property yourself to avoid bad things happenning
 				if(this.parseResults && this.parseResults.length) {
 					dojo.forEach(this.parseResults, function(w) {
@@ -3042,25 +3042,25 @@ dojo.provide("dojo.html");
 					});
 					delete this.parseResults;
 				}
-				// this is fast, but if you know its already empty or safe, you could 
+				// this is fast, but if you know its already empty or safe, you could
 				// override empty to skip this step
 				dojo.html._emptyNode(this.node);
 			},
-	
+
 			onBegin: function(){
 				// summary
-				//		Called after instantiation, but before set(); 
-				//		It allows modification of any of the object properties 
+				//		Called after instantiation, but before set();
+				//		It allows modification of any of the object properties
 				//		- including the node and content provided - before the set operation actually takes place
-				//		This default implementation checks for cleanContent and extractContent flags to 
+				//		This default implementation checks for cleanContent and extractContent flags to
 				//		optionally pre-process html string content
 				var cont = this.content;
-	
+
 				if(dojo.isString(cont)){
 					if(this.cleanContent){
 						cont = dojo.html._secureForInnerHtml(cont);
 					}
-  
+
 					if(this.extractContent){
 						var match = cont.match(/<body[^>]*>\s*([\s\S]+)\s*<\/body>/im);
 						if(match){ cont = match[1]; }
@@ -3069,11 +3069,11 @@ dojo.provide("dojo.html");
 
 				// clean out the node and any cruft associated with it - like widgets
 				this.empty();
-				
+
 				this.content = cont;
 				return this.node; /* DomNode */
 			},
-	
+
 			onEnd: function(){
 				// summary
 				//		Called after set(), when the new content has been pushed into the node
@@ -3085,26 +3085,26 @@ dojo.provide("dojo.html");
 				}
 				return this.node; /* DomNode */
 			},
-	
+
 			tearDown: function(){
 				// summary
 				//		manually reset the Setter instance if its being re-used for example for another set()
 				// description
-				//		tearDown() is not called automatically. 
+				//		tearDown() is not called automatically.
 				//		In normal use, the Setter instance properties are simply allowed to fall out of scope
 				//		but the tearDown method can be called to explicitly reset this instance.
-				delete this.parseResults; 
-				delete this.node; 
-				delete this.content; 
+				delete this.parseResults;
+				delete this.node;
+				delete this.content;
 			},
-  
+
 			onContentError: function(err){
-				return "Error occured setting content: " + err; 
+				return "Error occured setting content: " + err;
 			},
-			
+
 			_mixin: function(params){
 				// mix properties/methods into the instance
-				// TODO: the intention with tearDown is to put the Setter's state 
+				// TODO: the intention with tearDown is to put the Setter's state
 				// back to that of the original constructor (vs. deleting/resetting everything regardless of ctor params)
 				// so we could do something here to move the original properties aside for later restoration
 				var empty = {}, key;
@@ -3112,11 +3112,11 @@ dojo.provide("dojo.html");
 					if(key in empty){ continue; }
 					// TODO: here's our opportunity to mask the properties we dont consider configurable/overridable
 					// .. but history shows we'll almost always guess wrong
-					this[key] = params[key]; 
+					this[key] = params[key];
 				}
 			},
 			_parse: function(){
-				// summary: 
+				// summary:
 				//		runs the dojo parser over the node contents, storing any results in this.parseResults
 				//		Any errors resulting from parsing are passed to _onError for handling
 
@@ -3132,7 +3132,7 @@ dojo.provide("dojo.html");
 					this._onError('Content', e, "Error parsing in _ContentSetter#"+this.id);
 				}
 			},
-  
+
 			_onError: function(type, err, consoleText){
 				// summary:
 				//		shows user the string that is returned by on[type]Error
@@ -3159,29 +3159,29 @@ dojo.provide("dojo.html");
 			//	node:
 			//		the parent element that will receive the content
 			//	cont:
-			//		the content to be set on the parent element. 
+			//		the content to be set on the parent element.
 			//		This can be an html string, a node reference or a NodeList, dojo.NodeList, Array or other enumerable list of nodes
-			//	params: 
+			//	params:
 			//		Optional flags/properties to configure the content-setting. See dojo.html._ContentSetter
 			//	example:
 			//		A safe string/node/nodelist content replacement/injection with hooks for extension
-			//		Example Usage: 
-			//		dojo.html.set(node, "some string"); 
-			//		dojo.html.set(node, contentNode, {options}); 
-			//		dojo.html.set(node, myNode.childNodes, {options}); 
+			//		Example Usage:
+			//		dojo.html.set(node, "some string");
+			//		dojo.html.set(node, contentNode, {options});
+			//		dojo.html.set(node, myNode.childNodes, {options});
 		if(undefined == cont){
 			console.warn("dojo.html.set: no cont argument provided, using empty string");
 			cont = "";
-		}	
+		}
 		if(!params){
 			// simple and fast
 			return dojo.html._setNodeContent(node, cont, true);
-		}else{ 
+		}else{
 			// more options but slower
 			// note the arguments are reversed in order, to match the convention for instantiation via the parser
-			var op = new dojo.html._ContentSetter(dojo.mixin( 
-					params, 
-					{ content: cont, node: node } 
+			var op = new dojo.html._ContentSetter(dojo.mixin(
+					params,
+					{ content: cont, node: node }
 			));
 			return op.set();
 		}
@@ -4104,9 +4104,9 @@ dojo.declare(
 		// |	foo.startup();
 
 		templateString: dojo.cache("dijit", "templates/Dialog.html", "<div class=\"dijitDialog\" tabindex=\"-1\" waiRole=\"dialog\" waiState=\"labelledby-${id}_title\">\n\t<div dojoAttachPoint=\"titleBar\" class=\"dijitDialogTitleBar\">\n\t<span dojoAttachPoint=\"titleNode\" class=\"dijitDialogTitle\" id=\"${id}_title\"></span>\n\t<span dojoAttachPoint=\"closeButtonNode\" class=\"dijitDialogCloseIcon\" dojoAttachEvent=\"onclick: onCancel\" title=\"${buttonCancel}\">\n\t\t<span dojoAttachPoint=\"closeText\" class=\"closeText\" title=\"${buttonCancel}\">x</span>\n\t</span>\n\t</div>\n\t\t<div dojoAttachPoint=\"containerNode\" class=\"dijitDialogPaneContent\"></div>\n</div>\n"),
-		
+
 		baseClass: "dijitDialog",
-		
+
 		cssStateNodes: {
 			closeButtonNode: "dijitDialogCloseIcon"
 		},
@@ -4321,7 +4321,7 @@ dojo.declare(
 				wasPlaying = true;
 				this._fadeOut.stop();
 			}
-			
+
 			// Hide the underlay, unless the underlay widget has already been destroyed
 			// because we are being called during page unload (when all widgets are destroyed)
 			if((this.open || wasPlaying) && !dijit._underlay._destroyed){
@@ -4903,7 +4903,7 @@ dojo.mixin(dijit._editor.selection, {
 				}
 			}else if(doc.selection){
 				// Probably IE, so we can't use the range object as the pseudo
-				// range doesn't implement the boundry checking, we have to 
+				// range doesn't implement the boundry checking, we have to
 				// use IE specific crud.
 				range = doc.selection.createRange();
 				try{
@@ -6039,7 +6039,7 @@ dojo.declare("dijit._editor.RichText", [dijit._Widget, dijit._CssStateMixin], {
 		if(dn.nodeName && dn.nodeName == "LI"){
 			dn.innerHTML = " <br>";
 		}
-	
+
 		// Construct the editor div structure.
 		this.header = dn.ownerDocument.createElement("div");
 		dn.appendChild(this.header);
@@ -6101,7 +6101,7 @@ dojo.declare("dijit._editor.RichText", [dijit._Widget, dijit._CssStateMixin], {
 			if(dojo.isIE){
 				this._localizeEditorCommands();
 			}
-			
+
 			// Do final setup and set initial contents of editor
 			this.onLoad(html);
 		});
@@ -6164,8 +6164,8 @@ dojo.declare("dijit._editor.RichText", [dijit._Widget, dijit._CssStateMixin], {
 		}
 		var userStyle = "";
 		var self = this;
-		this.style.replace(/(^|;)\s*(line-|font-?)[^;]+/ig, function(match){ 
-			match = match.replace(/^;/ig,"") + ';'; 
+		this.style.replace(/(^|;)\s*(line-|font-?)[^;]+/ig, function(match){
+			match = match.replace(/^;/ig,"") + ';';
 			var s = match.split(":")[0];
 			if(s){
 				s = dojo.trim(s);
@@ -6184,7 +6184,7 @@ dojo.declare("dijit._editor.RichText", [dijit._Widget, dijit._CssStateMixin], {
 				}
 				dojo.style(self.domNode, sC, "");
 			}
-			userStyle += match + ';'; 
+			userStyle += match + ';';
 		});
 
 
@@ -6202,12 +6202,12 @@ dojo.declare("dijit._editor.RichText", [dijit._Widget, dijit._CssStateMixin], {
 			"\t\tmargin: -1px 0 0 0;\n", // remove extraneous vertical scrollbar on safari and firefox
 
 			// Set the html/body sizing.  Webkit always needs this, other browsers
-			// only set it when height is defined (not auto-expanding), otherwise 
+			// only set it when height is defined (not auto-expanding), otherwise
 			// scrollers do not appear.
 			((dojo.isWebKit)?"\t\twidth: 100%;\n":""),
 			((dojo.isWebKit)?"\t\theight: 100%;\n":""),
 			"\t}\n",
-			
+
 			// TODO: left positioning will cause contents to disappear out of view
 			//	   if it gets too wide for the visible area
 			"\tbody{\n",
@@ -6221,7 +6221,7 @@ dojo.declare("dijit._editor.RichText", [dijit._Widget, dijit._CssStateMixin], {
 			"\t\tline-height:", lineHeight,";\n",
 			"\t}\n",
 			"\tp{ margin: 1em 0; }\n",
-			
+
 			// Determine how scrollers should be applied.  In autoexpand mode (height = "") no scrollers on y at all.
 			// But in fixed height mode we want both x/y scrollers.  Also, if it's using wrapping div and in auto-expand
 			// (Mainly IE) we need to kill the y scroller on body and html.
@@ -6397,12 +6397,12 @@ dojo.declare("dijit._editor.RichText", [dijit._Widget, dijit._CssStateMixin], {
 			this.editNode.style.zoom = 1.0;
 		}else{
 			this.connect(this.document, "onmousedown", function(){
-				// Clear the moveToStart focus, as mouse 
+				// Clear the moveToStart focus, as mouse
 				// down will set cursor point.  Required to properly
 				// work with selection/position driven plugins and clicks in
 				// the window. refs: #10678
 				delete this._cursorToStart;
-			}); 
+			});
 		}
 
 		if(dojo.isWebKit){
@@ -6428,7 +6428,7 @@ dojo.declare("dijit._editor.RichText", [dijit._Widget, dijit._CssStateMixin], {
 		// Note that setValue() call will only work after isLoaded is set to true (above)
 
 		// Set up a function to allow delaying the setValue until a callback is fired
-		// This ensures extensions like dijit.Editor have a way to hold the value set 
+		// This ensures extensions like dijit.Editor have a way to hold the value set
 		// until plugins load (and do things like register filters.
 		var setContent = dojo.hitch(this, function(){
 			this.setValue(html);
@@ -6659,7 +6659,7 @@ dojo.declare("dijit._editor.RichText", [dijit._Widget, dijit._CssStateMixin], {
 			this.focusOnLoad = true;
 			return;
 		}
-		if(this._cursorToStart){ 
+		if(this._cursorToStart){
 			delete this._cursorToStart;
 			if(this.editNode.childNodes){
 				this.placeCursorAtStart(); // this calls focus() so return
@@ -7117,9 +7117,9 @@ dojo.declare("dijit._editor.RichText", [dijit._Widget, dijit._CssStateMixin], {
 		}else if(this.window && this.window.getSelection){ // Moz
 			html = this._preFilterContent(html);
 			this.execCommand("selectall");
-			if(!html){ 
+			if(!html){
 				this._cursorToStart = true;
-				html = "&nbsp;"; 
+				html = "&nbsp;";
 			}
 			this.execCommand("inserthtml", html);
 			this._preDomFilterContent(this.editNode);
@@ -7548,13 +7548,13 @@ dojo.declare("dijit._editor.RichText", [dijit._Widget, dijit._CssStateMixin], {
 		//		The node to process the children of;
 		var h = 0;
 		if(node && node.childNodes){
-			// IE didn't compute it right when position was obtained on the node directly is some cases, 
+			// IE didn't compute it right when position was obtained on the node directly is some cases,
 			// so we have to walk over all the children manually.
-			var i; 
-			for(i = 0; i < node.childNodes.length; i++){ 
-				var size = dojo.position(node.childNodes[i]); 
-				h += size.h;   
-			} 
+			var i;
+			for(i = 0; i < node.childNodes.length; i++){
+				var size = dojo.position(node.childNodes[i]);
+				h += size.h;
+			}
 		}
 		return h; // Number
 	}
@@ -7673,7 +7673,7 @@ dojo.declare("dijit._KeyNavContainer",
 			//		last one instead of the first one
 			// tags:
 			//		protected
-			
+
 			if(this.focusedChild && widget !== this.focusedChild){
 				this._onChildBlur(this.focusedChild);
 			}
@@ -7685,13 +7685,13 @@ dojo.declare("dijit._KeyNavContainer",
 			// summary:
 			//		Setup for each child widget
 			// description:
-			//		Sets tabIndex=-1 on each child, so that the tab key will 
+			//		Sets tabIndex=-1 on each child, so that the tab key will
 			//		leave the container rather than visiting each child.
 			// tags:
 			//		private
-			
+
 			widget.set("tabIndex", "-1");
-			
+
 			this.connect(widget, "_onFocus", function(){
 				// Set valid tabIndex so tabbing away from widget goes to right place, see #10272
 				widget.set("tabIndex", this.tabIndex);
@@ -8020,7 +8020,7 @@ dojo.declare("dijit._HasDropDown",
 			// the drop down was already opened on mousedown/keydown; just need to call stopEvent()
 			if(this._stopClickEvents){
 				dojo.stopEvent(e);
-			}			
+			}
 		},
 
 		_setupDropdown: function(){
@@ -8089,7 +8089,7 @@ dojo.declare("dijit._HasDropDown",
 			}
 			if(d && this._opened && e.keyCode == dojo.keys.ESCAPE){
 				this.toggleDropDown();
-			}else if(d && !this._opened && 
+			}else if(d && !this._opened &&
 					(e.keyCode == dojo.keys.DOWN_ARROW || e.keyCode == dojo.keys.ENTER || e.keyCode == dojo.keys.SPACE)){
 				this.toggleDropDown();
 				if(d.focus){
@@ -8168,7 +8168,7 @@ dojo.declare("dijit._HasDropDown",
 
 			if(!this._preparedNode){
 				dijit.popup.moveOffScreen(ddNode);
-				this._preparedNode = true;			
+				this._preparedNode = true;
 				// Check if we have explicitly set width and height on the dropdown widget dom node
 				if(ddNode.style.width){
 					this._explicitDDWidth = true;
@@ -8191,7 +8191,7 @@ dojo.declare("dijit._HasDropDown",
 					myStyle.height = "";
 				}
 				dojo.style(ddNode, myStyle);
-				
+
 				// Get size of drop down, and determine if vertical scroll bar needed
 				var mb = dojo.marginBox(ddNode);
 				var overHeight = (this.maxHeight && mb.h > this.maxHeight);
@@ -8218,7 +8218,7 @@ dojo.declare("dijit._HasDropDown",
 				}else{
 					delete mb.w;
 				}
-				
+
 				// And finally, resize the dropdown to calculated height and width
 				if(dojo.isFunction(dropDown.resize)){
 					dropDown.resize(mb);
@@ -8552,14 +8552,14 @@ dojo.declare("dijit.form.ComboButton", dijit.form.DropDownButton, {
 			dojo.stopEvent(evt);
 		}
 	},
-	
+
 	focus: function(/*String*/ position){
 		// summary:
 		//		Focuses this widget to according to position, if specified,
 		//		otherwise on arrow node
 		// position:
 		//		"start" or "end"
-		
+
 		dijit.focus(position == "start" ? this.titleNode : this._popupStateNode);
 	}
 });
@@ -8767,7 +8767,7 @@ dojo.declare("dijit._editor._Plugin", null, {
 				);
 			}else{
 				// hide button because editor doesn't support command (due to browser limitations)
-				this.button.domNode.style.display = "none";			
+				this.button.domNode.style.display = "none";
 			}
 		}
 
@@ -9169,7 +9169,7 @@ dojo.declare("dijit._editor.plugins.EnterKeyHandling", dijit._editor._Plugin, {
 					}
 				}
 			}
-			
+
 			// Okay, we probably have to split.
 			var rs = range.startContainer;
 			if(rs && rs.nodeType == 3){
@@ -9191,7 +9191,7 @@ dojo.declare("dijit._editor.plugins.EnterKeyHandling", dijit._editor._Plugin, {
 				while(parentC !== block.blockNode){
 					var tg = parentC.tagName;
 					var newTg = doc.createElement(tg);
-					// Clone over any 'style' data. 
+					// Clone over any 'style' data.
 					if(parentC.style){
 						if(newTg.style){
 							if(parentC.style.cssText){
@@ -9226,7 +9226,7 @@ dojo.declare("dijit._editor.plugins.EnterKeyHandling", dijit._editor._Plugin, {
 					nodeToMove = tNode;
 				}
 			}
-			
+
 			//lets move caret to the newly created block
 			newrange = dijit.range.create(this.editor.window);
 			newrange.setStart(newblock, 0);
@@ -9353,7 +9353,7 @@ dojo.declare("dijit._editor.plugins.EnterKeyHandling", dijit._editor._Plugin, {
 		dojo.forEach(ps, function(p){ pList.push(p); });
 		dojo.forEach(pList, function(p){
 			var prevSib = p.previousSibling;
-			if(	(prevSib) && (prevSib.nodeType == 1) && 
+			if(	(prevSib) && (prevSib.nodeType == 1) &&
 				(prevSib.nodeName == 'P' || dojo.style(prevSib, 'display') != 'block')
 			){
 				var newP = p.parentNode.insertBefore(this.document.createElement('p'), p);
@@ -9551,7 +9551,7 @@ dojo.declare(
 				this.plugins=this.plugins.concat(this.extraPlugins);
 			}
 
-			// Set up a deferred so that the value isn't applied to the editor 
+			// Set up a deferred so that the value isn't applied to the editor
 			// until all the plugins load, needed to avoid timing condition
 			// reported in #10537.
 			this.setValueDeferred = new dojo.Deferred();
@@ -9676,8 +9676,8 @@ dojo.declare(
 			// except what's needed for the header (toolbars) and footer (breadcrumbs, etc).
 			// A class was added to the iframe container and some themes style it, so we have to
 			// calc off the added margins and padding too. See tracker: #10662
-			var areaHeight = (this._contentBox.h - 
-				(this.getHeaderHeight() + this.getFooterHeight() + 
+			var areaHeight = (this._contentBox.h -
+				(this.getHeaderHeight() + this.getFooterHeight() +
 				 dojo._getPadBorderExtents(this.iframe.parentNode).h +
 				 dojo._getMarginExtents(this.iframe.parentNode).h));
 			this.editingArea.style.height = areaHeight + "px";
@@ -9706,7 +9706,7 @@ dojo.declare(
 			//Check for vertical scroller click.
 			bodyDir = b.dir?b.dir.toLowerCase():""
 			if(bodyDir != "rtl"){
-				if(clientWidth < offsetWidth && e.x > clientWidth && e.x < offsetWidth){ 
+				if(clientWidth < offsetWidth && e.x > clientWidth && e.x < offsetWidth){
 					// Check the click was between width and offset width, if so, scroller
 					outsideClientArea = true;
 				}
@@ -9725,7 +9725,7 @@ dojo.declare(
 				}
 			}
 			if(!outsideClientArea){
-				delete this._cursorToStart; // Remove the force to cursor to start position. 
+				delete this._cursorToStart; // Remove the force to cursor to start position.
 				delete this._savedSelection; // new mouse position overrides old selection
 				if(e.target.tagName == "BODY"){
 					setTimeout(dojo.hitch(this, "placeCursorAtEnd"), 0);
@@ -9927,7 +9927,7 @@ dojo.declare(
 					ret = true;
 				}
 				delete this._undoRedoActive;
-			}	
+			}
 			return ret;
 		},
 		redo: function(){
@@ -10181,13 +10181,13 @@ dojo.declare(
 					p.updateState && p.updateState();	// just in case something changed, like caret position
 				});
 			}
-			
+
 			this.inherited(arguments);
 		},
-		
+
 		_setStateClass: function(){
 			this.inherited(arguments);
-			
+
 			// Let theme set the editor's text color based on editor enabled/disabled state.
 			// We need to jump through hoops because the main document (where the theme CSS is)
 			// is separate from the iframe's document.
@@ -10263,7 +10263,7 @@ dojo.regexp.buildGroupRE = function(/*Object|Array*/arr, /*Function*/re, /*Boole
 	//		A single value or an array of values.
 	// re:
 	//		A function. Takes one parameter and converts it to a regular
-	//		expression. 
+	//		expression.
 	// nonCapture:
 	//		If true, uses non-capturing match, otherwise matches are retained
 	//		by regular expression. Defaults to false
@@ -10289,7 +10289,7 @@ dojo.regexp.group = function(/*String*/expression, /*Boolean?*/nonCapture){
 	//		adds group match to expression
 	// nonCapture:
 	//		If true, uses non-capturing match, otherwise matches are retained
-	//		by regular expression. 
+	//		by regular expression.
 	return "(" + (nonCapture ? "?:":"") + expression + ")"; // String
 }
 
@@ -10299,15 +10299,15 @@ if(!dojo._hasResource["dojo.data.util.sorter"]){ //_hasResource checks added by 
 dojo._hasResource["dojo.data.util.sorter"] = true;
 dojo.provide("dojo.data.util.sorter");
 
-dojo.data.util.sorter.basicComparator = function(	/*anything*/ a, 
+dojo.data.util.sorter.basicComparator = function(	/*anything*/ a,
 													/*anything*/ b){
-	//	summary:  
+	//	summary:
 	//		Basic comparision function that compares if an item is greater or less than another item
-	//	description:  
+	//	description:
 	//		returns 1 if a > b, -1 if a < b, 0 if equal.
 	//		'null' values (null, undefined) are treated as larger values so that they're pushed to the end of the list.
 	//		And compared to each other, null is equivalent to undefined.
-	
+
 	//null is a problematic compare, so if null, we set to undefined.
 	//Makes the check logic simple, compact, and consistent
 	//And (null == undefined) === true, so the check later against null
@@ -10320,18 +10320,18 @@ dojo.data.util.sorter.basicComparator = function(	/*anything*/ a,
 		b = undefined;
 	}
 	if(a == b){
-		r = 0; 
+		r = 0;
 	}else if(a > b || a == null){
-		r = 1; 
+		r = 1;
 	}
 	return r; //int {-1,0,1}
 };
 
 dojo.data.util.sorter.createSortFunction = function(	/* attributes array */sortSpec,
 														/*dojo.data.core.Read*/ store){
-	//	summary:  
+	//	summary:
 	//		Helper function to generate the sorting function based off the list of sort attributes.
-	//	description:  
+	//	description:
 	//		The sort function creation will look for a property on the store called 'comparatorMap'.  If it exists
 	//		it will look in the mapping for comparisons function for the attributes.  If one is found, it will
 	//		use it instead of the basic comparator, which is typically used for strings, ints, booleans, and dates.
@@ -10373,7 +10373,7 @@ dojo.data.util.sorter.createSortFunction = function(	/* attributes array */sortS
 				}
 				comp = map[attr] || bc;
 			}
-			sortFunctions.push(createSortFunction(attr, 
+			sortFunctions.push(createSortFunction(attr,
 				dir, comp, store));
 		}
 	}
@@ -10385,7 +10385,7 @@ dojo.data.util.sorter.createSortFunction = function(	/* attributes array */sortS
 				return ret;//int
 			}
 		}
-		return 0; //int  
+		return 0; //int
 	}; // Function
 };
 
@@ -10399,27 +10399,27 @@ dojo.provide("dojo.data.util.simpleFetch");
 dojo.data.util.simpleFetch.fetch = function(/* Object? */ request){
 	//	summary:
 	//		The simpleFetch mixin is designed to serve as a set of function(s) that can
-	//		be mixed into other datastore implementations to accelerate their development.  
-	//		The simpleFetch mixin should work well for any datastore that can respond to a _fetchItems() 
+	//		be mixed into other datastore implementations to accelerate their development.
+	//		The simpleFetch mixin should work well for any datastore that can respond to a _fetchItems()
 	//		call by returning an array of all the found items that matched the query.  The simpleFetch mixin
 	//		is not designed to work for datastores that respond to a fetch() call by incrementally
 	//		loading items, or sequentially loading partial batches of the result
-	//		set.  For datastores that mixin simpleFetch, simpleFetch 
+	//		set.  For datastores that mixin simpleFetch, simpleFetch
 	//		implements a fetch method that automatically handles eight of the fetch()
 	//		arguments -- onBegin, onItem, onComplete, onError, start, count, sort and scope
 	//		The class mixing in simpleFetch should not implement fetch(),
-	//		but should instead implement a _fetchItems() method.  The _fetchItems() 
-	//		method takes three arguments, the keywordArgs object that was passed 
+	//		but should instead implement a _fetchItems() method.  The _fetchItems()
+	//		method takes three arguments, the keywordArgs object that was passed
 	//		to fetch(), a callback function to be called when the result array is
 	//		available, and an error callback to be called if something goes wrong.
 	//		The _fetchItems() method should ignore any keywordArgs parameters for
-	//		start, count, onBegin, onItem, onComplete, onError, sort, and scope.  
+	//		start, count, onBegin, onItem, onComplete, onError, sort, and scope.
 	//		The _fetchItems() method needs to correctly handle any other keywordArgs
-	//		parameters, including the query parameter and any optional parameters 
-	//		(such as includeChildren).  The _fetchItems() method should create an array of 
-	//		result items and pass it to the fetchHandler along with the original request object 
-	//		-- or, the _fetchItems() method may, if it wants to, create an new request object 
-	//		with other specifics about the request that are specific to the datastore and pass 
+	//		parameters, including the query parameter and any optional parameters
+	//		(such as includeChildren).  The _fetchItems() method should create an array of
+	//		result items and pass it to the fetchHandler along with the original request object
+	//		-- or, the _fetchItems() method may, if it wants to, create an new request object
+	//		with other specifics about the request that are specific to the datastore and pass
 	//		that as the request object to the handler.
 	//
 	//		For more information on this specific function, see dojo.data.api.Read.fetch()
@@ -10487,11 +10487,11 @@ dojo._hasResource["dojo.data.util.filter"] = true;
 dojo.provide("dojo.data.util.filter");
 
 dojo.data.util.filter.patternToRegExp = function(/*String*/pattern, /*boolean?*/ ignoreCase){
-	//	summary:  
+	//	summary:
 	//		Helper function to convert a simple pattern to a regular expression for matching.
 	//	description:
 	//		Returns a regular expression object that conforms to the defined conversion rules.
-	//		For example:  
+	//		For example:
 	//			ca*   -> /^ca.*$/
 	//			*ca*  -> /^.*ca.*$/
 	//			*c\*a*  -> /^.*c\*a.*$/
@@ -10503,7 +10503,7 @@ dojo.data.util.filter.patternToRegExp = function(/*String*/pattern, /*boolean?*/
 	//			* Means match anything, so ca* means match anything starting with ca
 	//			? Means match single character.  So, b?b will match to bob and bab, and so on.
 	//      	\ is an escape character.  So for example, \* means do not treat * as a match, but literal character *.
-	//				To use a \ as a character in the string, it must be escaped.  So in the pattern it should be 
+	//				To use a \ as a character in the string, it must be escaped.  So in the pattern it should be
 	//				represented by \\ to be treated as an ordinary \ character instead of an escape.
 	//
 	//	ignoreCase:
@@ -10547,7 +10547,7 @@ dojo.data.util.filter.patternToRegExp = function(/*String*/pattern, /*boolean?*/
 	}else{
 		return new RegExp(rxp,"m"); //RegExp
 	}
-	
+
 };
 
 }
@@ -10593,7 +10593,7 @@ dojo.declare(
 		//		Defines a hint to help users fill out the input field (as defined in HTML 5).
 		//		This should only contain plain text (no html markup).
 		placeHolder: "",
-		
+
 		templateString: dojo.cache("dijit.form", "templates/TextBox.html", "<div class=\"dijit dijitReset dijitInline dijitLeft\" id=\"widget_${id}\" waiRole=\"presentation\"\n\t><div class=\"dijitReset dijitInputField dijitInputContainer\"\n\t\t><input class=\"dijitReset dijitInputInner\" dojoAttachPoint='textbox,focusNode' autocomplete=\"off\"\n\t\t\t${!nameAttrSetting} type='${type}'\n\t/></div\n></div>\n"),
 		_singleNodeTemplate: '<input class="dijit dijitReset dijitLeft dijitInputField" dojoAttachPoint="textbox,focusNode" autocomplete="off" type="${type}" ${!nameAttrSetting} />',
 
@@ -10604,7 +10604,7 @@ dojo.declare(
 		attributeMap: dojo.delegate(dijit.form._FormValueWidget.prototype.attributeMap, {
 			maxLength: "focusNode"
 		}),
-		
+
 		postMixInProperties: function(){
 			var type = this.type.toLowerCase();
 			if(this.templateString.toLowerCase() == "input" || ((type == "hidden" || type == "file") && this.templateString == dijit.form.TextBox.prototype.templateString)){
@@ -10625,10 +10625,10 @@ dojo.declare(
 			}
 			this._phspan.innerHTML="";
 			this._phspan.appendChild(document.createTextNode(v));
-			
+
 			this._updatePlaceHolder();
 		},
-		
+
 		_updatePlaceHolder: function(){
 			if(this._phspan){
 				this._phspan.style.display=(this.placeHolder&&!this._focused&&!this.textbox.value)?"":"none";
@@ -10874,7 +10874,7 @@ dojo.declare(
 			if(this.selectOnClick && dojo.isMoz){
 				this.textbox.selectionStart = this.textbox.selectionEnd = undefined; // clear selection so that the next mouse click doesn't reselect
 			}
-			
+
 			this._updatePlaceHolder();
 		},
 
@@ -10907,7 +10907,7 @@ dojo.declare(
 			}
 
 			this._updatePlaceHolder();
-			
+
 			this._refreshState();
 			this.inherited(arguments);
 		},
@@ -12225,7 +12225,7 @@ dojo.declare(
 				h: best.h,
 				w: Math.max(newwidth, this.domNode.offsetWidth)
 			});
-			
+
 			// If we increased the width of drop down to match the width of ComboBox.domNode,
 			// then need to reposition the drop down (wrapper) so (all of) the drop down still
 			// appears underneath the ComboBox.domNode
@@ -12593,7 +12593,7 @@ dojo.declare(
 		// _messages: Object
 		//		Holds "next" and "previous" text for paging buttons on drop down
 		_messages: null,
-		
+
 		baseClass: "dijitComboBoxMenu",
 
 		postMixInProperties: function(){
@@ -13287,7 +13287,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 	//			{ name:'Fozzie Bear', wears:['hat', 'tie']},
 	//			{ name:'Miss Piggy', pets:'Foo-Foo'}
 	//		]}
-	//		Note that it can also contain an 'identifer' property that specified which attribute on the items 
+	//		Note that it can also contain an 'identifer' property that specified which attribute on the items
 	//		in the array of items that acts as the unique identifier for that item.
 	//
 	constructor: function(/* Object */ keywordParameters){
@@ -13302,14 +13302,14 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 		//			...
 		//			typeN: function || object
 		//		}
-		//		Where if it is a function, it is assumed to be an object constructor that takes the 
+		//		Where if it is a function, it is assumed to be an object constructor that takes the
 		//		value of _value as the initialization parameters.  If it is an object, then it is assumed
 		//		to be an object of general form:
 		//		{
 		//			type: function, //constructor.
 		//			deserialize:	function(value) //The function that parses the value and constructs the object defined by type appropriately.
 		//		}
-	
+
 		this._arrayOfAllItems = [];
 		this._arrayOfTopLevelItems = [];
 		this._loadFinished = false;
@@ -13351,7 +13351,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 			this.failOk = keywordParameters.failOk?true:false;
 		}
 	},
-	
+
 	url: "",	// use "" rather than undefined for the benefit of the parser (#3539)
 
 	//Internal var, crossCheckUrl.  Used so that setting either url or _jsonFileUrl, can still trigger a reload
@@ -13361,34 +13361,34 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 	data: null,	// define this so that the parser can populate it
 
 	typeMap: null, //Define so parser can populate.
-	
+
 	//Parameter to allow users to specify if a close call should force a reload or not.
 	//By default, it retains the old behavior of not clearing if close is called.  But
 	//if set true, the store will be reset to default state.  Note that by doing this,
 	//all item handles will become invalid and a new fetch must be issued.
 	clearOnClose: false,
 
-	//Parameter to allow specifying if preventCache should be passed to the xhrGet call or not when loading data from a url.  
+	//Parameter to allow specifying if preventCache should be passed to the xhrGet call or not when loading data from a url.
 	//Note this does not mean the store calls the server on each fetch, only that the data load has preventCache set as an option.
 	//Added for tracker: #6072
 	urlPreventCache: false,
-	
+
 	//Parameter for specifying that it is OK for the xhrGet call to fail silently.
 	failOk: false,
 
-	//Parameter to indicate to process data from the url as hierarchical 
-	//(data items can contain other data items in js form).  Default is true 
-	//for backwards compatibility.  False means only root items are processed 
-	//as items, all child objects outside of type-mapped objects and those in 
+	//Parameter to indicate to process data from the url as hierarchical
+	//(data items can contain other data items in js form).  Default is true
+	//for backwards compatibility.  False means only root items are processed
+	//as items, all child objects outside of type-mapped objects and those in
 	//specific reference format, are left straight JS data objects.
 	hierarchical: true,
 
 	_assertIsItem: function(/* item */ item){
 		//	summary:
 		//		This function tests whether the item passed in is indeed an item in the store.
-		//	item: 
+		//	item:
 		//		The item to test for being contained by the store.
-		if(!this.isItem(item)){ 
+		if(!this.isItem(item)){
 			throw new Error("dojo.data.ItemFileReadStore: Invalid item argument.");
 		}
 	},
@@ -13396,25 +13396,25 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 	_assertIsAttribute: function(/* attribute-name-string */ attribute){
 		//	summary:
 		//		This function tests whether the item passed in is indeed a valid 'attribute' like type for the store.
-		//	attribute: 
+		//	attribute:
 		//		The attribute to test for being contained by the store.
-		if(typeof attribute !== "string"){ 
+		if(typeof attribute !== "string"){
 			throw new Error("dojo.data.ItemFileReadStore: Invalid attribute argument.");
 		}
 	},
 
-	getValue: function(	/* item */ item, 
-						/* attribute-name-string */ attribute, 
+	getValue: function(	/* item */ item,
+						/* attribute-name-string */ attribute,
 						/* value? */ defaultValue){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Read.getValue()
 		var values = this.getValues(item, attribute);
 		return (values.length > 0)?values[0]:defaultValue; // mixed
 	},
 
-	getValues: function(/* item */ item, 
+	getValues: function(/* item */ item,
 						/* attribute-name-string */ attribute){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Read.getValues()
 
 		this._assertIsItem(item);
@@ -13424,7 +13424,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 	},
 
 	getAttributes: function(/* item */ item){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Read.getAttributes()
 		this._assertIsItem(item);
 		var attributes = [];
@@ -13439,17 +13439,17 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 
 	hasAttribute: function(	/* item */ item,
 							/* attribute-name-string */ attribute){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Read.hasAttribute()
 		this._assertIsItem(item);
 		this._assertIsAttribute(attribute);
 		return (attribute in item);
 	},
 
-	containsValue: function(/* item */ item, 
-							/* attribute-name-string */ attribute, 
+	containsValue: function(/* item */ item,
+							/* attribute-name-string */ attribute,
 							/* anything */ value){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Read.containsValue()
 		var regexp = undefined;
 		if(typeof value === "string"){
@@ -13458,22 +13458,22 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 		return this._containsValue(item, attribute, value, regexp); //boolean.
 	},
 
-	_containsValue: function(	/* item */ item, 
-								/* attribute-name-string */ attribute, 
+	_containsValue: function(	/* item */ item,
+								/* attribute-name-string */ attribute,
 								/* anything */ value,
 								/* RegExp?*/ regexp){
-		//	summary: 
+		//	summary:
 		//		Internal function for looking at the values contained by the item.
-		//	description: 
-		//		Internal function for looking at the values contained by the item.  This 
+		//	description:
+		//		Internal function for looking at the values contained by the item.  This
 		//		function allows for denoting if the comparison should be case sensitive for
 		//		strings or not (for handling filtering cases where string case should not matter)
-		//	
+		//
 		//	item:
 		//		The data item to examine for attribute values.
 		//	attribute:
 		//		The attribute to inspect.
-		//	value:	
+		//	value:
 		//		The value to match.
 		//	regexp:
 		//		Optional regular expression generated off value if value was of string type to handle wildcarding.
@@ -13490,7 +13490,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 	},
 
 	isItem: function(/* anything */ something){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Read.isItem()
 		if(something && something[this._storeRefPropName] === this){
 			if(this._arrayOfAllItems[something[this._itemNumPropName]] === something){
@@ -13501,25 +13501,25 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 	},
 
 	isItemLoaded: function(/* anything */ something){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Read.isItemLoaded()
 		return this.isItem(something); //boolean
 	},
 
 	loadItem: function(/* object */ keywordArgs){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Read.loadItem()
 		this._assertIsItem(keywordArgs.item);
 	},
 
 	getFeatures: function(){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Read.getFeatures()
 		return this._features; //Object
 	},
 
 	getLabel: function(/* item */ item){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Read.getLabel()
 		if(this._labelAttr && this.isItem(item)){
 			return this.getValue(item,this._labelAttr); //String
@@ -13528,7 +13528,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 	},
 
 	getLabelAttributes: function(/* item */ item){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Read.getLabelAttributes()
 		if(this._labelAttr){
 			return [this._labelAttr]; //array
@@ -13536,10 +13536,10 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 		return null; //null
 	},
 
-	_fetchItems: function(	/* Object */ keywordArgs, 
-							/* Function */ findCallback, 
+	_fetchItems: function(	/* Object */ keywordArgs,
+							/* Function */ findCallback,
 							/* Function */ errorCallback){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.util.simpleFetch.fetch()
 		var self = this,
 		    filter = function(requestArgs, arrayOfItems){
@@ -13579,8 +13579,8 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 				}
 				findCallback(items, requestArgs);
 			}else{
-				// We want a copy to pass back in case the parent wishes to sort the array. 
-				// We shouldn't allow resort of the internal list, so that multiple callers 
+				// We want a copy to pass back in case the parent wishes to sort the array.
+				// We shouldn't allow resort of the internal list, so that multiple callers
 				// can get lists and sort without affecting each other.  We also need to
 				// filter out any null values that have been left as a result of deleteItem()
 				// calls in ItemFileWriteStore.
@@ -13600,11 +13600,11 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 			//Do a check on the JsonFileUrl and crosscheck it.
 			//If it doesn't match the cross-check, it needs to be updated
 			//This allows for either url or _jsonFileUrl to he changed to
-			//reset the store load location.  Done this way for backwards 
+			//reset the store load location.  Done this way for backwards
 			//compatibility.  People use _jsonFileUrl (even though officially
 			//private.
 			if(this._jsonFileUrl !== this._ccUrl){
-				dojo.deprecated("dojo.data.ItemFileReadStore: ", 
+				dojo.deprecated("dojo.data.ItemFileReadStore: ",
 					"To change the url, set the url property of the store," +
 					" not _jsonFileUrl.  _jsonFileUrl support will be removed in 2.0");
 				this._ccUrl = this._jsonFileUrl;
@@ -13622,14 +13622,14 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 
 			if(this._jsonFileUrl){
 				//If fetches come in before the loading has finished, but while
-				//a load is in progress, we have to defer the fetching to be 
+				//a load is in progress, we have to defer the fetching to be
 				//invoked in the callback.
 				if(this._loadInProgress){
 					this._queuedFetches.push({args: keywordArgs, filter: filter});
 				}else{
 					this._loadInProgress = true;
 					var getArgs = {
-							url: self._jsonFileUrl, 
+							url: self._jsonFileUrl,
 							handleAs: "json-comment-optional",
 							preventCache: this.urlPreventCache,
 							failOk: this.failOk
@@ -13640,7 +13640,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 							self._getItemsFromLoadedData(data);
 							self._loadFinished = true;
 							self._loadInProgress = false;
-							
+
 							filter(keywordArgs, self._getItemsArray(keywordArgs.queryOptions));
 							self._handleQueuedFetches();
 						}catch(e){
@@ -13689,7 +13689,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 	},
 
 	_handleQueuedFetches: function(){
-		//	summary: 
+		//	summary:
 		//		Internal function to execute delayed request in the store.
 		//Execute any deferred fetches now.
 		if(this._queuedFetches.length > 0){
@@ -13698,7 +13698,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 				    delayedQuery = fData.args,
 				    delayedFilter = fData.filter;
 				if(delayedFilter){
-					delayedFilter(delayedQuery, this._getItemsArray(delayedQuery.queryOptions)); 
+					delayedFilter(delayedQuery, this._getItemsArray(delayedQuery.queryOptions));
 				}else{
 					this.fetchItemByIdentity(delayedQuery);
 				}
@@ -13708,31 +13708,31 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 	},
 
 	_getItemsArray: function(/*object?*/queryOptions){
-		//	summary: 
+		//	summary:
 		//		Internal function to determine which list of items to search over.
 		//	queryOptions: The query options parameter, if any.
 		if(queryOptions && queryOptions.deep){
-			return this._arrayOfAllItems; 
+			return this._arrayOfAllItems;
 		}
 		return this._arrayOfTopLevelItems;
 	},
 
 	close: function(/*dojo.data.api.Request || keywordArgs || null */ request){
-		 //	summary: 
+		 //	summary:
 		 //		See dojo.data.api.Read.close()
-		 if(this.clearOnClose && 
-			this._loadFinished && 
+		 if(this.clearOnClose &&
+			this._loadFinished &&
 			!this._loadInProgress){
 			 //Reset all internalsback to default state.  This will force a reload
-			 //on next fetch.  This also checks that the data or url param was set 
+			 //on next fetch.  This also checks that the data or url param was set
 			 //so that the store knows it can get data.  Without one of those being set,
 			 //the next fetch will trigger an error.
 
-			 if(((this._jsonFileUrl == "" || this._jsonFileUrl == null) && 
+			 if(((this._jsonFileUrl == "" || this._jsonFileUrl == null) &&
 				 (this.url == "" || this.url == null)
 				) && this.data == null){
 				 console.debug("dojo.data.ItemFileReadStore: WARNING!  Data reload " +
-					" information has not been provided." + 
+					" information has not been provided." +
 					"  Please set 'url' or 'data' to the appropriate value before" +
 					" the next fetch");
 			 }
@@ -13756,11 +13756,11 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 		//
 		// 	returns: array
 		//		Array of items in store item format.
-		
+
 		// First, we define a couple little utility functions...
 		var addingArrays = false,
 		    self = this;
-		
+
 		function valueIsAnItem(/* anything */ aValue){
 			// summary:
 			//		Given any sort of value that could be in the raw json data,
@@ -13781,14 +13781,14 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 				(!dojo.isArray(aValue) || addingArrays) &&
 				(!dojo.isFunction(aValue)) &&
 				(aValue.constructor == Object || dojo.isArray(aValue)) &&
-				(typeof aValue._reference === "undefined") && 
-				(typeof aValue._type === "undefined") && 
+				(typeof aValue._reference === "undefined") &&
+				(typeof aValue._type === "undefined") &&
 				(typeof aValue._value === "undefined") &&
 				self.hierarchical
 			);
 			return isItem;
 		}
-		
+
 		function addItemAndSubItemsToArrayOfAllItems(/* Item */ anItem){
 			self._arrayOfAllItems.push(anItem);
 			for(var attribute in anItem){
@@ -13832,13 +13832,13 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 			item[this._rootItemPropName]=true;
 		}
 
-		// Step 2: Walk through all the attribute values of all the items, 
+		// Step 2: Walk through all the attribute values of all the items,
 		// and replace single values with arrays.  For example, we change this:
 		//		{ name:'Miss Piggy', pets:'Foo-Foo'}
 		// into this:
 		//		{ name:['Miss Piggy'], pets:['Foo-Foo']}
-		// 
-		// We also store the attribute names so we can validate our store  
+		//
+		// We also store the attribute names so we can validate our store
 		// reference and item id special properties for the O(1) isItem
 		var allAttributeNames = {},
 		    key;
@@ -13872,9 +13872,9 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 			this._reverseRefMap += "_";
 		}
 
-		// Step 4: Some data files specify an optional 'identifier', which is 
-		// the name of an attribute that holds the identity of each item. 
-		// If this data file specified an identifier attribute, then build a 
+		// Step 4: Some data files specify an optional 'identifier', which is
+		// the name of an attribute that holds the identity of each item.
+		// If this data file specified an identifier attribute, then build a
 		// hash table of items keyed by the identity of the items.
 		var arrayOfValues;
 
@@ -13900,7 +13900,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 			this._features['dojo.data.api.Identity'] = Number;
 		}
 
-		// Step 5: Walk through all the items, and set each item's properties 
+		// Step 5: Walk through all the items, and set each item's properties
 		// for _storeRefPropName and _itemNumPropName, so that store.isItem() will return true.
 		for(i = 0; i < this._arrayOfAllItems.length; ++i){
 			item = this._arrayOfAllItems[i];
@@ -13914,13 +13914,13 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 		// We replace item-references with pointers to items.  For example, we change:
 		//		{ name:['Kermit'], friends:[{_reference:{name:'Miss Piggy'}}] }
 		// into this:
-		//		{ name:['Kermit'], friends:[miss_piggy] } 
+		//		{ name:['Kermit'], friends:[miss_piggy] }
 		// (where miss_piggy is the object representing the 'Miss Piggy' item).
 		//
 		// We replace type/value pairs with typed-literals.  For example, we change:
 		//		{ name:['Nelson Mandela'], born:[{_type:'Date', _value:'July 18, 1918'}] }
 		// into this:
-		//		{ name:['Kermit'], born:(new Date('July 18, 1918')) } 
+		//		{ name:['Kermit'], born:(new Date('July 18, 1918')) }
 		//
 		// We also generate the associate map for all items for the O(1) isItem function.
 		for(i = 0; i < this._arrayOfAllItems.length; ++i){
@@ -13933,7 +13933,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 						if(("_type" in value) && ("_value" in value)){
 							var type = value._type; // examples: 'Date', 'Color', or 'ComplexNumber'
 							var mappingObj = this._datatypeMap[type]; // examples: Date, dojo.Color, foo.math.ComplexNumber, {type: dojo.Color, deserialize(value){ return new dojo.Color(value)}}
-							if(!mappingObj){ 
+							if(!mappingObj){
 								throw new Error("dojo.data.ItemFileReadStore: in the typeMap constructor arg, no object class was specified for the datatype '" + type + "'");
 							}else if(dojo.isFunction(mappingObj)){
 								arrayOfValues[j] = new mappingObj(value._value);
@@ -13956,12 +13956,12 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 									var candidateItem = this._arrayOfAllItems[k],
 									    found = true;
 									for(var refKey in referenceDescription){
-										if(candidateItem[refKey] != referenceDescription[refKey]){ 
-											found = false; 
+										if(candidateItem[refKey] != referenceDescription[refKey]){
+											found = false;
 										}
 									}
-									if(found){ 
-										arrayOfValues[j] = candidateItem; 
+									if(found){
+										arrayOfValues[j] = candidateItem;
 									}
 								}
 							}
@@ -13972,7 +13972,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 								}
 							}
 						}else if(this.isItem(value)){
-							//It's a child item (not one referenced through _reference).  
+							//It's a child item (not one referenced through _reference).
 							//We need to treat this as a referenced item, so it can be cleaned up
 							//in a write store easily.
 							if(this.referenceIntegrity){
@@ -13996,12 +13996,12 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 		 //		The item that holds the new reference to refItem.
 		 //	attribute:
 		 //		The attribute on parentItem that contains the new reference.
-		 
+
 		 //Stub function, does nothing.  Real processing is in ItemFileWriteStore.
 	},
 
 	getIdentity: function(/* item */ item){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Identity.getIdentity()
 		var identifier = this._features['dojo.data.api.Identity'];
 		if(identifier === Number){
@@ -14016,7 +14016,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 	},
 
 	fetchItemByIdentity: function(/* Object */ keywordArgs){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Identity.fetchItemByIdentity()
 
 		// Hasn't loaded yet, we have to trigger the load.
@@ -14027,11 +14027,11 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 			//Do a check on the JsonFileUrl and crosscheck it.
 			//If it doesn't match the cross-check, it needs to be updated
 			//This allows for either url or _jsonFileUrl to he changed to
-			//reset the store load location.  Done this way for backwards 
+			//reset the store load location.  Done this way for backwards
 			//compatibility.  People use _jsonFileUrl (even though officially
 			//private.
 			if(this._jsonFileUrl !== this._ccUrl){
-				dojo.deprecated("dojo.data.ItemFileReadStore: ", 
+				dojo.deprecated("dojo.data.ItemFileReadStore: ",
 					"To change the url, set the url property of the store," +
 					" not _jsonFileUrl.  _jsonFileUrl support will be removed in 2.0");
 				this._ccUrl = this._jsonFileUrl;
@@ -14040,7 +14040,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 				this._jsonFileUrl = this.url;
 				this._ccUrl = this.url;
 			}
-			
+
 			//See if there was any forced reset of data.
 			if(this.data != null && this._jsonData == null){
 				this._jsonData = this.data;
@@ -14054,7 +14054,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 				}else{
 					this._loadInProgress = true;
 					var getArgs = {
-							url: self._jsonFileUrl, 
+							url: self._jsonFileUrl,
 							handleAs: "json-comment-optional",
 							preventCache: this.urlPreventCache,
 							failOk: this.failOk
@@ -14097,7 +14097,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 					scope = keywordArgs.scope?keywordArgs.scope:dojo.global;
 					keywordArgs.onItem.call(scope, item);
 				}
-			} 
+			}
 		}else{
 			// Already loaded.  We can just look it up and call back.
 			item = this._getItemByIdentity(keywordArgs.identity);
@@ -14124,34 +14124,34 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 	},
 
 	getIdentityAttributes: function(/* item */ item){
-		//	summary: 
+		//	summary:
 		//		See dojo.data.api.Identity.getIdentifierAttributes()
-		 
+
 		var identifier = this._features['dojo.data.api.Identity'];
 		if(identifier === Number){
 			// If (identifier === Number) it means getIdentity() just returns
 			// an integer item-number for each item.  The dojo.data.api.Identity
-			// spec says we need to return null if the identity is not composed 
-			// of attributes 
+			// spec says we need to return null if the identity is not composed
+			// of attributes
 			return null; // null
 		}else{
 			return [identifier]; // Array
 		}
 	},
-	
+
 	_forceLoad: function(){
-		//	summary: 
+		//	summary:
 		//		Internal function to force a load of the store if it hasn't occurred yet.  This is required
-		//		for specific functions to work properly.  
+		//		for specific functions to work properly.
 		var self = this;
 		//Do a check on the JsonFileUrl and crosscheck it.
 		//If it doesn't match the cross-check, it needs to be updated
 		//This allows for either url or _jsonFileUrl to he changed to
-		//reset the store load location.  Done this way for backwards 
+		//reset the store load location.  Done this way for backwards
 		//compatibility.  People use _jsonFileUrl (even though officially
 		//private.
 		if(this._jsonFileUrl !== this._ccUrl){
-			dojo.deprecated("dojo.data.ItemFileReadStore: ", 
+			dojo.deprecated("dojo.data.ItemFileReadStore: ",
 				"To change the url, set the url property of the store," +
 				" not _jsonFileUrl.  _jsonFileUrl support will be removed in 2.0");
 			this._ccUrl = this._jsonFileUrl;
@@ -14169,7 +14169,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 
 		if(this._jsonFileUrl){
 				var getArgs = {
-					url: this._jsonFileUrl, 
+					url: this._jsonFileUrl,
 					handleAs: "json-comment-optional",
 					preventCache: this.urlPreventCache,
 					failOk: this.failOk,
@@ -14178,7 +14178,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 			var getHandler = dojo.xhrGet(getArgs);
 			getHandler.addCallback(function(data){
 				try{
-					//Check to be sure there wasn't another load going on concurrently 
+					//Check to be sure there wasn't another load going on concurrently
 					//So we don't clobber data that comes in on it.  If there is a load going on
 					//then do not save this data.  It will potentially clobber current data.
 					//We mainly wanted to sync/wait here.
@@ -14191,7 +14191,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 						//Okay, we hit an error state we can't recover from.  A forced load occurred
 						//while an async load was occurring.  Since we cannot block at this point, the best
 						//that can be managed is to throw an error.
-						throw new Error("dojo.data.ItemFileReadStore:  Unable to perform a synchronous load, an async load is in progress."); 
+						throw new Error("dojo.data.ItemFileReadStore:  Unable to perform a synchronous load, an async load is in progress.");
 					}
 				}catch(e){
 					console.log(e);
@@ -14205,7 +14205,7 @@ dojo.declare("dojo.data.ItemFileReadStore", null,{
 			self._getItemsFromLoadedData(self._jsonData);
 			self._jsonData = null;
 			self._loadFinished = true;
-		} 
+		}
 	}
 });
 //Mix in the simple fetch implementation to this class.
@@ -14504,14 +14504,14 @@ dojo.declare("dijit._editor.plugins._FormatBlockDropDown", dijit._editor.plugins
 					end = range.endContainer;
 
 					// find containing nodes of start/end.
-					while(start && start !== editor.editNode && 
-						  start !== editor.document.body && 
+					while(start && start !== editor.editNode &&
+						  start !== editor.document.body &&
 						  start.nodeType !== 1){
 						start = start.parentNode;
 					}
 
-					while(end && end !== editor.editNode && 
-						  end !== editor.document.body && 
+					while(end && end !== editor.editNode &&
+						  end !== editor.document.body &&
 						  end.nodeType !== 1){
 						end = end.parentNode;
 					}
@@ -14565,7 +14565,7 @@ dojo.declare("dijit._editor.plugins._FormatBlockDropDown", dijit._editor.plugins
 							node = node.parentNode;
 						}
 
-						//Also look for all child nodes in the selection that may need to be 
+						//Also look for all child nodes in the selection that may need to be
 						//cleared of formatting
 						processChildren(start, clearNodes);
 						if(block) { clearNodes = [block].concat(clearNodes); }
@@ -14601,7 +14601,7 @@ dojo.declare("dijit._editor.plugins._FormatBlockDropDown", dijit._editor.plugins
 		if(editor.customUndo){
 			// So of course IE doesn't work right with paste-overs.
 			// We have to do this manually, which is okay since IE already uses
-			// customUndo and we turned it on for WebKit.  WebKit pasted funny, 
+			// customUndo and we turned it on for WebKit.  WebKit pasted funny,
 			// so couldn't use the execCommand approach
 			while(node.firstChild){
 				dojo.place(node.firstChild, node, "before");
@@ -14610,11 +14610,11 @@ dojo.declare("dijit._editor.plugins._FormatBlockDropDown", dijit._editor.plugins
 		}else{
 			// Everyone else works fine this way, a paste-over and is native
 			// undo friendly.
-			dojo.withGlobal(editor.window, 
+			dojo.withGlobal(editor.window,
 				 "selectElementChildren", dijit._editor.selection, [node]);
-			var html = 	dojo.withGlobal(editor.window, 
+			var html = 	dojo.withGlobal(editor.window,
 				 "getSelectedHtml", dijit._editor.selection, [null]);
-			dojo.withGlobal(editor.window, 
+			dojo.withGlobal(editor.window,
 				 "selectElement", dijit._editor.selection, [node]);
 			editor.execCommand("inserthtml", html||"");
 		}
@@ -14689,7 +14689,7 @@ dojo.declare("dijit._editor.plugins.FontChoice", dijit._editor._Plugin,{
 			// User invoked change, since all internal updates set priorityChange to false and will
 			// not trigger an onChange event.
 			this.editor.focus();
-			
+
 			if(this.command == "fontName" && choice.indexOf(" ") != -1){ choice = "'" + choice + "'"; }
 
 			// Invoke, the editor already normalizes commands called through its
@@ -14699,7 +14699,7 @@ dojo.declare("dijit._editor.plugins.FontChoice", dijit._editor._Plugin,{
 			}else{
 				this.editor.execCommand(this.command, choice);
 			}
-			
+
 			// Enable custom undo for webkit, needed for noFormat to work properly
 			// and still undo.
 			this.editor.customUndo = this.editor.customUndo || dojo.isWebKit;
@@ -16204,7 +16204,7 @@ dojo.declare("dijit.Menu",
 				win = this._iframeContentWindow(iframe);
 			cn = dojo.withGlobal(win, dojo.body);
 		}else{
-			
+
 			// To capture these events at the top level, attach to <html>, not <body>.
 			// Otherwise right-click context menu just doesn't work.
 			cn = (node == dojo.body() ? dojo.doc.documentElement : node);
@@ -16241,7 +16241,7 @@ dojo.declare("dijit.Menu",
 						this._scheduleOpen(evt.target, iframe);	// no coords - open near target node
 					}
 				})
-			];	
+			];
 		});
 		binding.connects = cn ? doConnects(cn) : [];
 
@@ -16356,7 +16356,7 @@ dojo.declare("dijit.Menu",
 					ifc = dojo.position(iframe, true),
 					win = this._iframeContentWindow(iframe),
 					scroll = dojo.withGlobal(win, "_docScroll", dojo);
-	
+
 				var cs = dojo.getComputedStyle(iframe),
 					tp = dojo._toPixelValue,
 					left = (dojo.isIE && dojo.isQuirks ? 0 : tp(iframe, cs.paddingLeft)) + (dojo.isIE && dojo.isQuirks ? tp(iframe, cs.borderLeftWidth) : 0),
@@ -16616,7 +16616,7 @@ dojo.declare("dijit.form.Select", [dijit.form._FormSelectWidget, dijit._HasDropD
 		//		Show missing or invalid messages if appropriate, and highlight textbox field.
 		//		Used when a select is initially set to no value and the user is required to
 		//		set the value.
-		
+
 		var isValid = this.isValid(isFocused);
 		this.state = isValid ? "" : "Error";
 		this._setStateClass();
@@ -16739,7 +16739,7 @@ dojo.declare("dijit._editor.plugins.LinkDialog", dijit._editor._Plugin, {
 
 	// emailRegExp: [protected] String
 	//		Used for validating input as correct email address.  Taken from dojox.validate
-	emailRegExp:  "<?(mailto\\:)([!#-'*+\\-\\/-9=?A-Z^-~]+[.])*[!#-'*+\\-\\/-9=?A-Z^-~]+" /*username*/ + "@" +  
+	emailRegExp:  "<?(mailto\\:)([!#-'*+\\-\\/-9=?A-Z^-~]+[.])*[!#-'*+\\-\\/-9=?A-Z^-~]+" /*username*/ + "@" +
         "((?:(?:[\\da-zA-Z](?:[-\\da-zA-Z]{0,61}[\\da-zA-Z])?)\\.)+(?:[a-zA-Z](?:[-\\da-zA-Z]{0,6}[\\da-zA-Z])?)\\.?)|localhost|^[^-][a-zA-Z0-9_-]*>?",	// host.
 
 	// htmlTemplate: [protected] String
@@ -16913,8 +16913,8 @@ dojo.declare("dijit._editor.plugins.LinkDialog", dijit._editor._Plugin, {
 		// summary:
 		//		Function to check the values in args and 'fix' them up as needed.
 		// args: Object
-		//		Content being set.		
-		// tags: 
+		//		Content being set.
+		// tags:
 		//		protected
 		if(args && args.urlInput){
 			args.urlInput = args.urlInput.replace(/"/g, "&quot;");
@@ -16960,7 +16960,7 @@ dojo.declare("dijit._editor.plugins.LinkDialog", dijit._editor._Plugin, {
 			}
 		}
 		// make sure values are properly escaped, etc.
-		args = this._checkValues(args); 
+		args = this._checkValues(args);
 		this.editor.execCommand('inserthtml',
 			dojo.string.substitute(this.htmlTemplate, args));
 	},
@@ -17148,11 +17148,11 @@ dojo.declare("dijit._editor.plugins.ImgLinkDialog", [dijit._editor.plugins.LinkD
 
 	_checkValues: function(args){
 		// summary:
-		//		Function to check the values in args and 'fix' them up as needed 
+		//		Function to check the values in args and 'fix' them up as needed
 		//		(special characters in the url or alt text)
 		// args: Object
-		//		Content being set.		
-		// tags: 
+		//		Content being set.
+		// tags:
 		//		protected
 		if(args && args.urlInput){
 			args.urlInput = args.urlInput.replace(/"/g, "&quot;");
@@ -17418,7 +17418,7 @@ dojo.number._applyPattern = function(/*Number*/value, /*String*/pattern, /*dojo.
 	}else if(pattern.indexOf('E') != -1){
 		throw new Error("exponential notation not supported");
 	}
-	
+
 	//TODO: support @ sig figs?
 	var numberPatternRE = dojo.number._numberPatternRE;
 	var numberPattern = positivePattern.match(numberPatternRE);
@@ -17490,7 +17490,7 @@ dojo.number.__FormatAbsoluteOptions = function(){
 =====*/
 
 dojo.number._formatAbsolute = function(/*Number*/value, /*String*/pattern, /*dojo.number.__FormatAbsoluteOptions?*/options){
-	// summary: 
+	// summary:
 	//		Apply numeric pattern to absolute value using options. Gives no
 	//		consideration to local customs.
 	// value:
@@ -17804,10 +17804,10 @@ dojo.number._realNumberRegexp = function(/*dojo.number.__RealNumberRegexpFlags?*
 			var re = "";
 			if(q && (flags.places!==0)){
 				re = "\\" + flags.decimal;
-				if(flags.places == Infinity){ 
-					re = "(?:" + re + "\\d+)?"; 
+				if(flags.places == Infinity){
+					re = "(?:" + re + "\\d+)?";
 				}else{
-					re += "\\d{" + flags.places + "}"; 
+					re += "\\d{" + flags.places + "}";
 				}
 			}
 			return re;
@@ -17816,9 +17816,9 @@ dojo.number._realNumberRegexp = function(/*dojo.number.__RealNumberRegexpFlags?*
 	);
 
 	var exponentRE = dojo.regexp.buildGroupRE(flags.exponent,
-		function(q){ 
+		function(q){
 			if(q){ return "([eE]" + dojo.number._integerRegexp({ signed: flags.eSigned}) + ")"; }
-			return ""; 
+			return "";
 		}
 	);
 
@@ -17850,7 +17850,7 @@ dojo.number.__IntegerRegexpFlags = function(){
 =====*/
 
 dojo.number._integerRegexp = function(/*dojo.number.__IntegerRegexpFlags?*/flags){
-	// summary: 
+	// summary:
 	//		Builds a regular expression that matches an integer
 
 	// assign default values to missing parameters
@@ -18107,7 +18107,7 @@ dojo.declare(
 		if(!this.open){
 			this.hideNode.style.display = this.wipeNode.style.display = "none";
 		}
-		
+
 		// Hover and focus effect on title bar, except for non-toggleable TitlePanes
 		// This should really be controlled from _setToggleableAttr() but _CssStateMixin
 		// doesn't provide a way to disconnect a previous _trackMouseState() call
@@ -18331,14 +18331,14 @@ dojo.DeferredList = function(/*Array*/ list, /*Boolean?*/ fireOnOneCallback, /*B
 			if(finished === list.length){
 				self.resolve(resultList);
 			}
-			
+
 		}
 	});
 };
 dojo.DeferredList.prototype = new dojo.Deferred();
 
 dojo.DeferredList.prototype.gatherResults= function(deferredList){
-	// summary:	
+	// summary:
 	//	Gathers the results of the deferreds for packaging
 	//	as the parameters to the Deferred Lists' callback
 
@@ -18383,7 +18383,7 @@ dojo.__cookieProps = function(){
 
 
 dojo.cookie = function(/*String*/name, /*String?*/value, /*dojo.__cookieProps?*/props){
-	//	summary: 
+	//	summary:
 	//		Get or set a cookie.
 	//	description:
 	// 		If one argument is passed, returns the value of the cookie
@@ -18392,17 +18392,17 @@ dojo.cookie = function(/*String*/name, /*String?*/value, /*dojo.__cookieProps?*/
 	//		Name of the cookie
 	//	value:
 	//		Value for the cookie
-	//	props: 
+	//	props:
 	//		Properties for the cookie
 	//	example:
 	//		set a cookie with the JSON-serialized contents of an object which
 	//		will expire 5 days from now:
 	//	|	dojo.cookie("configObj", dojo.toJson(config), { expires: 5 });
-	//	
+	//
 	//	example:
 	//		de-serialize a cookie back into a JavaScript object:
 	//	|	var config = dojo.fromJson(dojo.cookie("configObj"));
-	//	
+	//
 	//	example:
 	//		delete a cookie:
 	//	|	dojo.cookie("configObj", null, {expires: -1});
@@ -18414,7 +18414,7 @@ dojo.cookie = function(/*String*/name, /*String?*/value, /*dojo.__cookieProps?*/
 		props = props || {};
 // FIXME: expires=0 seems to disappear right away, not on close? (FF3)  Change docs?
 		var exp = props.expires;
-		if(typeof exp == "number"){ 
+		if(typeof exp == "number"){
 			var d = new Date();
 			d.setTime(d.getTime() + exp*24*60*60*1000);
 			exp = props.expires = d;
@@ -18435,7 +18435,7 @@ dojo.cookie = function(/*String*/name, /*String?*/value, /*dojo.__cookieProps?*/
 dojo.cookie.isSupported = function(){
 	//	summary:
 	//		Use to determine if the current browser supports cookies or not.
-	//		
+	//
 	//		Returns true if user allows cookies.
 	//		Returns false if user doesn't allow cookies.
 
@@ -19926,7 +19926,7 @@ dojo.declare(
 				}else{
 					// Final destination node, select it
 					this._selectNode(node);
-					
+
 					// signal that path setting is finished
 					d.resolve(true);
 				}
@@ -19934,7 +19934,7 @@ dojo.declare(
 
 			this._expandNode(node).addCallback(dojo.hitch(this, advance));
 		}));
-			
+
 		return d;
 	},
 
@@ -21350,8 +21350,8 @@ dojo.declare(
 				preventDefault: function(){ // not IE
 							this.returnValue = false;
 						},
-				stopPropagation: function(){}, 
-				currentTarget: e ? e.target : this.domNode, 
+				stopPropagation: function(){},
+				currentTarget: e ? e.target : this.domNode,
 				target: e ? e.target : this.domNode
 			};
 			// if return value is not exactly false, and haven't called preventDefault(), then reset
@@ -21493,8 +21493,8 @@ dojo.declare(
 		//		In markup, this is specified as "readOnly".
 		//		Similar to disabled except readOnly form values are submitted.
 		readOnly: false,
-		
-		// the attributeMap should inherit from dijit.form._FormWidget.prototype.attributeMap 
+
+		// the attributeMap should inherit from dijit.form._FormWidget.prototype.attributeMap
 		// instead of ToggleButton as the icon mapping has no meaning for a CheckBox
 		attributeMap: dojo.delegate(dijit.form._FormWidget.prototype.attributeMap, {
 			readOnly: "focusNode"
@@ -22113,7 +22113,7 @@ dojo.declare(
 		/*=====
 		constraints: {},
 		======*/
-		
+
 		baseClass: "dijitTextBox dijitCurrencyTextBox",
 
 		// Override regExpGen ValidationTextBox.regExpGen().... we use a reg-ex generating function rather
@@ -22281,7 +22281,7 @@ dojo.date.getTimezoneName = function(/*Date*/dateObject){
 	}else{
 		// If at first you don't succeed ...
 		// If IE knows about the TZ, it appears before the year
-		// Capital letters or slash before a 4-digit year 
+		// Capital letters or slash before a 4-digit year
 		// at the end of string
 		var pat = /([A-Z\/]+) \d{4}$/;
 		if((match = str.match(pat))){
@@ -22290,7 +22290,7 @@ dojo.date.getTimezoneName = function(/*Date*/dateObject){
 		// Some browsers (e.g. Safari) glue the TZ on the end
 		// of toLocaleString instead of putting it in toString
 			str = dateObject.toLocaleString();
-			// Capital letters or slash -- end of string, 
+			// Capital letters or slash -- end of string,
 			// after space
 			pat = / ([A-Z\/]+)$/;
 			if((match = str.match(pat))){
@@ -22332,7 +22332,7 @@ dojo.date.compare = function(/*Date*/date1, /*Date?*/date2, /*String?*/portion){
 		date1.setFullYear(0, 0, 0);
 		date2.setFullYear(0, 0, 0);
 	}
-	
+
 	if(date1 > date2){ return 1; } // int
 	if(date1 < date2){ return -1; } // int
 	return 0; // int
@@ -22855,10 +22855,10 @@ dojo.date.locale.parse = function(/*String*/value, /*dojo.date.locale.__FormatOp
 	//		formatting lengths may be chosen, with "full" used by default.
 	//		Custom patterns may be used or registered with translations using
 	//		the dojo.date.locale.addCustomFormats method.
-	//	
+	//
 	//		Formatting patterns are implemented using [the syntax described at
 	//		unicode.org](http://www.unicode.org/reports/tr35/tr35-4.html#Date_Format_Patterns)
-	//		When two digit years are used, a century is chosen according to a sliding 
+	//		When two digit years are used, a century is chosen according to a sliding
 	//		window of 80 years before and 20 years after present year, for both `yy` and `yyyy` patterns.
 	//		year < 100CE requires strict mode.
 	//
@@ -23007,7 +23007,7 @@ dojo.date.locale.parse = function(/*String*/value, /*dojo.date.locale.__FormatOp
 		result[3] = 0; //12am -> 0
 	}
 
-	//TODO: implement a getWeekday() method in order to test 
+	//TODO: implement a getWeekday() method in order to test
 	//validity of input strings containing 'EEE' or 'EEEE'...
 
 	var dateObject = new Date(result[0], result[1], result[2], result[3], result[4], result[5], result[6]); // Date
@@ -23047,7 +23047,7 @@ function _processPattern(pattern, applyPattern, applyLiteral, applyAll){
 	applyLiteral = applyLiteral || identity;
 	applyAll = applyAll || identity;
 
-	//split on single quotes (which escape literals in date format strings) 
+	//split on single quotes (which escape literals in date format strings)
 	//but preserve escaped single quotes (e.g., o''clock)
 	var chunks = pattern.match(/(''|[^'])+/g),
 		literal = pattern.charAt(0) == "'";
@@ -23288,15 +23288,15 @@ dojo.declare(
 		// tabIndex: Integer
 		//		Order fields are traversed when user hits the tab key
 		tabIndex: "0",
-		
+
 		baseClass:"dijitCalendar",
 
-		// Set node classes for various mouse events, see dijit._CssStateMixin for more details 
+		// Set node classes for various mouse events, see dijit._CssStateMixin for more details
 		cssStateNodes: {
 			"decrementMonth": "dijitCalendarArrow",
 			"incrementMonth": "dijitCalendarArrow",
 			"previousYearLabelNode": "dijitCalendarPreviousYear",
-			"nextYearLabelNode": "dijitCalendarNextYear"			
+			"nextYearLabelNode": "dijitCalendarNextYear"
 		},
 
 		attributeMap: dojo.delegate(dijit._Widget.prototype.attributeMap, {
@@ -23611,9 +23611,9 @@ dojo.declare(
 			//      Handler for mouse out events on days, clears hovered style
 			// tags:
 			//      protected
-	
+
 			if(!this._currentNode){ return; }
-			
+
 			// if mouse out occurs moving from <td> to <span> inside <td>, ignore it
 			if(evt.relatedTarget && evt.relatedTarget.parentNode == this._currentNode){ return; }
 
@@ -23623,7 +23623,7 @@ dojo.declare(
 			}
 			this._currentNode = null;
 		},
-		
+
 		_onDayMouseDown: function(/*Event*/ evt){
 			var node = evt.target.parentNode;
 			if(node && node.dijitDateValue){
@@ -23631,7 +23631,7 @@ dojo.declare(
 				this._currentNode = node;
 			}
 		},
-		
+
 		_onDayMouseUp: function(/*Event*/ evt){
 			var node = evt.target.parentNode;
 			if(node && node.dijitDateValue){
@@ -25919,7 +25919,7 @@ dojo.declare(
 			// Set the height of the open pane based on what room remains.
 
 			var openPane = this.selectedChildWidget;
-			
+
 			if(!openPane){ return;}
 
 			var openPaneContainer = openPane._wrapperWidget.domNode,
@@ -25934,7 +25934,7 @@ dojo.declare(
 					totalCollapsedHeight += dojo.marginBox(child._wrapperWidget.domNode).h;
 				}
 			});
-			this._verticalSpace = mySize.h - totalCollapsedHeight - openPaneContainerMargin.h 
+			this._verticalSpace = mySize.h - totalCollapsedHeight - openPaneContainerMargin.h
 			 	- openPaneContainerPadBorder.h - openPane._buttonWidget.getTitleHeight();
 
 			// Memo size to make displayed child
@@ -25964,7 +25964,7 @@ dojo.declare(
 			this.inherited(arguments);
 		},
 
-		addChild: function(/*dijit._Widget*/ child, /*Integer?*/ insertIndex){	
+		addChild: function(/*dijit._Widget*/ child, /*Integer?*/ insertIndex){
 			if(this._started){
 				// Adding a child to a started Accordion is complicated because children have
 				// wrapper widgets.  Default code path (calling this.inherited()) would add
@@ -25976,11 +25976,11 @@ dojo.declare(
 				if(!child._started){
 					child.startup();
 				}
-				
+
 				// Then stick the wrapper widget around the child widget
 				this._setupChild(child);
 
-				// Code below copied from StackContainer	
+				// Code below copied from StackContainer
 				dojo.publish(this.id+"-addChild", [child, insertIndex]);
 				this.layout();
 				if(!this.selectedChildWidget){
@@ -26040,7 +26040,7 @@ dojo.declare(
 				var newContents = newWidget.domNode;
 				dojo.addClass(newContents, "dijitVisible");
 				dojo.removeClass(newContents, "dijitHidden");
-				
+
 				if(animate){
 					var newContentsOverflow = newContents.style.overflow;
 					newContents.style.overflow = "hidden";
@@ -26103,7 +26103,7 @@ dojo.declare(
 					delete this._inTransition;
 				});
 				combined.play();
-			}			
+			}
 		},
 
 		// note: we are treating the container as controller here
@@ -26141,7 +26141,7 @@ dojo.declare("dijit.layout._AccordionInnerContainer",
 		//		Internal widget placed as direct child of AccordionContainer.containerNode.
 		//		When other widgets are added as children to an AccordionContainer they are wrapped in
 		//		this widget.
-		
+
 		// buttonWidget: String
 		//		Name of class to use to instantiate title
 		//		(Wish we didn't have a separate widget for just the title but maintaining it
@@ -26161,10 +26161,10 @@ dojo.declare("dijit.layout._AccordionInnerContainer",
 		isContainer: true,
 		isLayoutContainer: true,
 
-		buildRendering: function(){			
+		buildRendering: function(){
 			// Create wrapper div, placed where the child is now
 			this.domNode = dojo.place("<div class='" + this.baseClass + "'>", this.contentWidget.domNode, "after");
-			
+
 			// wrapper div's first child is the button widget (ie, the title bar)
 			var child = this.contentWidget,
 				cls = dojo.getObject(this.buttonWidget);
@@ -26178,7 +26178,7 @@ dojo.declare("dijit.layout._AccordionInnerContainer",
 				id: child.id + "_button",
 				parent: this.parent
 			})).placeAt(this.domNode);
-			
+
 			// and then the actual content widget (changing it from prior-sibling to last-child)
 			dojo.place(this.contentWidget.domNode, this.domNode);
 		},
@@ -26209,13 +26209,13 @@ dojo.declare("dijit.layout._AccordionInnerContainer",
 
 		destroy: function(){
 			this.button.destroyRecursive();
-			
+
 			delete this.contentWidget._buttonWidget;
 			delete this.contentWidget._wrapperWidget;
 
 			this.inherited(arguments);
 		},
-		
+
 		destroyDescendants: function(){
 			// since getChildren isn't working for me, have to code this manually
 			this.contentWidget.destroyRecursive();
@@ -26677,7 +26677,7 @@ dojo.declare(
 					top: notifyTopBottom,
 					bottom: notifyTopBottom
 				};
-			
+
 			// Send notification to those panes that have changed size
 			dojo.forEach(this.getChildren(), function(child){
 				if(child.resize && notifyList[child.region]){
@@ -26785,12 +26785,12 @@ dojo.declare("dijit.layout._Splitter", [ dijit._Widget, dijit._Templated ],
 
 		var dim = this.horizontal ? 'h' : 'w',
 			thickness = this.container._splitterThickness[this.region];
-			
+
 		// Get DOMNode of opposite pane, if an opposite pane exists.
 		// Ex: if I am the _Splitter for the left pane, then get the right pane.
 		var flip = {left:'right', right:'left', top:'bottom', bottom:'top', leading:'trailing', trailing:'leading'},
 			oppNode = this.container["_" + flip[this.region]];
-		
+
 		// I can expand up to the edge of the opposite pane, or if there's no opposite pane, then to
 		// edge of BorderContainer
 		var available = dojo.contentBox(this.container.domNode)[dim] -
@@ -27934,7 +27934,7 @@ dojo.declare("dijit.layout._TabButton",
 		//		Hook for attr('label', ...) to work.
 		// description:
 		//		takes an HTML string.
-		//		Inherited ToggleButton implementation will Set the label (text) of the button; 
+		//		Inherited ToggleButton implementation will Set the label (text) of the button;
 		//		Need to set the alt attribute of icon on tab buttons if no label displayed
 			this.inherited(arguments);
 			if(this.showLabel == false && !this.params.title){
@@ -28054,7 +28054,7 @@ dojo.declare("dijit.layout.ScrollingTabController",
 						if(menuItem){
 							menuItem.set(name, value);
 						}
-	
+
 						// The changed label will have changed the width of the
 						// buttons, so do a resize
 						if(this._dim){
@@ -28190,7 +28190,7 @@ dojo.declare("dijit.layout.ScrollingTabController",
 
 		// Enable/disabled left right buttons depending on whether or not user can scroll to left or right
 		this._setButtonClass(this._getScroll());
-		
+
 		this._postResize = true;
 	},
 

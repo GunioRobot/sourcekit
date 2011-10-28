@@ -61,5 +61,5 @@ Change history
 
 2008-01-15	Initial checkin, with basic movie embedding code.
 2008-06-04	Removed the base code, after moving it into dojox.embed and modifying it.
-2008-08-14  Implemented FLVideo for Flash Video 
+2008-08-14  Implemented FLVideo for Flash Video
 2009-02-08  Implemented FLAudio for Flash Audio

@@ -12,7 +12,7 @@
 	background-color:#fff;
 }
 .claro .dijitTimePickerItem{
-	
+
 	background-image: url("images/commonHighlight.png");
 	background-position:0px -1px;
 	background-repeat:repeat-x;
@@ -26,13 +26,13 @@
 	background-image: none;
 }
 .claro .dijitTimePickerTick {
-	
+
 	color:#7a7a7a;
 	background-color:#f2f2f2;
 	font-size:0.818em;
 }
 .claro .dijitTimePickerMarker {
-	
+
 	color:#000;
 	background-color:#e3f2ff;
 	font-size: 1em;
@@ -62,8 +62,8 @@
 .dj_ie6 .claro .dijitTimePickerMarkerHover,
 .dj_ie6 .claro .dijitTimePickerMarkerSelected,
 .dj_ie6 .claro .dijitTimePickerTickSelected  {
-	position: relative; 	
-	zoom: 1; 
+	position: relative;
+	zoom: 1;
 }
 .claro .dijitTimePickerTick .dijitTimePickerItemInner {
 	padding:1px;
@@ -82,7 +82,7 @@
 	background-image: none;
 }
 .claro .dijitTimePicker .dijitArrowButtonInner{
-	height: 100%; 
+	height: 100%;
 	background-image: url("form/images/commonFormArrows.png");
 	background-repeat: no-repeat;
 	background-position:-140px 45%;
@@ -90,7 +90,7 @@
 .claro .dijitTimePicker .dijitDownArrowButton .dijitArrowButtonInner{
 	background-position:-35px 45%;
 }
-.claro .dijitTimePicker .dijitUpArrowHover, 
+.claro .dijitTimePicker .dijitUpArrowHover,
 .claro .dijitTimePicker .dijitDownArrowHover {
 	background-color: #abd6ff;
 }

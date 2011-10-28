@@ -37,7 +37,7 @@
  * ***** END LICENSE BLOCK ***** */
 
 define(function(require, exports, module) {
-    
+
 var Document        = require("../document").Document,
     Range           = require("../range").Range,
     assert          = require("./assertions"),

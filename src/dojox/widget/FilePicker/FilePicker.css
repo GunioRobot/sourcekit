@@ -25,14 +25,14 @@
 	overflow: scroll;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	display:-moz-inline-box;		
-	display:inline-block;			
-	#zoom: 1; 
-	#display:inline; 
+	display:-moz-inline-box;
+	display:inline-block;
+	#zoom: 1;
+	#display:inline;
 	border:0;
 	padding:0;
 	vertical-align:middle;
-	#vertical-align: auto;	
+	#vertical-align: auto;
 }
 .dojoxRollingListPane .dijitMenuItem td {
 	width: 1px;
@@ -46,7 +46,7 @@
 }
 .dj_webkit .dojoxRollingListPane,
 .dj_ie .dojoxRollingListPane {
-	padding-right: 15px; 
+	padding-right: 15px;
 }
 .dojoxRollingListPane .dijitMenu {
 	border: none !important;
@@ -91,7 +91,7 @@
 .soria .dojoxRollingListPane {
 	background-color: #fff;
 }
-.soria .dojoxRollingListPane .dojoxRollingListItemHover, 
+.soria .dojoxRollingListPane .dojoxRollingListItemHover,
 .soria .dojoxRollingListPane .dojoxRollingListItemFocus {
 	background-color: #e3e3e3;
 }

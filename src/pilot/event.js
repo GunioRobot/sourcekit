@@ -87,7 +87,7 @@ exports.preventDefault = function(e) {
 };
 
 exports.getDocumentX = function(e) {
-    if (e.clientX) {        
+    if (e.clientX) {
         return e.clientX + dom.getPageScrollLeft();
     } else {
         return e.pageX;
@@ -110,7 +110,7 @@ exports.getButton = function(e) {
         return 0;
     else if (e.type == "contextmenu")
         return 2;
-        
+
     // DOM Event
     if (e.preventDefault) {
         return e.button;

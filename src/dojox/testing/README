@@ -10,11 +10,11 @@ experimental
 Credits
 	Wolfram Kriesing (wolfram@dojotoolkit.org)
 -------------------------------------------------------------------------------
-Project description 
+Project description
 
 	A port of Python's DocTests module to Dojo and D.O.H. which is also
 	compatible with Dojo's API documentation system
- 
+
 -------------------------------------------------------------------------------
 Dependencies:
 

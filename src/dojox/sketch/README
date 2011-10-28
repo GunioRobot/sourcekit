@@ -37,10 +37,10 @@ allow changing of background image
 simplier format? such as a json based one, which is easier to parse, and then
 write a convertor to convert the json format to svg or any other format?)
  * Move mousedown/up/move to each shape (to prepare for the following)
- * Add shapes for other primitive shapes (needs to decide which primitive 
-dojox.gfx.shapes are useful), and add in support for user to group any 
-shapes/groups to form a single "compound shape" (need to add support to set 
-fill/stroke properties on the entire compound shape, which shallpropagate to 
+ * Add shapes for other primitive shapes (needs to decide which primitive
+dojox.gfx.shapes are useful), and add in support for user to group any
+shapes/groups to form a single "compound shape" (need to add support to set
+fill/stroke properties on the entire compound shape, which shallpropagate to
 all children shapes)
 -------------------------------------------------------------------------------
 Installation instructions

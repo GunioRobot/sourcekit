@@ -36,8 +36,8 @@ test per widget instance per type of interaction (keyboard vs mouse for instance
 you are testing.
 
 After you finish interacting with the Web page, click out of any dojo.stopEvents
-and press CTRL-ALT-ENTER again. You will see a box containing the generated source 
-code for your recording. Copy this into a dojo.addOnLoad on the same page to register 
+and press CTRL-ALT-ENTER again. You will see a box containing the generated source
+code for your recording. Copy this into a dojo.addOnLoad on the same page to register
 the test with DOH. Replace the /*Your condition here*/ text with a JS condition that
 indicates that the test passed. Again, having multiple small tests will help you
 keep the condition small. Add a doh.run() call after you register all of your tests

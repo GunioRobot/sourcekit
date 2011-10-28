@@ -9,9 +9,9 @@ experimental, beta, stable
 -------------------------------------------------------------------------------
 Credits
 	Mike Wilcox 	 - Author
-	Jared Jurkiewicz - Author (PrettyPrint, PageBreak, ShowBlockNodes, 
-		Preview, Save, ToolbarLineBreak, InsertEntity, 
-		NormalizeIndentOutdent, Breadcrumb, FindReplace, 
+	Jared Jurkiewicz - Author (PrettyPrint, PageBreak, ShowBlockNodes,
+		Preview, Save, ToolbarLineBreak, InsertEntity,
+		NormalizeIndentOutdent, Breadcrumb, FindReplace,
 		CollapsibleToolbar, Blockquote, PasteFromWord, InsertAnchor,
 		TextColor, NormalizeStyle, StatusBar)
 	Dustin Machi 	 - Technical Assistance
@@ -21,7 +21,7 @@ Credits
 -------------------------------------------------------------------------------
 Project description
 
-Space for extensions and additional plugins for dijit.Editor.  The project 
+Space for extensions and additional plugins for dijit.Editor.  The project
 currently contains the following plugins:
 
 dojox.editor.plugins.TablePlugins:
@@ -40,14 +40,14 @@ dojox.editor.plugins.PrettyPrint:
 	The PrettyPrint plugin provides a mechanism by which the output from
 	editor.getValue()/editor.attr("value") is nicely formatted.  Optional
 	format parameters are how many spaces to indent by (default is tab),
-	the maximum text line length (not including indent), and what 
-	characters in text strings should be encoded to their &<enc>; 
+	the maximum text line length (not including indent), and what
+	characters in text strings should be encoded to their &<enc>;
 	representation.
 
 dojox.editor.plugins.PageBreak:
 	Status: Supported (stable).
 	A simple plugin that allows you to insert 'page breaks' into the doc
-	being edited.  These page break styles will then cause the document 
+	being edited.  These page break styles will then cause the document
 	to break to another page when printed.
 
 dojox.editor.plugins.ShowBlockNodes:
@@ -70,7 +70,7 @@ dojox.editor.plugins.Preview:
 
 dojox.editor.plugins.ToolbarLineBreak:
 	Status: Supported (stable).
-	An extremely simple plugin that allows you to 'linebreak' the dijit toolbar so that really long 
+	An extremely simple plugin that allows you to 'linebreak' the dijit toolbar so that really long
 	toolbars for editor (lots of plugins enabled), can be broken up into multiple rows.
 
 dojox.editor.plugins.InsertEntity:
@@ -89,14 +89,14 @@ dojox.editor.plugins.NormalizeIndentOutdent:
 dojox.editor.plugins.Breadcrumb:
 	Status: Experimental (unsupported).
 	A plugin that adds a breadcrumb toolbar to the bottom of the editor.  Useful for seeing
-	where you aren and what operations you can perform.  This is new and has been tested, but not 
+	where you aren and what operations you can perform.  This is new and has been tested, but not
 	extensively.  Therefore it is currently classed as experimental.
 
 dojox.editor.plugins.FindReplace:
 	Status: Experimental (unsupported).
 	A plugin that adds a togglable Find/Replace toolbar to the editor.  Useful for searching
 	and replacing text strings in the editor content.  Only works on FF, IE, and WebKit.  No Opera
-	support.  This is new and has been tested, but not extensively.  Therefore it is currently 
+	support.  This is new and has been tested, but not extensively.  Therefore it is currently
 	classed as experimental.
 
 dojox.editor.plugins.CollapsibleToolbar:
@@ -106,7 +106,7 @@ dojox.editor.plugins.CollapsibleToolbar:
 
 dojox.editor.plugins.Blockquote:
 	Status: Supported (Stable).
-	A plugin that puts a button on the toolbar that allows users to select text for a semantic 
+	A plugin that puts a button on the toolbar that allows users to select text for a semantic
 	'blockquote' tag-wrap action.  It toggles on and off during state changes to determine if
 	the current section is contained within a blockquote.
 
@@ -125,7 +125,7 @@ dojox.editor.plugins.InsertAnchor:
 dojox.editor.plugins.TextColor:
 	Status: Experimental (unsupported).
 	A plugin that makes use of the dojox.widget.ColorPicker widget in lieu of the
-	dijit.ColorPalette.  
+	dijit.ColorPalette.
 
 dojox.editor.plugins.NormalizeStyle:
 	Status: Experimental (unsupported).
@@ -165,10 +165,10 @@ See also:
         http://docs.dojocampus.org/dojox/editor/plugins/CollapsibleToolbar
 	http://docs.dojocampus.org/dojox/editor/plugins/Blockquote
 	http://docs.dojocampus.org/dojox/editor/plugins/PasteFromWord
-	http://docs.dojocampus.org/dojox/editor/plugins/InsertAnchor       
+	http://docs.dojocampus.org/dojox/editor/plugins/InsertAnchor
 	http://docs.dojocampus.org/dojox/editor/plugins/TextColor
 	http://docs.dojocampus.org/dojox/editor/plugins/NormalizeStyle
-	http://docs.dojocampus.org/dojox/editor/plugins/StatusBar 
+	http://docs.dojocampus.org/dojox/editor/plugins/StatusBar
 
 -------------------------------------------------------------------------------
 Plugin Installation instructions

@@ -13,7 +13,7 @@ var Mode = function() {
 oop.inherits(Mode, TextMode);
 
 (function() {
-    
+
 	  this.getNextLineIndent = function(state, line, tab) {
 	      var indent = this.$getIndent(line);
 
@@ -24,7 +24,7 @@ oop.inherits(Mode, TextMode);
 	      if (tokens.length && tokens[tokens.length-1].type == "comment") {
 	          return indent;
 	      }
-      
+
 	      if (state == "start") {
 	          var match = line.match(/^.*[\{\(\[]\s*$/);
 	          if (match) {

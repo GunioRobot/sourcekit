@@ -3,14 +3,14 @@
 .dojoxMultiSelect {
 	border: solid black 1px;
 	margin: 1px 0;
-	overflow: scroll; 
-	overflow-y: scroll; 
-	overflow-x: hidden; 
+	overflow: scroll;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	height: 100px;
 }
 .dj_ie .dojoxMultiSelect,
 .dj_webkit .dojoxMultiSelect {
-	
+
 	padding-right: 15px;
 }
 .dojoxMultiSelectItem {
@@ -35,7 +35,7 @@
 	line-height: normal;
 }
 .tundra .dojoxMultiSelectFocused {
-	
+
 	border-color:#406b9b;
 }
 .soria .dojoxMultiSelect {
@@ -48,7 +48,7 @@
 	line-height: normal;
 }
 .soria .dojoxMultiSelectFocused {
-	
+
 	border-color:#406b9b;
 }
 .nihilo .dojoxMultiSelect {
@@ -61,7 +61,7 @@
 	line-height: normal;
 }
 .nihilo .dojoxMultiSelectFocused {
-	
+
 	border-color:#b3b3b3;
 }
 .claro .dojoxMultiSelect {

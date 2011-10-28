@@ -4,6 +4,6 @@ All contents of this directory are Copyright (c) the Dojo Foundation, with the
 following exceptions:
 -------------------------------------------------------------------------------
 
-_crypto.js - internally uses AES algorithm	
+_crypto.js - internally uses AES algorithm
 	* AES algorithm copyright Chris Veness (CLA signed and permission given to use code under BSD license)
       Taken from http://www.movable-type.co.uk/scripts/aes.html

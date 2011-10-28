@@ -6,7 +6,7 @@
 	padding: 0px;
 }
 .soria .dijitDialog .dijitDialogTitle {
-	
+
 	font-weight: bold;
 	padding: 0px 4px;
 	font-size: 0.9em;
@@ -18,13 +18,13 @@
 	padding:10px;
 }
 .soria .dijitDialogTitleBar {
-	
+
 	background: #fafafa url("images/titleBar.png") repeat-x top left;
 	padding: 5px 6px 3px 6px;
-	outline:0; 
+	outline:0;
 }
 .soria .dijitDialogCloseIcon {
-	
+
 	background-image: url("images/spriteRoundedIconsSmallBl.png");
 	background-repeat: no-repeat;
 	background-position: -60px 0px;
@@ -43,35 +43,35 @@
 }
 .soria .dijitTooltip,
 .soria .dijitTooltipDialog {
-	
-	background: transparent;	
+
+	background: transparent;
 }
 .dijitTooltipBelow {
-	
+
 	padding-top: 10px;
 }
 .dijitTooltipAbove {
-	
+
 	padding-bottom: 10px;
 }
 .soria .dijitTooltipContainer {
-	
+
 	background-color: #fff;
 	border:1px solid #cbcbcb;
 	padding:0.45em;
 }
 .soria .dijitTooltipConnector {
-	
+
 	border:0px;
 	z-index: 2;
 }
 .soria .dijitTooltipABRight .dijitTooltipConnector {
-	
+
 	left: auto !important;
 	right: 6px;
 }
 .soria .dijitTooltipBelow .dijitTooltipConnector {
-	
+
 	top: 0px;
 	left: 6px;
 	background:url("images/tooltipConnectorUp.png") no-repeat top left;
@@ -82,7 +82,7 @@
 	background-image: url("images/tooltipConnectorUp.gif");
 }
 .soria .dijitTooltipAbove .dijitTooltipConnector {
-	
+
 	bottom: 0px;
 	left: 6px;
 	background:url("images/tooltipConnectorDown.png") no-repeat top left;
@@ -105,7 +105,7 @@
 	padding-left: 11px;
 }
 .soria .dijitTooltipLeft .dijitTooltipConnector {
-	
+
 	right: 0px;
 	bottom: 3px;
 	background:url("images/tooltipConnectorRight.png") no-repeat top left;
@@ -119,7 +119,7 @@
 	padding-left: 10px;
 }
 .soria .dijitTooltipRight .dijitTooltipConnector {
-	
+
 	left: 0px;
 	bottom: 3px;
 	background:url("images/tooltipConnectorLeft.png") no-repeat top left;

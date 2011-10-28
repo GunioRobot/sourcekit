@@ -1,12 +1,12 @@
 
 .claro  .dijitColorPalette {
-	outline: 1px solid #769dc0; 
+	outline: 1px solid #769dc0;
 	border: 1px solid #c0ccdf;
 	background:#fff;
 	-moz-border-radius: 0px;
 }
 .claro .dijitColorPalette .dijitPaletteImg {
-	
+
 	border: 1px solid #cecece;
 }
 .claro .dijitColorPalette .dijitPaletteCellHover .dijitPaletteImg {

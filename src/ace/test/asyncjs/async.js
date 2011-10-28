@@ -25,9 +25,9 @@ exports.Generator = function(source) {
     this.map = function(mapper) {
         if (!mapper)
             return this
-            
+
         mapper = makeAsync(1, mapper)
-        
+
         var source = this.source
         this.next = function(callback) {
             source.next(function(err, value) {
@@ -45,13 +45,13 @@ exports.Generator = function(source) {
         }
         return new this.constructor(this)
     }
-    
+
     this.filter = function(filter) {
         if (!filter)
             return this
-            
+
         filter = makeAsync(1, filter)
-        
+
         var source = this.source
         this.next = function(callback) {
             source.next(function handler(err, value) {
@@ -76,7 +76,7 @@ exports.Generator = function(source) {
         var count = -1
         if (!end || end < 0)
             var end = Infinity
-        
+
         var source = this.source
         this.next = function(callback) {
             source.next(function handler(err, value) {
@@ -93,14 +93,14 @@ exports.Generator = function(source) {
         }
         return new this.constructor(this)
     }
-    
+
     this.reduce = function(reduce, initialValue) {
         reduce = makeAsync(3, reduce)
 
         var index = 0
         var done = false
         var previousValue = initialValue
-        
+
         var source = this.source
         this.next = function(callback) {
             if (done)
@@ -110,7 +110,7 @@ exports.Generator = function(source) {
                 source.next(function(err, currentValue) {
                     if (err)
                         return callback(err, previousValue)
-                    
+
                     previousValue = currentValue
                     reduceAll()
                 })
@@ -119,10 +119,10 @@ exports.Generator = function(source) {
                 reduceAll()
 
             function reduceAll() {
-                source.next(function handler(err, currentValue) {                    
+                source.next(function handler(err, currentValue) {
                     if (err) {
                         done = true
-                        if (err == STOP)                            
+                        if (err == STOP)
                             return callback(null, previousValue)
                         else
                             return(err)
@@ -132,19 +132,19 @@ exports.Generator = function(source) {
                         source.next(handler)
                     })
                 })
-            }            
+            }
         }
         return new this.constructor(this)
     }
-    
+
     this.forEach =
     this.each = function(fn) {
         fn = makeAsync(1, fn)
-            
+
         var source = this.source
         this.next = function(callback) {
             source.next(function handler(err, value) {
-                if (err) 
+                if (err)
                     callback(err)
                 else {
                     fn(value, function(err) {
@@ -155,20 +155,20 @@ exports.Generator = function(source) {
         }
         return new this.constructor(this)
     }
-    
+
     this.some = function(condition) {
         condition = makeAsync(1, condition)
-        
+
         var source = this.source
         var done = false
         this.next = function(callback) {
             if (done)
                 return callback(STOP)
-            
+
             source.next(function handler(err, value) {
                 if (err)
                     return callback(err)
-                    
+
                 condition(value, function(err, result) {
                     if (err) {
                         done = true
@@ -176,32 +176,32 @@ exports.Generator = function(source) {
                             callback(null, false)
                         else
                             callback(err)
-                    }                        
+                    }
                     else if (result) {
                         done = true
                         callback(null, true)
                     }
-                    else 
+                    else
                         source.next(handler)
                 })
             })
         }
         return new this.constructor(this)
     }
-    
+
     this.every = function(condition) {
         condition = makeAsync(1, condition)
-        
+
         var source = this.source
         var done = false
         this.next = function(callback) {
             if (done)
                 return callback(STOP)
-            
+
             source.next(function handler(err, value) {
                 if (err)
                     return callback(err)
-                    
+
                 condition(value, function(err, result) {
                     if (err) {
                         done = true
@@ -209,19 +209,19 @@ exports.Generator = function(source) {
                             callback(null, true)
                         else
                             callback(err)
-                    }                        
+                    }
                     else if (!result) {
                         done = true
                         callback(null, false)
                     }
-                    else 
+                    else
                         source.next(handler)
                 })
             })
         }
         return new this.constructor(this)
     }
-    
+
     this.call = function(context) {
         var source = this.source
         return this.map(function(fn, next) {
@@ -231,14 +231,14 @@ exports.Generator = function(source) {
             })
         })
     }
-    
+
     this.concat = function(generator) {
         var generators = [this]
         generators.push.apply(generators, arguments)
         var index = 0
         var source = generators[index++]
-        
-        return new this.constructor(function(callback) {            
+
+        return new this.constructor(function(callback) {
             source.next(function handler(err, value) {
                 if (err) {
                     if (err == STOP) {
@@ -256,20 +256,20 @@ exports.Generator = function(source) {
             })
         })
     }
-    
+
     this.zip = function(generator) {
         var generators = [this]
         generators.push.apply(generators, arguments)
-        
+
         return new this.constructor(function(callback) {
             exports.list(generators)
-                .map(function(gen, next) {                    
+                .map(function(gen, next) {
                     gen.next(next)
                 })
                 .toArray(callback)
         })
     }
-    
+
     this.sort = function(compare) {
         var self = this
         var arrGen
@@ -284,7 +284,7 @@ exports.Generator = function(source) {
                     arrGen = exports.list(arr.sort(compare))
                     arrGen.next(callback)
                 }
-            })            
+            })
         }
         return new this.constructor(this)
     }
@@ -292,18 +292,18 @@ exports.Generator = function(source) {
     this.join = function(separator) {
         return this.$arrayOp(Array.prototype.join, separator !== undefined ? [separator] : null)
     }
-    
+
     this.reverse = function() {
         return this.$arrayOp(Array.prototype.reverse)
     }
-    
+
     this.$arrayOp = function(arrayMethod, args) {
         var self = this
         var i = 0
         this.next = function(callback) {
             if (i++ > 0)
                 return callback(STOP)
-                
+
             self.toArray(function(err, arr) {
                 if (err)
                     callback(err, "")
@@ -316,9 +316,9 @@ exports.Generator = function(source) {
             })
         }
         return new this.constructor(this)
-        
+
     }
-    
+
     this.end = function(breakOnError, callback) {
     	if (!callback) {
             callback = arguments[0]
@@ -351,11 +351,11 @@ exports.Generator = function(source) {
             callback = arguments[0]
             breakOnError = true
         }
-        
+
         var values = []
         var errors = []
         var source = this.source
-        
+
         source.next(function handler(err, value) {
             if (err) {
                 if (err == STOP) {
@@ -382,7 +382,7 @@ exports.Generator = function(source) {
 }).call(exports.Generator.prototype)
 
 var makeAsync = exports.makeAsync = function(args, fn, context) {
-    if (fn.length > args) 
+    if (fn.length > args)
         return fn
     else {
         return function() {
@@ -402,7 +402,7 @@ exports.list = function(arr, construct) {
     var construct = construct || exports.Generator
     var i = 0
     var len = arr.length
-    
+
     return new construct(function(callback) {
         if (i < len)
             callback(null, arr[i++])
@@ -413,17 +413,17 @@ exports.list = function(arr, construct) {
 
 exports.values = function(map, construct) {
     var values = []
-    for (var key in map) 
+    for (var key in map)
         values.push(map[key])
-        
+
     return exports.list(values, construct)
 }
 
 exports.keys = function(map, construct) {
     var keys = []
-    for (var key in map) 
+    for (var key in map)
         keys.push(key)
-        
+
     return exports.list(keys, construct)
 }
 
@@ -433,17 +433,17 @@ exports.keys = function(map, construct) {
  * Return a generator containing an arithmetic progression of integers.
  * range(i, j) returns [i, i+1, i+2, ..., j-1] start (!) defaults to 0.
  * When step is given, it specifies the increment (or decrement).
- */ 
+ */
 exports.range = function(start, stop, step, construct) {
     var construct = construct || exports.Generator
     start = start || 0
     step = step || 1
-    
+
     if (stop === undefined || stop === null)
         stop = step > 0 ? Infinity : -Infinity
-        
+
     var value = start
-    
+
     return new construct(function(callback) {
         if (step > 0 && value >= stop || step < 0 && value <= stop)
             callback(STOP)
@@ -483,7 +483,7 @@ exports.plugin = function(members, constructors) {
         for (var key in constructors) {
             exports[key] = constructors[key]
         }
-    }    
+    }
 }
 
 })

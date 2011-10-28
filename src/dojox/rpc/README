@@ -10,12 +10,12 @@ Service.js: beta - this will become dojo.rpc.Service eventually and replace
 			the existing rpc system
 JsonRPC.js: beta - plugins for json-rpc for the rpc system
 Rest.js: beta - plugin for REST style services for the rpc system
-JsonRest.js: beta - A module for tracking and persisting changes to JSON objects 
+JsonRest.js: beta - A module for tracking and persisting changes to JSON objects
 through REST.
 OfflineRest.js: alpha - A module for storing REST changes locally as write-
 back cache for offline and intermittent connection situations
 ProxiedPath.js: beta - plugin for the PATH envelope to work with a simple PHP proxy
-Client.js: alpha - A module for maintaining per page/tab client sessions and 
+Client.js: alpha - A module for maintaining per page/tab client sessions and
 deterministic message sequencing with a server.
 
 SMDLibrary contains smd files representing external services.
@@ -50,7 +50,7 @@ Install into the following directory structure:
 
 ...which should be at the same level as your Dojo checkout.
 
-The use of the actual utilities varies, but typically additional software 
+The use of the actual utilities varies, but typically additional software
 will be included with dojo.require() and smd files for services can be loaded
 manually with an xhr request or can be provided by url to the service when created
 

@@ -1,11 +1,11 @@
 
 .tundra .dijitTreeNodeRtl,
 .tundra .dijitTreeNodeRtl .dijitTreeExpandoLeaf {
-	
+
     background-image: none;
 }
 .tundra .dijitTreeNodeRtl .dijitTreeExpandoOpened {
-	
+
 	background-image: url('images/treeExpand_minus_rtl.gif');
 }
 .tundra .dijitTreeNodeRtl .dijitTreeExpandoClosed {

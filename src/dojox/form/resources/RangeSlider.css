@@ -10,7 +10,7 @@
 .dojoxRangeSlider .dijitSliderProgressBar {
     overflow:hidden;
     cursor:pointer;
-    
+
 }
 .dojoxRangeSlider .dijitSliderProgressBarV {
     position:absolute !important;

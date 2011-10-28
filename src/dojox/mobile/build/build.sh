@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Build script for dojox.mobile
-# 
+#
 # Note:
 # You may need to manually apply the following patch to your build script
 # in order to completely remove all the unused modules from your build.
@@ -11,7 +11,7 @@
 # For example, if you see query.js and NodeList.js baked into your build,
 # while you are not using them, then it is worth trying the patch.
 # The file to be patched is util/buildscripts/jslib/buildUtil.js.
-# 
+#
 # --- buildUtil.js-orig
 # +++ buildUtil.js
 # @@ -1506,7 +1506,7 @@

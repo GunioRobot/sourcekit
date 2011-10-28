@@ -1,6 +1,6 @@
 
 .thumbWrapper .thumbNav {
-	background-repeat: no-repeat;	
+	background-repeat: no-repeat;
 	background-position: center;
 	padding-top: 1px;
 	width: 30px;
@@ -68,7 +68,7 @@
 	font-size: 1%;
 }
 .thumbWrapper .thumbLoaded {
-	background-color: transparent;	
+	background-color: transparent;
 }
 .thumbScroller {
 	overflow-x: hidden;
@@ -82,7 +82,7 @@
 }
 .thumbVert .thumbScroller {
 	height: 500px;
-	width: 100px;	
+	width: 100px;
 }
 .thumbWrapper {
 	float: left;

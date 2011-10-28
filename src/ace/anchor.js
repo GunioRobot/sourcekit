@@ -46,7 +46,7 @@ var EventEmitter = require("pilot/event_emitter").EventEmitter;
  */
 var Anchor = exports.Anchor = function(doc, row, column) {
     this.document = doc;
-    
+
     if (typeof column == "undefined")
         this.setPosition(row.row, row.column);
     else
@@ -59,31 +59,31 @@ var Anchor = exports.Anchor = function(doc, row, column) {
 (function() {
 
     oop.implement(this, EventEmitter);
-    
+
     this.getPosition = function() {
         return this.$clipPositionToDocument(this.row, this.column);
     };
-    
+
     this.getDocument = function() {
         return this.document;
     };
-    
+
     this.onChange = function(e) {
         var delta = e.data;
         var range = delta.range;
-            
+
         if (range.start.row == range.end.row && range.start.row != this.row)
             return;
-            
+
         if (range.start.row > this.row)
             return;
-            
+
         if (range.start.row == this.row && range.start.column > this.column)
             return;
-    
+
         var row = this.row;
         var column = this.column;
-        
+
         if (delta.action === "insertText") {
             if (range.start.row === row && range.start.column <= column) {
                 if (range.start.row === range.end.row) {
@@ -108,7 +108,7 @@ var Anchor = exports.Anchor = function(doc, row, column) {
                     column = range.start.column;
                 else
                     column = Math.max(0, column - (range.end.column - range.start.column));
-                
+
             } else if (range.start.row !== range.end.row && range.start.row < row) {
                 if (range.end.row == row) {
                     column = Math.max(0, column - range.end.column) + range.start.column;
@@ -143,15 +143,15 @@ var Anchor = exports.Anchor = function(doc, row, column) {
         else {
             pos = this.$clipPositionToDocument(row, column);
         }
-        
+
         if (this.row == pos.row && this.column == pos.column)
             return;
-            
+
         var old = {
             row: this.row,
             column: this.column
         };
-        
+
         this.row = pos.row;
         this.column = pos.column;
         this._dispatchEvent("change", {
@@ -159,14 +159,14 @@ var Anchor = exports.Anchor = function(doc, row, column) {
             value: pos
         });
     };
-    
+
     this.detach = function() {
         this.document.removeEventListener("change", this.$onChange);
     };
-    
+
     this.$clipPositionToDocument = function(row, column) {
         var pos = {};
-    
+
         if (row >= this.document.getLength()) {
             pos.row = Math.max(0, this.document.getLength() - 1);
             pos.column = this.document.getLine(pos.row).length;
@@ -179,13 +179,13 @@ var Anchor = exports.Anchor = function(doc, row, column) {
             pos.row = row;
             pos.column = Math.min(this.document.getLine(pos.row).length, Math.max(0, column));
         }
-        
+
         if (column < 0)
             pos.column = 0;
-            
+
         return pos;
     };
-    
+
 }).call(Anchor.prototype);
 
 });

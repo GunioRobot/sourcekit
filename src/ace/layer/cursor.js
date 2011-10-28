@@ -123,13 +123,13 @@ var Cursor = function(parentEl) {
         if (this.isVisible) {
             this.element.appendChild(this.cursor);
         }
-        
+
         if (this.session.getOverwrite()) {
             dom.addCssClass(this.cursor, "ace_overwrite");
         } else {
             dom.removeCssClass(this.cursor, "ace_overwrite");
         }
-        
+
         this.restartTimer();
     };
 

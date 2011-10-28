@@ -6,7 +6,7 @@
 	padding:2px 9px 2px 8px;
 }
 .tundra .tabStrip-disabled .tabStripButtonRtl .dijitTabInnerDiv {
-	
+
 	padding-bottom: 3px;
 	padding-top: 1px;
 }
@@ -27,12 +27,12 @@
 	margin-left:0px;
 }
 .dj_ie .tundra .dijitTabRtl .dijitTabInnerDiv {
-	
+
 	width : 0.1% !important;
 }
 .dj_iequirks-rtl .tundra .dijitTabContainerTopNone,
 .dj_iequirks-rtl .tundra .dijitTabContainerBottomNone {
-	
+
 	border-left: 1px solid #fff;
 	border-right: 1px solid #fff;
 }

@@ -23,7 +23,7 @@ This project aims to add html functions that aren't used often enough to
 warrant going into Dojo Core but should not be duplicated.  For instance, font
 measurement routines aren't used by the majority of developers, but are complex
 enough to not be duplicated.
-Styles adds the ability to create and remove dynamic cssRules, as well as 
+Styles adds the ability to create and remove dynamic cssRules, as well as
 manipulate document style sheets.
 Ellipsis adds some css definitions and dojo.behavior rules (for FF) to support
 text-overflow: ellipsis

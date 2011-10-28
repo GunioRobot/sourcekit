@@ -4,8 +4,8 @@
 	background-image: url('../images/spriteCheckbox.gif');
 }
 .soria .dijitCheckBox,
-.soria .dijitCheckBoxIcon {		
-	background-image: url('../images/spriteCheckbox.gif'); 
+.soria .dijitCheckBoxIcon {
+	background-image: url('../images/spriteCheckbox.gif');
 	background-repeat: no-repeat;
 	width: 16px;
 	height: 16px;
@@ -14,27 +14,27 @@
 }
 .soria .dijitCheckBox,
 .soria .dijitToggleButton .dijitCheckBoxIcon {
-	
+
 	background-position: -16px;
 }
 .soria .dijitCheckBoxChecked,
 .soria .dijitToggleButtonChecked .dijitCheckBoxIcon {
-	
+
 	background-position: 0px;
 }
 .soria .dijitCheckBoxDisabled {
-	
+
 	background-position: -48px;
 }
 .soria .dijitCheckBoxCheckedDisabled {
-	
+
 	background-position: -32px;
 }
 .soria .dijitCheckBoxHover {
-	
+
 	background-position: -80px;
 }
 .soria .dijitCheckBoxCheckedHover {
-	
+
 	background-position: -64px;
 }

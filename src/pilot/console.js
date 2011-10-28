@@ -37,7 +37,7 @@
  *
  * ***** END LICENSE BLOCK ***** */
 define(function(require, exports, module) {
-    
+
 /**
  * This object represents a "safe console" object that forwards debugging
  * messages appropriately without creating a dependency on Firebug in Firefox.

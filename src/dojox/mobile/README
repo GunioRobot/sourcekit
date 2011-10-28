@@ -17,9 +17,9 @@ Credits:
 -------------------------------------------------------------------------------
 Project description
 
-This project tries to solve an area lacking in dojo, namely better 
+This project tries to solve an area lacking in dojo, namely better
 support for mobile devices.  This project provides through CSS3 and
-custom styles, interfaces that display and work well on mobile devices 
+custom styles, interfaces that display and work well on mobile devices
 such as the Android and iPhone Smart Phones.
 
 The code is deliberately kept as lightweight as possible, using CSS3 animations

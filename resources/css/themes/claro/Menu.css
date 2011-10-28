@@ -15,15 +15,15 @@
 	background-repeat:repeat-y;
 	background-color:#fff;
 	border: 1px solid #769dc0;
-	
+
 	margin: -1px 0;
 }
-.claro .dijitMenuBar .dijitMenuItem {  
+.claro .dijitMenuBar .dijitMenuItem {
 	padding: 6px 10px 7px;
 	background-position:0px 100px;
 	color:#4a4a4a;
 	margin:-1px;
-}	
+}
 .claro .dijitMenuItem {
 	background-image: url("images/menuHighlight.png");
 	background-position:0px -40px;
@@ -95,7 +95,7 @@
 }
 .claro .dijitMenuSeparatorTop {
 	height: auto;
-	margin-top:1px; 
+	margin-top:1px;
 	border-bottom: 1px solid #b5bcc7
 }
 .claro .dijitMenuSeparatorBottom{

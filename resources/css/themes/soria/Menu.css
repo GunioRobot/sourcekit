@@ -25,7 +25,7 @@
 }
 .soria .dijitMenuPassive .dijitMenuItemHover,
 .soria .dijitMenuItemSelected {
-	background-color: #d9e6f9; 
+	background-color: #d9e6f9;
 	color: #243C5F;
 }
 .soria .dijitMenuItemIcon {
@@ -45,7 +45,7 @@
 	height: 1px;
 }
 .soria .dijitMenuSeparatorTop {
-	border-bottom: 1px solid #fff; 
+	border-bottom: 1px solid #fff;
 }
 .soria .dijitMenuSeparatorBottom {
 	border-top: 1px solid #8ba0bd;

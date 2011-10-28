@@ -7,7 +7,7 @@
 }
 .tundra .dijitTab {
 	line-height:normal;
-	margin-right:4px;	
+	margin-right:4px;
 	padding:0px;
 	border:1px solid #ccc;
 	background:#e2e2e2 url("../images/tabEnabled.png") repeat-x;
@@ -32,7 +32,7 @@
 	bottom: 2px;
 }
 .tundra .dijitTabChecked {
-	
+
 	background-color:#fff;
 	border-color: #ccc;
 	background-image:none;
@@ -63,7 +63,7 @@
 	background:#fff;
 }
 .tundra .dijitTab .tabLabel {
-	
+
 	min-height: 12px;
 	display: inline-block;
 }
@@ -76,7 +76,7 @@
 .tundra .dijitTabContainerTabListNested .dijitTab {
 	background: none;
 	border: none;
-	top: 0px;		
+	top: 0px;
 }
 .tundra .dijitTabContainerTabListNested .dijitTab .dijitTabContent {
 }
@@ -86,10 +86,10 @@
 .tundra .dijitTabContainerTabListNested .dijitTabChecked .dijitTabContent .tabLabel {
 	text-decoration: underline;
 	font-weight: bold;
-	
+
 }
 .tundra .dijitTabContainer .dijitTabPaneWrapperNested {
-	border: none;	
+	border: none;
 }
 .tundra .dijitTabCloseButton {
 	background: url("../images/tabClose.png") no-repeat right top;
@@ -199,7 +199,7 @@
 .tundra .dijitTabContainerLeft-tabs .dijitTab,
 .tundra .dijitTabContainerRight-tabs .dijitTab {
 	margin-right:0px;
-	margin-bottom:4px;	
+	margin-bottom:4px;
 }
 .tundra .dijitTabContainerTop-dijitContentPane .dijitTabContainerTop-tabs {
 	border-left: 0px solid #ccc;

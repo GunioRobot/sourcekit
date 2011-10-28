@@ -42,7 +42,7 @@ var checks = require("pilot/typecheck");
 var canon = require('pilot/canon');
 
 /**
- * 
+ *
  */
 var helpMessages = {
     plainPrefix:
